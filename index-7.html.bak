@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Primary SEO Meta Tags -->
+  <meta name="description" content="Vidhitra Corporate Advisors LLP provides Fractional General Counsel services — ongoing legal counsel integrated with your business, covering corporate law, commercial contracts, regulatory compliance, and cross-jurisdictional matters across India." />
+  <meta name="keywords" content="Fractional General Counsel, Corporate Advisory, Corporate Law Firm India, Commercial Contracts, Regulatory Compliance, Legal Counsel for Business, Vidhitra Corporate Advisors" />
+  <meta name="author" content="Vidhitra Corporate Advisors LLP" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.vidhitra.com/" />
+
+  <!-- Site Title -->
+  <title>Vidhitra Corporate Advisors LLP | Fractional General Counsel</title>
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.vidhitra.com/" />
+  <meta property="og:title" content="Vidhitra Corporate Advisors LLP | Fractional General Counsel" />
+  <meta property="og:description" content="Ongoing legal counsel integrated with your business — corporate law, commercial contracts, regulatory compliance, and cross-jurisdictional support across India." />
+  <meta property="og:image" content="assets/images/og-image.jpg" />
+  <meta property="og:site_name" content="Vidhitra Corporate Advisors LLP" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vidhitra Corporate Advisors LLP | Fractional General Counsel" />
+  <meta name="twitter:description" content="Ongoing legal counsel integrated with your business — corporate law, commercial contracts, regulatory compliance, and cross-jurisdictional support across India." />
+  <meta name="twitter:image" content="assets/images/og-image.jpg" />
+
+  <!-- Theme colour (browser UI tint on mobile) — client brand teal -->
+  <meta name="theme-color" content="#005c59" />
+
+  <!-- Favicons — generated from client logo -->
+  <link rel="icon" type="image/x-icon" href="assets/images/vidhitra/logo.webp" />
+
+  <!-- CSS here -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/font-awesome-pro.min.css" />
+  <link rel="stylesheet" href="assets/css/animate.css" />
+  <link rel="stylesheet" href="assets/css/solvior-icons.css" />
+  <link rel="stylesheet" href="assets/css/swiper.min.css" />
+  <link rel="stylesheet" href="assets/css/odometer-theme-default.css" />
+  <link rel="stylesheet" href="assets/css/nice-select.css" />
+  <link rel="stylesheet" href="assets/css/venobox.min.css" />
+  <link rel="stylesheet" href="assets/css/meanmenu.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="mouseCursor cursor-outer"></div>
+  <div class="mouseCursor cursor-inner"><span><i class="tji-angle-left"></i>Drag<i class="tji-angle-right"></i></span>
+  </div>
+  
+  <!-- start: Search Popup -->
+  <div class="search_popup">
+    <div class="search_close">
+      <button type="button" class="search_close_btn">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17 1L1 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M1 1L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-12">
+          <div class="tj_search_wrapper">
+            <div class="search_form">
+              <form action="#">
+                <div class="search_input">
+                  <h4 class="title">Search Blog, projects, Service or people.</h4>
+                  <div class="search-box">
+                    <input class="search-input-field" type="search" placeholder="Search here..." required="">
+                    <button type="submit">
+                      <i class="tji-search"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="search-popup-overlay"></div>
+  <!-- end: Search Popup -->
+
+<!-- start: Hamburger Menu -->
+<div class="body-overlay"></div>
+<div class="hamburger-area" data-lenis-prevent>
+  <div class="hamburger_bg"></div>
+  <div class="hamburger_wrapper">
+    <div class="hamburger_top d-flex align-items-center justify-content-between">
+      <div class="hamburger_logo">
+        <a href="index.html" class="mobile_logo">
+          <img src="assets/images/vidhitra/logo.webp" alt="Vidhitra Corporate Advisors LLP" />
+        </a>
+      </div>
+      <div class="hamburger_close">
+        <button class="hamburger_close_btn hamburgerCloseBtn"><i class="fa-thin fa-times"></i></button>
+      </div>
+    </div>
+    <div class="hamburger_search">
+      <form method="get" action="#0">
+        <button type="submit"><i class="fal fa-search"></i></button>
+        <input type="search" autocomplete="off" name="s" value="" placeholder="Search here" />
+      </form>
+    </div>
+
+    <div class="hamburger_menu">
+      <div class="mobile_menu"></div>
+    </div>
+
+    <div class="hamburger-infos">
+      <h4 class="hamburger-title">Contact info</h4>
+      <div class="contact-info">
+        <div class="contact_item">
+          <span class="subtitle">Email</span>
+          <div class="text"><a class="link" href="mailto:info@vidhitra.com">info@vidhitra.com</a></div>
+        </div>
+        <div class="contact_item">
+          <span class="subtitle">Phone</span>
+          <!-- TODO: insert client's actual phone number once shared -->
+          <div class="text"><a class="link" href="tel:+91XXXXXXXXXX">+91 XXX XXX XXXX</a></div>
+        </div>
+        <div class="contact_item">
+          <span class="subtitle">Presence</span>
+          <div class="text">Pan-India</div>
+        </div>
+      </div>
+    </div>
+    <div class="hamburger-socials">
+      <h4 class="hamburger-title">Follow us</h4>
+      <ul>
+        <!-- TODO: replace # with actual social links once client confirms active profiles -->
+        <li>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- end: Hamburger Menu -->
+
+<!-- start: Header Area -->
+<header class="tj-header-area header-6 style-6 header-absolute">
+  <div class="header-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="header-wrapper">
+
+            <!-- logo -->
+            <div class="site-logo">
+              <a class="logo" href="index.html">
+                <img src="assets/images/vidhitra/logo.webp" class="logo" alt="Vidhitra Corporate Advisors LLP">
+              </a>
+            </div>
+
+            <!-- main navigation -->
+            <div class="mainmenu d-lg-block d-none" id="main-menu">
+              <ul>
+                <li class="current-menu-ancestor">
+                  <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                  <a href="fractional-general-counsel.html">Fractional General Counsel</a>
+                </li>
+
+                <li class="has-dropdown">
+                  <a href="capabilities.html">Capabilities</a>
+                  
+                  <ul class="sub-menu mega-menu-service">
+                    <li>
+                      <a class="mega-menu-service-single" href="service-details.html">
+                        <span class="mega-menu-service-icon"><i class="tji-business"></i></span>
+                        <span class="mega-menu-service-title">Corporate &amp; Strategic Business Matters</span>
+                        <span class="mega-menu-service-nav"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="mega-menu-service-single" href="service-details.html">
+                        <span class="mega-menu-service-icon"><i class="tji-strategic"></i></span>
+                        <span class="mega-menu-service-title">Commercial Contracts &amp; Business Relationships</span>
+                        <span class="mega-menu-service-nav"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="mega-menu-service-single" href="service-details.html">
+                        <span class="mega-menu-service-icon"><i class="tji-process"></i></span>
+                        <span class="mega-menu-service-title">Infrastructure, Projects &amp; Bids</span>
+                        <span class="mega-menu-service-nav"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="mega-menu-service-single" href="service-details.html">
+                        <span class="mega-menu-service-icon"><i class="tji-optimization"></i></span>
+                        <span class="mega-menu-service-title">Regulatory Compliance &amp; Business Risk</span>
+                        <span class="mega-menu-service-nav"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="mega-menu-service-single" href="service-details.html">
+                        <span class="mega-menu-service-icon"><i class="tji-executive"></i></span>
+                        <span class="mega-menu-service-title">Technology, IT &amp; Digital Business</span>
+                        <span class="mega-menu-service-nav"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="mega-menu-service-single" href="service-details.html">
+                        <span class="mega-menu-service-icon"><i class="tji-leadership"></i></span>
+                        <span class="mega-menu-service-title">Employment &amp; Workforce Matters</span>
+                        <span class="mega-menu-service-nav"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                      </a>
+                    </li>
+                    <li>
+                      <!-- NOTE: theme only ships 6 service icon classes — reused "strategic" here for the 7th.
+                           Consider asking the theme's icon font for a closer match (e.g. a "growth" or "startup" glyph). -->
+                      <a class="mega-menu-service-single" href="service-details.html">
+                        <span class="mega-menu-service-icon"><i class="tji-strategic"></i></span>
+                        <span class="mega-menu-service-title">Market Entry, Startups &amp; Emerging Businesses</span>
+                        <span class="mega-menu-service-nav"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="has-dropdown">
+                    <a href="about.html">
+                        About </i>
+                    </a>
+
+                    <ul class="sub-menu">
+                        <li><a href="about.html">About Vidhitra</a></li>
+                        <li><a href="the-vidhitra-approach.html">Our Approach</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="insights.html">Insights</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="header_right_info d-none d-md-inline-flex">
+              
+
+              <!-- menu bar -->
+              <button class="menu_btn d-none d-xl-inline-flex">
+                <span class="cubes">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
+
+              <!-- button -->
+              <a href="contact.html" class="tj-primary-btn">
+                <div class="btn_inner">
+                  <div class="btn_icon">
+                    <span>
+                      <i class="tji-arrow-right"></i>
+                      <i class="tji-arrow-right"></i>
+                    </span>
+                  </div>
+                  <div class="btn_text">
+                    <span>Get in Touch</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- menu bar -->
+            <button class="menu_btn d-lg-none hamburgerBtn">
+              <span class="cubes">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<header class="tj-header-area header-6 style-6 header-duplicate header-sticky">
+  <div class="header-bottom">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="header-wrapper">
+
+            <!-- logo -->
+            <div class="site-logo">
+              <a class="logo" href="index.html">
+                <img src="assets/images/vidhitra/logo.webp" class="logo" alt="Vidhitra Corporate Advisors LLP">
+              </a>
+            </div>
+
+            <!-- main navigation -->
+            <div class="mainmenu d-lg-block d-none">
+              <ul>
+                <li class="current-menu-ancestor">
+                  <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                  <a href="fractional-general-counsel.html">Fractional General Counsel</a>
+                </li>
+
+                <li class="has-dropdown">
+                  <a href="capabilities.html">Capabilities </a>
+              
+                  <ul class="sub-menu mega-menu-service">
+                    <li>
+                      <a class="mega-menu-service-single" href="service-details.html">
+                        <span class="mega-menu-service-icon"><i class="tji-business"></i></span>
+                        <span class="mega-menu-service-title">Corporate &amp; Strategic Business Matters</span>
+                        <span class="mega-menu-service-nav"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="mega-menu-service-single" href="service-details.html">
+                        <span class="mega-menu-service-icon"><i class="tji-strategic"></i></span>
+                        <span class="mega-menu-service-title">Commercial Contracts &amp; Business Relationships</span>
+                        <span class="mega-menu-service-nav"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="mega-menu-service-single" href="service-details.html">
+                        <span class="mega-menu-service-icon"><i class="tji-process"></i></span>
+                        <span class="mega-menu-service-title">Infrastructure, Projects &amp; Bids</span>
+                        <span class="mega-menu-service-nav"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="mega-menu-service-single" href="service-details.html">
+                        <span class="mega-menu-service-icon"><i class="tji-optimization"></i></span>
+                        <span class="mega-menu-service-title">Regulatory Compliance &amp; Business Risk</span>
+                        <span class="mega-menu-service-nav"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="mega-menu-service-single" href="service-details.html">
+                        <span class="mega-menu-service-icon"><i class="tji-executive"></i></span>
+                        <span class="mega-menu-service-title">Technology, IT &amp; Digital Business</span>
+                        <span class="mega-menu-service-nav"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="mega-menu-service-single" href="service-details.html">
+                        <span class="mega-menu-service-icon"><i class="tji-leadership"></i></span>
+                        <span class="mega-menu-service-title">Employment &amp; Workforce Matters</span>
+                        <span class="mega-menu-service-nav"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="mega-menu-service-single" href="service-details.html">
+                        <span class="mega-menu-service-icon"><i class="tji-strategic"></i></span>
+                        <span class="mega-menu-service-title">Market Entry, Startups &amp; Emerging Businesses</span>
+                        <span class="mega-menu-service-nav"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="has-dropdown">
+                  <a href="about.html">About </a>
+                  <ul class="sub-menu">
+                    <li><a href="about.html">About Vidhitra</a></li>
+                    <li><a href="the-vidhitra-approach.html">Our Approach</a></li>
+                    <li><a href="leadership.html">Leadership</a></li>
+                  </ul>
+                </li>
+
+                <li><a href="insights.html">Insights</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="header_right_info d-none d-md-inline-flex">
+              <!-- search btn -->
+              <button class="header_search d-none d-lg-inline-flex">
+                Explore
+                <i class="tji-search"></i>
+              </button>
+              <!-- menu bar -->
+              <button class="menu_btn d-none d-xl-inline-flex">
+                <span class="cubes">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
+
+              <!-- button -->
+              <a href="contact.html" class="tj-primary-btn header_btn">
+                <div class="btn_inner">
+                  <div class="btn_icon">
+                    <span>
+                      <i class="tji-arrow-right"></i>
+                      <i class="tji-arrow-right"></i>
+                    </span>
+                  </div>
+                  <div class="btn_text">
+                    <span>Get in Touch</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- menu bar -->
+            <button class="menu_btn d-lg-none hamburgerBtn">
+              <span class="cubes">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- end: Header Area -->
+<main id="primary" class="site-main">
+<!-- start: Slider Section -->
+<section class="tj-hero-slider style-1">
+   <div class="swiper full-slider-active">
+      <div class="swiper-wrapper">
+
+         <!-- Slide 1 -->
+         <div class="swiper-slide">
+            <section class="tj-slider-section" data-bg-image="assets/images/vidhitra/banners/banc1.png">
+               <div class="container">
+                  <div class="row">
+                     <div class="slider-wrapper">
+                        <div class="slider-content">
+                           <div class="heightfix">
+                              <span class="sub-title">Understand Fractional General Counsel</span>
+                              <h1 class="slider-title">Understand the Legal Dimensions of Your Business Decisions</h1>
+                              <p class="slider-desc">We bring clarity to what legal issues mean for your business — and what they may mean for the decisions ahead.</p>
+                              <!-- FIXED: now nested inside .heightfix, right after the CTA —
+                                   no longer a sibling column that collides with the bottom nav strip -->
+                              <div class="slider-feature-box">
+                                 <div class="desc">
+                                    <p>35+ Years of Experience &nbsp;|&nbsp; Pan-India Coverage &nbsp;|&nbsp; Flexible Engagements &nbsp;|&nbsp; Multi-Sector Experience</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- .slider-feature-box no longer sits here as a separate sibling column -->
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+
+         <!-- Slide 2 -->
+         <div class="swiper-slide">
+            <section class="tj-slider-section" data-bg-image="assets/images/vidhitra/banners/ban2.png">
+               <div class="container">
+                  <div class="row">
+                     <div class="slider-wrapper">
+                        <div class="slider-content">
+                           <div class="heightfix">
+                              <span class="sub-title">Discover The Vidhitra Approach</span>
+                              <h1 class="slider-title">See Beyond the Immediate Legal Issue</h1>
+                              <p class="slider-desc">Legal questions rarely exist in isolation. We consider the broader business context, commercial objectives, risks, and priorities before advising on the way forward.</p>
+                                                            <div class="slider-feature-box">
+                                 <div class="desc">
+                                    <p>35+ Years of Experience &nbsp;|&nbsp; Pan-India Coverage &nbsp;|&nbsp; Flexible Engagements &nbsp;|&nbsp; Multi-Sector Experience</p>
+                                 </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+
+         <!-- Slide 3 -->
+         <div class="swiper-slide">
+            <section class="tj-slider-section" data-bg-image="assets/images/vidhitra/banners/ban3.png">
+               <div class="container">
+                  <div class="row">
+                     <div class="slider-wrapper">
+                        <div class="slider-content">
+                           <div class="heightfix">
+                              <span class="sub-title">Experience Working Together</span>
+                              <h1 class="slider-title">Connect Legal Thinking to Business Strategy</h1>
+                              <p class="slider-desc">Every important business decision has legal dimensions. We help leadership evaluate options with legal, commercial, and operational implications in view.</p>
+                                                            <div class="slider-feature-box">
+                                 <div class="desc">
+                                    <p>35+ Years of Experience &nbsp;|&nbsp; Pan-India Coverage &nbsp;|&nbsp; Flexible Engagements &nbsp;|&nbsp; Multi-Sector Experience</p>
+                                 </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+
+         <!-- Slide 4 -->
+         <div class="swiper-slide">
+            <section class="tj-slider-section" data-bg-image="assets/images/vidhitra/banners/ban4.png">
+               <div class="container">
+                  <div class="row">
+                     <div class="slider-wrapper">
+                        <div class="slider-content">
+                           <div class="heightfix">
+                              <span class="sub-title">See Who It Is Designed For</span>
+                              <h1 class="slider-title">Advice Built Around Your Business</h1>
+                              <p class="slider-desc">Counsel shaped around your business priorities, context, and stage of growth.</p>
+                                                            <div class="slider-feature-box">
+                                 <div class="desc">
+                                    <p>35+ Years of Experience &nbsp;|&nbsp; Pan-India Coverage &nbsp;|&nbsp; Flexible Engagements &nbsp;|&nbsp; Multi-Sector Experience</p>
+                                 </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+
+         <!-- Slide 5 -->
+         <div class="swiper-slide">
+            <section class="tj-slider-section" data-bg-image="assets/images/vidhitra/banners/ban5.png">
+               <div class="container">
+                  <div class="row">
+                     <div class="slider-wrapper">
+                        <div class="slider-content">
+                           <div class="heightfix">
+                              <span class="sub-title">Explore Our Capabilities</span>
+                              <h1 class="slider-title">Turn Legal Complexity into Practical Action</h1>
+                              <p class="slider-desc">Clear, commercially focused advice that helps you move forward with confidence.</p>
+                                                            <div class="slider-feature-box">
+                                 <div class="desc">
+                                    <p>35+ Years of Experience &nbsp;|&nbsp; Pan-India Coverage &nbsp;|&nbsp; Flexible Engagements &nbsp;|&nbsp; Multi-Sector Experience</p>
+                                 </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+
+      </div>
+
+      <div class="vd-slide-nav">
+         <button class="vd-slide-nav-arrow vd-prev" aria-label="Previous slide"><i class="fa fa-caret-left"></i></button>
+
+         <div class="vd-slide-tabs" role="tablist" aria-label="Homepage hero slides">
+            <button class="vd-slide-tab is-active" data-slide-index="0" role="tab" aria-selected="true">
+               <span class="vd-tab-label">Fractional General Counsel</span>
+               <span class="vd-tab-progress"><span class="vd-tab-progress-fill"></span></span>
+            </button>
+            <button class="vd-slide-tab" data-slide-index="1" role="tab" aria-selected="false">
+               <span class="vd-tab-label">The Vidhitra Approach</span>
+               <span class="vd-tab-progress"><span class="vd-tab-progress-fill"></span></span>
+            </button>
+            <button class="vd-slide-tab" data-slide-index="2" role="tab" aria-selected="false">
+               <span class="vd-tab-label">Working Together</span>
+               <span class="vd-tab-progress"><span class="vd-tab-progress-fill"></span></span>
+            </button>
+            <button class="vd-slide-tab" data-slide-index="3" role="tab" aria-selected="false">
+               <span class="vd-tab-label">Who It Is Designed For</span>
+               <span class="vd-tab-progress"><span class="vd-tab-progress-fill"></span></span>
+            </button>
+            <button class="vd-slide-tab" data-slide-index="4" role="tab" aria-selected="false">
+               <span class="vd-tab-label">Capabilities</span>
+               <span class="vd-tab-progress"><span class="vd-tab-progress-fill"></span></span>
+            </button>
+         </div>
+
+         <button class="vd-slide-nav-arrow vd-next" aria-label="Next slide"><i class="fa fa-caret-right"></i></button>
+      </div>
+
+   </div>
+</section>
+<!-- end: Slider Section -->
+
+<!-- start: About Section -->
+<section class="h6-about-section my-5">
+  <div class="container mt-5">
+    <div class="row">
+       <div class="row flex-lg-row flex-column-reverse">
+         <div class="col-xl-8 col-lg-8 ">
+      <div class="h6-about-content">
+          <div class="sec-heading style-2">
+            <span class="sub-title wow fadeInUp" data-wow-delay="0.3s">Who We Are</span>
+            <h2 class="sec-title tj-text-invert">Fractional General Counsel for the Business You Are Building</h2>
+          </div>
+        </div>
+     
+    <p>We work alongside your leadership team, providing ongoing legal counsel as your business grows, evolves, and makes decisions that shape its future.</p>
+    <p>As businesses grow, legal considerations become part of everyday decision-making and not just individual transactions or disputes. Contracts, compliance, people, technology, expansion, and investments all require timely legal input. Without ongoing legal guidance, routine decisions can create unnecessary risk, slow business progress, or result in costly issues later.</p>
+    <p>Our Fractional General Counsel model provides ongoing access to experienced legal counsel which is integrated with your business. We work alongside founders, promoters, boards, leadership teams, and in-house legal providing practical guidance across corporate law, commercial contracts, governance, regulatory compliance, risk, and strategic business matters.</p>
+    <p>Rather than stepping in only when a legal issue arises, we work alongside your leadership team bringing continuity, context, and legal support aligned with how your business operates.</p>
+    <div class="vd-about-highlights">
+
+    <div class="vd-highlight">
+        <span class="vd-highlight-icon">
+            <i class="fa-regular fa-clock"></i>
+        </span>
+
+        <div>
+            <strong>35+ Years</strong>
+            <span>Experience</span>
+        </div>
+    </div>
+
+    <div class="vd-highlight">
+        <span class="vd-highlight-icon">
+            <i class="fa-regular fa-location-dot"></i>
+        </span>
+
+        <div>
+            <strong>Pan-India</strong>
+            <span>Coverage</span>
+        </div>
+    </div>
+
+    <div class="vd-highlight">
+        <span class="vd-highlight-icon">
+            <i class="fa-regular fa-sliders"></i>
+        </span>
+
+        <div>
+            <strong>Flexible</strong>
+            <span>Engagements</span>
+        </div>
+    </div>
+
+    <div class="vd-highlight">
+        <span class="vd-highlight-icon">
+            <i class="fa-regular fa-building"></i>
+        </span>
+
+        <div>
+            <strong>Multi-sector</strong>
+            <span>Experience</span>
+        </div>
+    </div>
+
+</div>
+  </div>
+
+
+
+<div class="col-xl-4 col-lg-4 my-auto">
+    <div class="vd-about-visual">
+
+        <!-- Decorative teal panel -->
+<div class="vd-about-panel vd-parallax-panel"></div>
+
+
+        <!-- Main image -->
+        <div class="vd-about-image vd-parallax-layer">
+            <img
+                src="assets/images/vidhitra/about/d6346c03-6bef-4cde-8823-37702f9657c3.png"
+                alt="Vidhitra Corporate Advisors">
+        </div>
+
+        <!-- Gold architectural line -->
+        <div class="vd-about-frame"></div>
+
+        <!-- Experience badge -->
+        <div class="vd-about-badge">
+            <span class="vd-badge-number">35+</span>
+            <span class="vd-badge-label">
+                YEARS OF<br>
+                EXPERIENCE
+            </span>
+        </div>
+
+        <!-- Small decorative dot -->
+        <span class="vd-about-dot"></span>
+
+    </div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</section>
+<!-- end: About Section -->
+
+<!-- start: Approach Section (redesigned — numbered list, simple fade-up reveal) -->
+<section class="tj-approach-section section-space">
+  <div class="container   ">
+      <div class="h6-about-content">
+          <div class="sec-heading style-2 text-center">
+            <span class="sub-title wow fadeInUp" data-wow-delay="0.3s">The Vidhitra Approach</span>
+            <h2 class="sec-title tj-text-invert">Legal Counsel Built Around Your Business</h2>
+            <p>Effective legal counsel begins with understanding the business behind the legal issue. We bring business context, continuity, practical judgment, and the flexibility to respond as priorities change.</p>
+          </div>
+      </div>
+
+    <div class="tj-approach-layout">
+
+      <div class="tj-approach-list">
+
+        <div class="tj-approach-item wow fadeInUp" data-wow-delay="0.1s">
+          <div class="tj-approach-number"><span>1</span></div>
+          <div class="tj-approach-content">
+            <h3 class="title">We start with the business, not just the legal question</h3>
+            <p class="desc">The legal issue is rarely the whole issue. We first understand what the business is trying to achieve, what is changing, and what the decision needs to accomplish. We then bring the legal perspective into that context.</p>
+          </div>
+        </div>
+
+        <div class="tj-approach-item wow fadeInUp" data-wow-delay="0.2s">
+          <div class="tj-approach-number"><span>2</span></div>
+          <div class="tj-approach-content">
+            <h3 class="title">We build context that compounds over time</h3>
+            <p class="desc">With ongoing counsel, each matter is informed by what came before. Over time, we develop a deeper understanding of your business, its priorities, operating environment, and how decisions are made. That context reduces repetition and makes our counsel more relevant, practical, and commercially informed.</p>
+          </div>
+        </div>
+
+        <div class="tj-approach-item wow fadeInUp" data-wow-delay="0.3s">
+          <div class="tj-approach-number"><span>3</span></div>
+          <div class="tj-approach-content">
+            <h3 class="title">We help leadership weigh the decision, not just the risk</h3>
+            <p class="desc">Legal advice is most valuable when it helps leadership evaluate the available paths, not simply identify risk. We help clarify what matters, where the exposure lies, what can be negotiated, and the practical steps that can move the business forward.</p>
+          </div>
+        </div>
+
+        <div class="tj-approach-item wow fadeInUp" data-wow-delay="0.4s">
+          <div class="tj-approach-number"><span>4</span></div>
+          <div class="tj-approach-content">
+            <h3 class="title">We provide continuity as your business evolves</h3>
+            <p class="desc">As your business grows and its priorities evolve, so does the legal support it requires. Our Fractional General Counsel model provides ongoing access to experienced legal counsel, providing continuity while adapting to your evolving business and priorities.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sticky visual — stays in view as the person scrolls the steps -->
+      <div class="tj-approach-visual">
+        <div class="tj-approach-visual-inner">
+          <img src="assets/images/vidhitra/approach/approach1.png" alt="The Vidhitra Approach">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- end: Approach Section -->
+
+<!-- start: Case Study Section -->
+<section class="h9-case-study my-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sec-heading-wrap">
+          <div class="h6-about-content">
+            <div class="">
+              <span class="sub-title wow fadeInUp" data-wow-delay="0.3s">Who We Work With</span>
+              <h2 class="sec-title tj-text-invert">Legal Counsel for the Business You Are Building, Growing, or Leading</h2>
+              <div class=" wow fadeInUp w-100" data-wow-delay="0.4s">
+                <!-- <p>The legal needs of an organisation evolve as it grows. Whether you are building a new venture, scaling operations, navigating strategic decisions, or expanding into new markets, your legal counsel should evolve with you.</p>
+                <p>We work alongside businesses and leadership teams at different stages of growth, providing practical legal counsel that reflects their priorities, operational realities, and long-term objectives.</p> -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="h9-case-study-inner wow fadeInUp" data-wow-delay="0.6s">
+
+          <!-- Item 1: Founders & Emerging Businesses (now first, carries "active") -->
+          <div class=" h5-case-study-item h9-case-study-item active">
+            <div class="h5-case-study-item-inner h9-case-study-item-inner"
+              data-bg-image="assets/images/vidhitra/work-with/2.webp">
+              <div class="case-study-content">
+                <div class="case-study-text">
+                  <div class="title-area">
+                    <h3 class="title"><a href="about.html">Founders &amp; <br> Emerging Businesses</a></h3>
+                    <ul class="category">
+                      <li><a href="#">Structuring</a></li>
+                      <li><a href="#">Investment Readiness</a></li>
+                    </ul>
+                    <div class="desc">Building the legal foundations for growth&mdash;from business structuring, business arrangements, and governance to commercial contracts, investment readiness, and the legal decisions that shape an emerging business.</div>
+                  </div>
+                  <a class="icon-btn" href="about.html">
+                    <i class="fa fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Growth-Stage & Established Businesses -->
+          <div class=" h5-case-study-item h9-case-study-item ">
+            <div class="h5-case-study-item-inner h9-case-study-item-inner"
+              data-bg-image="assets/images/vidhitra/work-with/3.webp">
+              <div class="case-study-content">
+                <div class="case-study-text">
+                  <div class="title-area">
+                    <h3 class="title"><a href="about.html">Growth-Stage &amp; <br> Established Businesses</a></h3>
+                    <ul class="category">
+                      <li><a href="#">Governance</a></li>
+                      <li><a href="#">Expansion</a></li>
+                    </ul>
+                    <div class="desc">Supporting leadership with the legal and commercial demands of a growing or established business, including corporate governance, commercial operations, regulatory compliance, strategic transactions, expansion, and day-to-day decision-making.</div>
+                  </div>
+                  <a class="icon-btn" href="about.html">
+                    <i class="fa fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Boards, Leadership Teams & In-House Legal Functions -->
+          <div class=" h5-case-study-item h9-case-study-item ">
+            <div class="h5-case-study-item-inner h9-case-study-item-inner"
+              data-bg-image="assets/images/vidhitra/work-with/4.png">
+              <div class="case-study-content">
+                <div class="case-study-text">
+                  <div class="title-area">
+                    <h3 class="title"><a href="about.html">Boards, Leadership Teams &amp; <br> In-House Legal Functions</a></h3>
+                    <ul class="category">
+                      <li><a href="#">Transactions</a></li>
+                      <li><a href="#">Regulatory</a></li>
+                    </ul>
+                    <div class="desc">Providing additional senior legal capacity for governance matters, complex transactions, commercial negotiations, regulatory initiatives, strategic projects, and periods of transition, growth, or increased legal demand.</div>
+                  </div>
+                  <a class="icon-btn" href="about.html">
+                    <i class="fa fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: International Businesses Entering or Operating in India -->
+          <div class=" h5-case-study-item h9-case-study-item ">
+            <div class="h5-case-study-item-inner h9-case-study-item-inner"
+              data-bg-image="assets/images/vidhitra/work-with/5.webp">
+              <div class="case-study-content">
+                <div class="case-study-text">
+                  <div class="title-area">
+                    <h3 class="title"><a href="about.html">International Businesses <br> Entering or Operating in India</a></h3>
+                    <ul class="category">
+                      <li><a href="#">Market Entry</a></li>
+                      <li><a href="#">Cross-Border</a></li>
+                    </ul>
+                    <div class="desc">Supporting international businesses with market entry, business structuring, regulatory requirements, commercial contracting, and ongoing legal support as they establish, expand, and operate in India.</div>
+                  </div>
+                  <a class="icon-btn" href="about.html">
+                    <i class="fa fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end: Case Study Section -->
+
+<!-- start: Service Section -->
+<section class="tj-service-section-two section-space">
+    <div class="container">
+      <div class="row">
+          <div class="col-12">
+            <div class="sec-heading style-3">
+                <div class="sec-text">
+                  
+                    <div class="h6-about-content">
+                      <div class="sec-heading style-2 ">
+                        <span class="sub-title wow fadeInUp" data-wow-delay="0.3s">Capabilities</span>
+                        <h2 class="sec-title tj-text-invert">Legal Counsel Across the Decisions That Shape Your Business</h2>
+                        <p>From establishing a business and entering new markets to managing contracts, people, projects, compliance, technology, and growth, we provide legal counsel across the matters that shape how businesses operate and evolve.</p>
+                      </div>
+                  </div>
+                </div>
+
+                
+                <div class="swiper_navigations service-navigation d-none d-md-inline-flex wow fadeInUp"
+                  data-wow-delay="0.3s">
+                  <div class="navigation slider-prev"><i class="tji-arrow-left"></i></div>
+                  <div class="navigation slider-next"><i class="tji-arrow-right"></i></div>
+                </div>
+            </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-12">
+            <div class="swiper style-4  tj-service-slider leftSwipeWrap">
+                <div class="swiper-wrapper">
+
+                  <!-- 1. Corporate & Strategic Business Matters -->
+                  <div class="swiper-slide left-swipe">
+                      <div class="service-style-4">
+                        <div class="thumb">
+                            <img src="assets/images/vidhitra/capability/strategy.jpg" alt="image">
+                        </div>
+                        <div class="service-icon">
+                            <span><i class="tji-business"></i></span>
+                        </div>
+                        <div class="service-content">
+                            <h4 class="title"><a href="service-details.html">Corporate &amp; Strategic Business Matters</a></h4>
+                            <p class="desc">Business structuring, governance, corporate transactions, and strategic legal advice for decisions that shape the organisation.</p>
+                            <a class="service-button" href="service-details.html">
+                              <i class="tji-arrow-right"></i>
+                            </a>
+                        </div>
+                      </div>
+                  </div>
+
+                  <!-- 2. Commercial Contracts & Business Relationships -->
+                  <div class="swiper-slide left-swipe">
+                      <div class="service-style-4">
+                        <div class="thumb">
+                            <img src="assets/images/vidhitra/capability/contract.jpg" alt="image">
+                        </div>
+                        <div class="service-icon">
+                            <span><i class="tji-strategic"></i></span>
+                        </div>
+                        <div class="service-content">
+                            <h4 class="title"><a href="service-details.html">Commercial Contracts &amp; Business Relationships</a></h4>
+                            <p class="desc">Contracts that support commercial relationships&mdash;from structuring and negotiation to review, risk allocation, and ongoing contract management.</p>
+                            <a class="service-button" href="service-details.html">
+                              <i class="tji-arrow-right"></i>
+                            </a>
+                        </div>
+                      </div>
+                  </div>
+
+                  <!-- 3. Infrastructure, Projects & Bids -->
+                  <div class="swiper-slide left-swipe">
+                      <div class="service-style-4">
+                        <div class="thumb">
+                            <img src="assets/images/vidhitra/capability/project.jpg" alt="image">
+                        </div>
+                        <div class="service-icon">
+                            <span><i class="tji-process"></i></span>
+                        </div>
+                        <div class="service-content">
+                            <h4 class="title"><a href="service-details.html">Infrastructure, Projects &amp; Bids</a></h4>
+                            <p class="desc">Legal and commercial support across tenders, procurement, concessions, project documentation, and complex project structures.</p>
+                            <a class="service-button" href="service-details.html">
+                              <i class="tji-arrow-right"></i>
+                            </a>
+                        </div>
+                      </div>
+                  </div>
+
+                  <!-- 4. Regulatory Compliance & Business Risk -->
+                  <div class="swiper-slide left-swipe">
+                      <div class="service-style-4">
+                        <div class="thumb">
+                            <img src="assets/images/vidhitra/capability/risk.jpeg" alt="image">
+                        </div>
+                        <div class="service-icon">
+                            <span><i class="tji-optimization"></i></span>
+                        </div>
+                        <div class="service-content">
+                            <h4 class="title"><a href="service-details.html">Regulatory Compliance &amp; Business Risk</a></h4>
+                            <p class="desc">Governance, compliance frameworks, internal controls, and risk management for businesses operating in regulated and complex environments.</p>
+                            <a class="service-button" href="service-details.html">
+                              <i class="tji-arrow-right"></i>
+                            </a>
+                        </div>
+                      </div>
+                  </div>
+
+                  <!-- 5. Technology, IT & Digital Business -->
+                  <div class="swiper-slide left-swipe">
+                      <div class="service-style-4">
+                        <div class="thumb">
+                            <img src="assets/images/vidhitra/capability/digital.jpg" alt="image">
+                        </div>
+                        <div class="service-icon">
+                            <span><i class="tji-executive"></i></span>
+                        </div>
+                        <div class="service-content">
+                            <h4 class="title"><a href="service-details.html">Technology, IT &amp; Digital Business</a></h4>
+                            <p class="desc">Legal support for technology transactions, SaaS and software arrangements, IT outsourcing, digital operations, and data-driven business models.</p>
+                            <a class="service-button" href="service-details.html">
+                              <i class="tji-arrow-right"></i>
+                            </a>
+                        </div>
+                      </div>
+                  </div>
+
+                  <!-- 6. Employment & Workforce Matters -->
+                  <div class="swiper-slide left-swipe">
+                      <div class="service-style-4">
+                        <div class="thumb">
+                            <img src="assets/images/vidhitra/capability/workforce.jpg" alt="image">
+                        </div>
+                        <div class="service-icon">
+                            <span><i class="tji-leadership"></i></span>
+                        </div>
+                        <div class="service-content">
+                            <h4 class="title"><a href="service-details.html">Employment &amp; Workforce Matters</a></h4>
+                            <p class="desc">Legal support across employment relationships, workforce frameworks, leadership transitions, and workplace risk.</p>
+                            <a class="service-button" href="service-details.html">
+                              <i class="tji-arrow-right"></i>
+                            </a>
+                        </div>
+                      </div>
+                  </div>
+
+                  <!-- 7. Market Entry, Startups & Emerging Businesses -->
+                  <div class="swiper-slide left-swipe">
+                      <div class="service-style-4">
+                        <div class="thumb">
+                            <img src="assets/images/vidhitra/capability/new.jpg" alt="image">
+                        </div>
+                        <div class="service-icon">
+                            <span><i class="tji-strategic"></i></span>
+                        </div>
+                        <div class="service-content">
+                            <h4 class="title"><a href="service-details.html">Market Entry, Startups &amp; Emerging Businesses</a></h4>
+                            <p class="desc">Legal support for establishing, structuring, and growing businesses in India, including market entry, regulatory alignment, commercial arrangements, and ongoing legal needs.</p>
+                            <a class="service-button" href="service-details.html">
+                              <i class="tji-arrow-right"></i>
+                            </a>
+                        </div>
+                      </div>
+                  </div>
+
+                </div>
+                <div class="swiper_pagination service-pagination"></div>
+            </div>
+          </div>
+      </div>
+    </div>
+</section>
+<!-- end: Service Section -->
+
+<!-- start: Credentials Section -->
+<section class="tj-credentials-section section-space">
+  <div class="container">
+
+    <div class="sec-heading text-center">
+      <span class="sub-title wow fadeInUp" data-wow-delay="0.1s">Credentials</span>
+      <h2 class="sec-title wow fadeInUp" data-wow-delay="0.2s">Experience That Supports Business Decisions at Every Stage</h2>
+      <div class="desc wow fadeInUp" data-wow-delay="0.3s">
+        <p>Our experience spans the business lifecycle, sectors, and jurisdictions. We bring this perspective to the legal and commercial decisions businesses face—from establishing and entering new markets to scaling operations, managing complexity, and strengthening governance.</p>
+      </div>
+    </div>
+
+    <div class="tj-credentials-layout">
+
+      <!-- Left: supporting image -->
+      <div class="tj-credentials-image wow fadeInLeft" data-wow-delay="0.2s">
+        <img src="assets/images/vidhitra/approach/exp.webp" alt="Vidhitra Corporate Advisors — leadership advisory experience">
+      </div>
+
+      <!-- Right: stacked list — bold heading + description per item,
+          NOT a counter/odometer mechanic, since none of these are
+          actual numbers. Each item separated by a thin divider,
+          echoing the reference's vertical rhythm without faking stats. -->
+      <div class="tj-credentials-list">
+
+        <div class="tj-credential-row wow fadeInUp" data-wow-delay="0.1s">
+          <h3 class="title">Business Lifecycle Experience</h3>
+          <p class="desc">Experience across the business journey—from incorporation and market entry to growth, investment, expansion, restructuring, and ongoing governance.</p>
+        </div>
+
+        <div class="tj-credential-row wow fadeInUp" data-wow-delay="0.2s">
+          <h3 class="title">Cross-Sector Commercial Understanding</h3>
+          <p class="desc">Experience across infrastructure, manufacturing, healthcare, logistics, technology, digital services, and other regulated and operationally complex sectors.</p>
+        </div>
+
+        <div class="tj-credential-row wow fadeInUp" data-wow-delay="0.3s">
+          <h3 class="title">Leadership-Level Advisory Experience</h3>
+          <p class="desc">Advising founders, promoters, boards, executive leadership, in-house legal teams, and international businesses on decisions that combine legal, commercial, operational, and regulatory considerations.</p>
+        </div>
+
+        <div class="tj-credential-row wow fadeInUp" data-wow-delay="0.4s">
+          <h3 class="title">India and Cross-Border Perspective</h3>
+          <p class="desc">Supporting Indian businesses and international organisations entering or operating in India, with an understanding of the legal and commercial considerations involved in domestic and cross-border business activity.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- end: Credentials Section -->
+
+
+<!-- start: FAQS Section -->
+<section class="h6-project-section my-5 py-2">
+
+  <div class="mx-5 px-5">
+    <div class="shadowbox mx-5">
+      <div class="sec-heading text-center pt-5">
+        <span class="sub-title wow fadeInUp mt-5" data-wow-delay="0.1s">FAQ</span>
+        <h2 class="sec-title text-anim">Legal Counsel Built Around Your Business</h2>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="h6-project-wrap">
+
+            <!-- Item 01 — pinned (stacks/reveals as you scroll) -->
+            <div class="h6-project-item approach-stack">
+              <div class="project_image">
+                <img src="assets/images/vidhitra/approach/ap3.png" alt="We help leadership weigh the decision, not just the risk">
+              </div>
+              <div class="project_content">
+                <div class="project_content_inner">
+                  <span class="no">01.</span>
+                  <h3 class="title">A Different Model for Ongoing Legal Counsel</h3>
+                  <div class="desc">An ongoing legal relationship that brings continuity, context, and senior-level legal support to businesses as they grow, change, and evolve.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 02 — pinned -->
+            <div class="h6-project-item approach-stack">
+              <div class="project_image">
+                <img src="assets/images/vidhitra/approach/ap3.png" alt="We help leadership weigh the decision, not just the risk">
+              </div>
+              <div class="project_content">
+                <div class="project_content_inner">
+                  <span class="no">02.</span>
+                  <h3 class="title">What is a Fractional General Counsel?</h3>
+                  <div class="desc">A Fractional General Counsel is an ongoing legal counsel arrangement that gives a business access to senior-level legal advice and strategic support without appointing a full-time General Counsel. The counsel works with the business on a continuing basis, develops an understanding of its operations and priorities, and provides legal support as needs arise—without becoming part of the organisation’s payroll or adding the overhead associated with a full-time role.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 03 — pinned -->
+            <div class="h6-project-item approach-stack">
+              <div class="project_image">
+                <img src="assets/images/vidhitra/approach/ap3.png" alt="We help leadership weigh the decision, not just the risk">
+              </div>
+              <div class="project_content">
+                <div class="project_content_inner">
+                  <span class="no">03.</span>
+                  <h3 class="title">How does the Fractional General Counsel model work?</h3>
+                  <div class="desc">The relationship is ongoing, but the engagement is flexible. Rather than employing a full-time General Counsel, the business retains access to senior legal counsel who understands its context and provides support across its evolving legal needs. The business pays for the legal services and support actually required, based on the agreed engagement structure.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 04 — NOT pinned (final card, comes to rest naturally, same as
+                 the original theme pattern where the last stack item has no pin class) -->
+            <div class="h6-project-item approach-stack">
+              <div class="project_image">
+                <img src="assets/images/vidhitra/approach/ap3.png" alt="We help leadership weigh the decision, not just the risk">
+              </div>
+              <div class="project_content">
+                <div class="project_content_inner">
+                  <span class="no">04.</span>
+                  <h3 class="title">What value does a Fractional General Counsel bring to a business?</h3>
+                  <div class="desc">The model provides continuity without the fixed commitment of a full-time legal leadership role. Over time, the counsel develops an understanding of the business, allowing legal advice to be more informed by its operations, priorities, and objectives. This gives the business access to ongoing senior legal support while keeping the engagement aligned with its actual legal needs.</div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Item 04 — NOT pinned (final card, comes to rest naturally, same as
+                 the original theme pattern where the last stack item has no pin class) -->
+            <div class="h6-project-item approach-stack">
+              <div class="project_image">
+                <img src="assets/images/vidhitra/approach/ap3.png" alt="We help leadership weigh the decision, not just the risk">
+              </div>
+              <div class="project_content">
+                <div class="project_content_inner">
+                  <span class="no">05.</span>
+                  <h3 class="title">Who can benefit from a Fractional General Counsel?</h3>
+                  <div class="desc">The model can support founders, startups, SMEs, growth-stage and established businesses, international companies entering or expanding in India, and in-house legal teams that need additional senior-level legal capacity. It is particularly relevant for businesses that need an ongoing legal relationship and access to experienced counsel, but do not require or wish to add a full-time General Counsel to their organisation.</div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Item 04 — NOT pinned (final card, comes to rest naturally, same as
+                 the original theme pattern where the last stack item has no pin class) -->
+            <div class="h6-project-item approach-stack">
+              <div class="project_image">
+                <img src="assets/images/vidhitra/approach/ap3.png" alt="We help leadership weigh the decision, not just the risk">
+              </div>
+              <div class="project_content">
+                <div class="project_content_inner">
+                  <span class="no">06.</span>
+                  <h3 class="title">When should a business consider a Fractional General Counsel?</h3>
+                  <div class="desc">A business can engage a Fractional General Counsel from incorporation and at any stage of its growth. The support may range from addressing day-to-day legal queries and advising on important business communications to establishing legal and governance foundations, entering into commercial relationships, raising investment, expanding operations, entering new markets, managing organisational change, and navigating complex business decisions. The engagement evolves with the business, providing ongoing legal counsel aligned with its changing needs and priorities.</div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Item 04 — NOT pinned (final card, comes to rest naturally, same as
+                 the original theme pattern where the last stack item has no pin class) -->
+            <div class="h6-project-item">
+              <div class="project_image">
+                <img src="assets/images/vidhitra/approach/ap3.png" alt="We help leadership weigh the decision, not just the risk">
+              </div>
+              <div class="project_content">
+                <div class="project_content_inner">
+                  <span class="no">07.</span>
+                  <h3 class="title">What role does a Fractional General Counsel play in a business?</h3>
+                  <div class="desc">A Fractional General Counsel provides ongoing legal counsel that develops with the business. By understanding the organisation, its operations, priorities, and history, the counsel can support day-to-day legal queries, business communications, ongoing legal matters, and important business decisions with greater context. The model can also work alongside external law firms and in-house legal teams, providing additional senior-level capacity, business context, and continuity of legal support as and when required.</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end: FAQS Section -->
+
+<!-- start: Contact Us Section -->
+<section class="tj-contact-section section-space">
+  <div class="container">
+    <div class="row rg-60">
+
+      <!-- Left: intro + contact info -->
+      <div class="col-lg-5">
+        <div class="tj-contact-intro">
+          <div class="sec-heading style-2">
+            <span class="sub-title wow fadeInUp" data-wow-delay="0.1s">Contact Us</span>
+            <h2 class="sec-title tj-text-invert wow fadeInUp" data-wow-delay="0.2s">Every Business Relationship Begins with a Conversation</h2>
+          </div>
+          <p class="wow fadeInUp" data-wow-delay="0.3s">Whether you wish to discuss your legal requirements or explore career and internship opportunities with the firm, we invite you to get in touch. Complete the form below, and we will ensure your enquiry reaches the appropriate member of our team.</p>
+
+          <div class="contact-info tj-contact-info-block wow fadeInUp" data-wow-delay="0.4s">
+            <div class="contact_item">
+              <span class="subtitle">Email</span>
+              <div class="text"><a class="link text-dark" href="mailto:info@vidhitra.com">info@vidhitra.com</a></div>
+            </div>
+            <div class="contact_item">
+              <span class="subtitle">Phone</span>
+              <div class="text"><a class="link text-dark" href="tel:+91XXXXXXXXXX">+91 XXX XXX XXXX</a></div>
+            </div>
+            <div class="contact_item">
+              <span class="subtitle">Presence</span>
+              <div class="text text-dark">Pan-India</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: enquiry form -->
+      <div class="col-lg-7">
+        <div class="tj-contact-form-card wow fadeInUp" data-wow-delay="0.3s">
+          <span class="tj-contact-form-tag">Client Enquiry</span>
+          <h3 class="tj-contact-form-title">Client Enquiry</h3>
+
+          <form id="tjClientEnquiryForm" class="tj-contact-form" novalidate>
+            <div class="row">
+
+              <div class="col-sm-6">
+                <div class="tj-form-field wow fadeInUp" data-wow-delay="0.1s">
+                  <input type="text" id="cuFullName" name="full_name" placeholder=" " required>
+                  <label for="cuFullName">Full Name<span class="req">*</span></label>
+                  <span class="field-underline"></span>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="tj-form-field wow fadeInUp" data-wow-delay="0.15s">
+                  <input type="text" id="cuOrg" name="organisation" placeholder=" " required>
+                  <label for="cuOrg">Business / Organisation<span class="req">*</span></label>
+                  <span class="field-underline"></span>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="tj-form-field wow fadeInUp" data-wow-delay="0.2s">
+                  <input type="email" id="cuEmail" name="email" placeholder=" " required>
+                  <label for="cuEmail">Email Address<span class="req">*</span></label>
+                  <span class="field-underline"></span>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="tj-form-field tj-form-select wow fadeInUp" data-wow-delay="0.25s">
+                  <select id="cuHelp" name="how_can_we_help" class="nice-select" required>
+                    <option value="" disabled selected hidden></option>
+                    <option value="Fractional General Counsel">Fractional General Counsel</option>
+                    <option value="Specific Legal Matter">Specific Legal Matter</option>
+                    <option value="Corporate & Strategic Advisory">Corporate &amp; Strategic Advisory</option>
+                    <option value="Commercial Contracts">Commercial Contracts</option>
+                    <option value="Regulatory Compliance & Risk">Regulatory Compliance &amp; Risk</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <label for="cuHelp">How Can We Help?<span class="req">*</span></label>
+                  <span class="field-underline"></span>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="tj-form-field wow fadeInUp" data-wow-delay="0.3s">
+                  <input type="tel" id="cuPhone" name="phone" placeholder=" ">
+                  <label for="cuPhone">Phone Number</label>
+                  <span class="field-underline"></span>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="tj-form-field wow fadeInUp" data-wow-delay="0.35s">
+                  <input type="url" id="cuWebsite" name="website" placeholder=" ">
+                  <label for="cuWebsite">Website / Business URL</label>
+                  <span class="field-underline"></span>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="tj-form-field tj-form-textarea wow fadeInUp" data-wow-delay="0.4s">
+                  <textarea id="cuMessage" name="message" placeholder=" " required></textarea>
+                  <label for="cuMessage">Briefly Tell Us About Your Requirement<span class="req">*</span></label>
+                  <span class="field-underline"></span>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label class="tj-consent-check wow fadeInUp" data-wow-delay="0.45s">
+                  <input type="checkbox" id="cuConsent" name="consent" required>
+                  <span class="tj-consent-box">
+                    <svg viewBox="0 0 16 12" class="tj-consent-tick"><polyline points="1.5 6.5 6 11 14.5 1"/></svg>
+                  </span>
+                  <span class="tj-consent-text">I consent to Vidhitra Corporate Advisors LLP collecting and processing my personal data for responding to my enquiry and providing legal advisory services in accordance with applicable privacy and data protection laws.</span>
+                </label>
+              </div>
+
+              <div class="col-12">
+                <div class="tj-form-submit-wrap wow fadeInUp" data-wow-delay="0.5s">
+                  <button type="submit" class="tj-submit-btn">
+                    <span class="btn-text"><span>Submit enquiry</span></span>
+                    <span class="btn-icon">
+                      <i class="tji-angle-right"></i>
+                      <i class="tji-angle-right"></i>
+                    </span>
+                  </button>
+                  <span class="tj-form-success" id="tjFormSuccess">Thank you — your enquiry has been received.</span>
+                </div>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- end: Contact Us Section -->
+
+
+<script>
+/* ============ Contact form: validation + animated feedback ============ */
+(function () {
+  const form = document.getElementById('tjClientEnquiryForm');
+  if (!form) return;
+
+  const successMsg = document.getElementById('tjFormSuccess');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    let isValid = true;
+
+    // required inputs / textarea / select
+    form.querySelectorAll('.tj-form-field').forEach((field) => {
+      const control = field.querySelector('input, select, textarea');
+      if (!control) return;
+      const required = control.hasAttribute('required');
+      const filled = control.value && control.value.trim().length > 0;
+
+      field.classList.remove('tj-field-invalid');
+      if (required && !filled) {
+        isValid = false;
+        field.classList.add('tj-field-invalid');
+        // restart shake animation if triggered twice in a row
+        void field.offsetWidth;
+      }
+    });
+
+    // consent checkbox
+    const consentWrap = document.querySelector('.tj-consent-check');
+    const consentInput = document.getElementById('cuConsent');
+    consentWrap.classList.remove('tj-field-invalid');
+    if (!consentInput.checked) {
+      isValid = false;
+      consentWrap.classList.add('tj-field-invalid');
+    }
+
+    if (!isValid) {
+      successMsg.classList.remove('is-visible');
+      return;
+    }
+
+    // Replace this block with your actual submit call (fetch/AJAX to your
+    // form handler or CRM endpoint) — this just simulates success.
+    successMsg.classList.add('is-visible');
+    form.reset();
+    form.querySelectorAll('.tj-form-field').forEach((f) => f.classList.remove('tj-field-invalid'));
+
+    window.setTimeout(() => successMsg.classList.remove('is-visible'), 5000);
+  });
+})();
+</script>
+
+  </main>
+
+<!-- start: Footer -->
+<footer class="tj-footer-area">
+  <div class="container">
+
+   
+
+    <!-- Middle: 4 link columns + contact -->
+    <div class="tj-footer-columns">
+
+      <div class="tj-footer-col">
+        <h4 class="footer-heading">Fractional Legal Counsel</h4>
+        <ul>
+          <li><a href="fractional-general-counsel.html#understanding">Understanding Fractional General Counsel</a></li>
+          <li><a href="fractional-general-counsel.html#engagement-model">The Engagement Model</a></li>
+          <li><a href="fractional-general-counsel.html#how-we-work">How We Work</a></li>
+          <li><a href="capabilities.html">Our Capabilities</a></li>
+          <li><a href="who-we-work-with.html">Who We Support</a></li>
+          <li><a href="the-vidhitra-approach.html">Our Approach</a></li>
+        </ul>
+      </div>
+
+      <div class="tj-footer-col">
+        <h4 class="footer-heading">Capabilities</h4>
+        <ul>
+          <li><a href="service-details.html">Corporate Law &amp; Strategic Advisory</a></li>
+          <li><a href="service-details.html">Infrastructure, Projects &amp; Bid Advisory</a></li>
+          <li><a href="service-details.html">Commercial Contracts &amp; Contracting Systems</a></li>
+          <li><a href="service-details.html">Regulatory Compliance &amp; Risk Advisory</a></li>
+          <li><a href="service-details.html">Technology, IT &amp; Digital Business</a></li>
+          <li><a href="service-details.html">Employment &amp; Workforce Advisory</a></li>
+          <li><a href="service-details.html">Market Entry, Startups &amp; Emerging Businesses</a></li>
+        </ul>
+      </div>
+
+      <div class="tj-footer-col">
+        <h4 class="footer-heading">Firm</h4>
+        <ul>
+          <li><a href="about.html">About Vidhitra</a></li>
+          <li><a href="the-vidhitra-approach.html">Our Approach</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="tj-footer-col">
+        <h4 class="footer-heading">Legal Information</h4>
+        <ul>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+          <li><a href="terms-of-use.html">Terms of Use</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="cookie-policy.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="tj-footer-col tj-footer-contact">
+        <h4 class="footer-heading">Contact Details</h4>
+        <ul>
+          <li><a href="mailto:info@vidhitra.com">info@vidhitra.com</a></li>
+          <!-- TODO: insert client's actual phone number once shared -->
+          <li><a href="tel:+91XXXXXXXXXX">+91 XXX XXX XXXX</a></li>
+          <ul class="tj-footer-socials">
+          <!-- TODO: replace # with actual social links once client confirms active profiles -->
+          <li><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+          <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
+        </ul>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Large outlined brand wordmark — sits above the bottom bar,
+         gold stroke outline, transparent fill -->
+    <div class="tj-footer-wordmark wow fadeInUp" data-wow-delay="0.1s">
+      <span>VIDHITRA</span>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="tj-footer-bottom ">
+      <p class="text-white mb-0 text-bold">&copy; <span>2026</span> Vidhitra Corporate Advisors LLP. All rights reserved.</p>
+      <p class="text-white mb-0 text-bold">Developed By <a href="https://hsdigitalmedia.com/" target="_blank">HS Digital Media®</a></p>
+    </div>
+
+  </div>
+</footer>
+<!-- end: Footer -->
+
+<script>
+  // Auto-updates the copyright year — no manual edits needed each year
+  document.getElementById('tjFooterYear').textContent = new Date().getFullYear();
+</script>
+
+  <!-- ============ DISCLAIMER GATE ============ -->
+  <div class="vd-popup-overlay" id="vdPopupOverlay">
+    <div class="vd-popup-wrap" id="vdPopupWrap">
+      <div class="vd-popup-shape-big"></div>
+      <div class="vd-popup-shape-small"></div>
+
+      <div class="vd-popup-card" id="vdPopupCard" role="dialog" aria-modal="true" aria-labelledby="vdPopupTitle">
+        <p class="vd-eyebrow">Website Disclaimer</p>
+        <h2 class="vd-popup-title" id="vdPopupTitle">Welcome to Vidhitra Corporate Advisors LLP</h2>
+
+        <p class="vd-popup-text">
+          The content on this website is provided for general informational purposes only and should not be relied
+          upon as legal advice. Accessing or using this website does not create an advocate-client relationship
+          with Vidhitra Corporate Advisors LLP.
+        </p>
+
+        <p class="vd-popup-text">
+          We encourage you to review our Website Disclaimer, Terms of Use, Privacy Policy, and Cookie Policy to
+          understand the terms governing your use of this website and how we collect, use, and protect your
+          personal data. <a class="vd-readmore" href="/policies" target="_blank" rel="noopener">Read More</a>
+        </p>
+
+        <div class="vd-actions">
+          <button type="button" class="vd-btn vd-btn-primary" id="vdEnterBtn">Enter Website</button>
+          <button type="button" class="vd-btn vd-btn-secondary" id="vdExitBtn">Exit Website</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JS here -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/gsap-scroll-to-plugin.min.js"></script>
+  <script src="assets/js/gsap-scroll-trigger.min.js"></script>
+  <script src="assets/js/gsap-split-text.min.js"></script>
+  <script src="assets/js/smooth-scroll.min.js"></script>
+
+  <script src="assets/js/appear.min.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/odometer.min.js"></script>
+  <script src="assets/js/jquery-knob.js"></script>
+  <script src="assets/js/swiper.min.js"></script>
+  <script src="assets/js/nice-select.js"></script>
+  <script src="assets/js/venobox.min.js"></script>
+  <script src="assets/js/meanmenu.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/disclaimer.js"></script>
+  <script>
+(function () {
+  const list = document.querySelector('.tj-approach-list');
+  if (!list) return;
+
+  const items = Array.from(list.querySelectorAll('.tj-approach-item'));
+  let ticking = false;
+
+  function update() {
+    ticking = false;
+    const vh = window.innerHeight;
+
+    items.forEach((item) => {
+      const rect = item.getBoundingClientRect();
+      const itemCenter = rect.top + rect.height / 2;
+
+      // Item "arrives" once its center crosses this line (60% down viewport),
+      // and "leaves" (resets) once it crosses back above 85% or below the top.
+      const triggerLine = vh * 0.75;
+
+      if (itemCenter < triggerLine) {
+        item.classList.add('is-inview');
+      } else {
+        item.classList.remove('is-inview');
+      }
+    });
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('wheel', onScroll, { passive: true });
+  window.addEventListener('touchmove', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  update();
+})();
+
+
+// Scroll-triggered reveal for About section — same threshold pattern as Approach section
+(function () {
+  const targets = document.querySelectorAll(
+    '.h6-about-content, .vidhitra-about-visual'
+    
+  );
+  if (!targets.length) return;
+
+  let ticking = false;
+
+  function update() {
+    ticking = false;
+    const vh = window.innerHeight;
+    const triggerLine = vh * 0.85;
+
+    targets.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < triggerLine && rect.bottom > 0) {
+        el.classList.add('is-inview');
+      } else {
+        el.classList.remove('is-inview');
+      }
+    });
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('wheel', onScroll, { passive: true });
+  window.addEventListener('touchmove', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  update();
+})();
+  </script>
+</body>
+</html>

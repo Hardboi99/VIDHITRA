@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Website Disclaimer</title>
+<link rel="stylesheet" href="assets/css/main.css">
+<style>
+ 
+
+  *{box-sizing:border-box;}
+  body{
+    font-family:"Segoe UI", Arial, sans-serif;
+    background:#eae7df;
+    min-height:100vh;
+    margin:0;
+  }
+  body.vd-locked{ overflow:hidden; }
+
+  /* ===== Overlay ===== */
+  .vd-popup-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(10,30,20,0.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    opacity:0;
+  }
+  .vd-popup-overlay.is-active{
+    display:flex;
+    opacity:1;
+    animation:vdFadeIn .3s ease forwards;
+  }
+  .vd-popup-overlay.is-closing{
+    animation:vdFadeOut .9s ease forwards;
+  }
+
+  @keyframes vdFadeIn{ from{opacity:0;} to{opacity:1;} }
+  @keyframes vdFadeOut{ from{opacity:1;} to{opacity:0;} }
+
+  /* ===== Wrapper holds the card + decorative shapes ===== */
+  .vd-popup-wrap{
+    position:relative;
+    width:min(620px, 92vw);
+    display:flex;
+    justify-content:center;
+  }
+
+  /* organic blob — the only thing that drifts with the cursor */
+  .vd-popup-shape-big{
+    position:absolute;
+    top:50%;
+    left:60%;
+    width:560px;
+    height:560px;
+    max-width:110vw;
+    max-height:110vw;
+    background:var(--tj-color-theme-primary);
+    border-radius:62% 38% 51% 49% / 45% 55% 43% 57%;
+    transform:translate(-50%,-50%);
+    z-index:0;
+    pointer-events:none;
+    transition:transform .18s ease-out;
+    will-change:transform;
+    animation:vdBlobMorph 14s ease-in-out infinite;
+  }
+  @keyframes vdBlobMorph{
+    0%,100%{ border-radius:62% 38% 51% 49% / 45% 55% 43% 57%; }
+    33%    { border-radius:45% 55% 62% 38% / 55% 40% 60% 45%; }
+    66%    { border-radius:56% 44% 38% 62% / 40% 62% 38% 60%; }
+  }
+
+  .vd-popup-shape-small{
+    position:absolute;
+    top:-24px;
+    right:50px;
+    width:52px;
+    height:52px;
+    background:var(--tj-color-theme-primary);
+    border-radius:50%;
+    z-index:2;
+    pointer-events:none;
+    transition:transform .18s ease-out;
+    will-change:transform;
+  }
+
+  /* ===== Card ===== */
+  .vd-popup-card{
+    position:relative;
+    background:#ffffff;
+    width:100%;
+    max-height:90vh;
+    overflow:auto;
+    border-radius:16px;
+    box-shadow:0 30px 60px rgba(0,0,0,0.25);
+    padding:44px 44px 36px;
+    transform:translate3d(0,24px,0) scale(.96);
+    opacity:0;
+    z-index:1;
+  }
+  .vd-popup-overlay.is-active .vd-popup-card{
+    animation:vdCardIn .38s cubic-bezier(.2,.8,.3,1) forwards;
+  }
+  .vd-popup-overlay.is-closing .vd-popup-card{
+    animation:vdCardOut .9s cubic-bezier(.6,0,.85,.15) forwards;
+    transform-origin:50% 50%;
+  }
+
+  @keyframes vdCardIn{
+    from{opacity:0; transform:translate3d(0,24px,0) scale(.96);}
+    to{opacity:1; transform:translate3d(0,0,0) scale(1);}
+  }
+  /* anticlockwise clock-sweep close, slow */
+  @keyframes vdCardOut{
+    0%{ opacity:1; transform:rotate(0deg) scale(1) translate3d(0,0,0); }
+    60%{ opacity:1; transform:rotate(-90deg) scale(.55) translate3d(0,10px,0); }
+    100%{ opacity:0; transform:rotate(-90deg) scale(.1) translate3d(0,20px,0); }
+  }
+
+  .vd-eyebrow{
+    margin:0 0 6px;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--tj-color-theme-primary);
+  }
+
+  .vd-popup-title{
+    margin:0 0 18px;
+    font-size:24px;
+    line-height:1.3;
+    font-weight:700;
+    color:var(--tj-color-theme-primary);
+  }
+
+  .vd-popup-text{
+    font-size:15px;
+    line-height:1.7;
+    color:var(--tj-color-text-body);
+    margin:0 0 16px;
+  }
+  .vd-popup-text:last-of-type{ margin-bottom:26px; }
+
+  .vd-readmore{
+    color:var(--tj-color-theme-primary);
+    font-weight:600;
+    text-decoration:underline;
+    text-underline-offset:2px;
+  }
+
+  .vd-actions{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+
+  .vd-btn{
+    flex:1 1 180px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:14px 22px;
+    border-radius:999px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    border:1.5px solid var(--tj-color-theme-primary);
+    transition:background .15s ease, color .15s ease, transform .15s ease;
+  }
+  .vd-btn-primary{
+    background:var(--tj-color-theme-primary);
+    color:#fff;
+  }
+  .vd-btn-primary:hover{ background:var(--tj-color-theme-primary); transform:translateY(-1px); }
+
+  .vd-btn-secondary{
+    background:transparent;
+    color:var(--tj-color-theme-primary);
+  }
+  .vd-btn-secondary:hover{ background:rgba(12,61,46,0.06); }
+
+  @media (max-width:560px){
+    .vd-popup-card{ padding:32px 24px 26px; }
+    .vd-actions{ flex-direction:column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ DISCLAIMER GATE ============ -->
+<div class="vd-popup-overlay" id="vdPopupOverlay">
+  <div class="vd-popup-wrap" id="vdPopupWrap">
+    <div class="vd-popup-shape-big"></div>
+    <div class="vd-popup-shape-small"></div>
+
+    <div class="vd-popup-card" id="vdPopupCard" role="dialog" aria-modal="true" aria-labelledby="vdPopupTitle">
+      <p class="vd-eyebrow">Website Disclaimer</p>
+      <h2 class="vd-popup-title" id="vdPopupTitle">Welcome to Vidhitra Corporate Advisors LLP</h2>
+
+      <p class="vd-popup-text">
+        The content on this website is provided for general informational purposes only and should not be relied
+        upon as legal advice. Accessing or using this website does not create an advocate-client relationship
+        with Vidhitra Corporate Advisors LLP.
+      </p>
+
+      <p class="vd-popup-text">
+        We encourage you to review our Website Disclaimer, Terms of Use, Privacy Policy, and Cookie Policy to
+        understand the terms governing your use of this website and how we collect, use, and protect your
+        personal data. <a class="vd-readmore" href="/policies" target="_blank" rel="noopener">Read More</a>
+      </p>
+
+      <div class="vd-actions">
+        <button type="button" class="vd-btn vd-btn-primary" id="vdEnterBtn">Enter Website</button>
+        <button type="button" class="vd-btn vd-btn-secondary" id="vdExitBtn">Exit Website</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SITE CONTENT (placeholder) ============ -->
+<main style="max-width:900px;margin:0 auto;padding:60px 24px;">
+  <h1>Vidhitra Corporate Advisors LLP</h1>
+  <p>This is where your actual site content sits. The disclaimer gate above blocks it until the visitor chooses Enter or Exit.</p>
+</main>
+
+<script>
+(function () {
+  var overlay    = document.getElementById('vdPopupOverlay');
+  var wrap       = document.getElementById('vdPopupWrap');
+  var shapeBig   = document.querySelector('.vd-popup-shape-big');
+  var shapeSmall = document.querySelector('.vd-popup-shape-small');
+  var enterBtn   = document.getElementById('vdEnterBtn');
+  var exitBtn    = document.getElementById('vdExitBtn');
+
+  var CLOSE_ANIM_MS = 900; // must match .vd-popup-overlay.is-closing .vd-popup-card duration
+  var STORAGE_KEY    = 'vidhitraDisclaimerAccepted';
+  var EXIT_URL        = 'https://www.google.com'; // where "Exit Website" sends visitors
+
+  function openGate() {
+    document.body.classList.add('vd-locked');
+    overlay.classList.remove('is-active', 'is-closing');
+    void overlay.offsetWidth;
+    overlay.classList.add('is-active');
+  }
+
+  function enterSite() {
+    try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+    overlay.classList.add('is-closing');
+    setTimeout(function () {
+      overlay.classList.remove('is-active', 'is-closing');
+      overlay.style.display = 'none';
+      document.body.classList.remove('vd-locked');
+    }, CLOSE_ANIM_MS);
+  }
+
+  function exitSite() {
+    window.location.href = EXIT_URL;
+  }
+
+  enterBtn.addEventListener('click', enterSite);
+  exitBtn.addEventListener('click', exitSite);
+
+  // NOTE: intentionally no backdrop-click / Escape / X close —
+  // a disclaimer gate must be explicitly accepted or declined.
+
+  /* Only the background shapes drift with the cursor — the card never moves */
+  var raf = null;
+  overlay.addEventListener('mousemove', function (e) {
+    if (!overlay.classList.contains('is-active')) return;
+    var rect = wrap.getBoundingClientRect();
+    var relX = (e.clientX - rect.left) / rect.width;
+    var relY = (e.clientY - rect.top) / rect.height;
+    var bigX = (relX - 0.5) * 50, bigY = (relY - 0.5) * 50;
+    var smallX = (relX - 0.5) * -70, smallY = (relY - 0.5) * -70;
+    if (raf) cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(function () {
+      shapeBig.style.transform   = 'translate(-50%,-50%) translate3d(' + bigX + 'px,' + bigY + 'px,0)';
+      shapeSmall.style.transform = 'translate3d(' + smallX + 'px,' + smallY + 'px,0)';
+    });
+  });
+  overlay.addEventListener('mouseleave', function () {
+    shapeBig.style.transform   = 'translate(-50%,-50%) translate3d(0,0,0)';
+    shapeSmall.style.transform = 'translate3d(0,0,0)';
+  });
+
+  /* Show immediately on load — once per browser session (remove the
+     try/catch check below if you want it on every single page load) */
+  var alreadyAccepted = false;
+  try { alreadyAccepted = sessionStorage.getItem(STORAGE_KEY) === '1'; } catch (e) {}
+
+  if (!alreadyAccepted) {
+    openGate();
+  }
+})();
+</script>
+
+</body>
+</html>

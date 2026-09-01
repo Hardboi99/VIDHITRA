@@ -43014,3 +43014,226 @@
     transition: none !important;
   }
 }
+
+
+
+/* ── H2 — large editorial heading ── */
+.sec-title,
+.section-title,
+.vd-capabilities-heading {
+  font-family: var(--tj-ff-heading, 'Libre Franklin', sans-serif) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+/* Preserve the existing Vidhitra animated colour-reveal */
+.tj-text-invert > div {
+  background-size: 200% 100%;
+  background-position-x: 100%;
+  color: transparent !important;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+/* ── H3 — DM Serif Display Italic ── */
+.h6-about-content h3,
+.tj-credentials-section h3,
+.tj-approach-content .title,
+.vd-capability-content .title,
+.h6-project-section .title,
+.h6-project-section h3,
+.tj-faq-section h3,
+.slider-wrapper .slider-content h3 {
+  font-family: "DM Serif Display", serif !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+}
+
+
+/* ── HERO TYPOGRAPHY ── */
+
+.slider-wrapper .slider-content .slider-title {
+  letter-spacing: 0.018em !important;
+  word-spacing: 0.05em !important;
+  line-height: 1.15 !important;
+}
+
+/* ── HERO SMOOTH REVEAL ── */
+
+.tj-hero-slider.style-1 .slider-content .sub-title,
+.tj-hero-slider.style-1 .slider-content .slider-title,
+.tj-hero-slider.style-1 .slider-content .slider-desc,
+.tj-hero-slider.style-1 .slider-content .slider-feature-box {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.tj-hero-slider.style-1 .swiper-slide-active .sub-title {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.15s;
+}
+
+.tj-hero-slider.style-1 .swiper-slide-active .slider-title {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.30s;
+}
+
+.tj-hero-slider.style-1 .swiper-slide-active .slider-desc {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.50s;
+}
+
+.tj-hero-slider.style-1 .swiper-slide-active .slider-feature-box {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.70s;
+}
+
+
+.tj-hero-slider.style-1 {
+  min-height: 100vh;
+  height: 100svh;
+  position: relative;
+}
+
+.tj-hero-slider.style-1 .swiper,
+.tj-hero-slider.style-1 .swiper-wrapper,
+.tj-hero-slider.style-1 .swiper-slide,
+.tj-hero-slider.style-1 .tj-slider-section {
+  height: 100%;
+}
+
+.slider-wrapper .slider-content {
+  padding-top: 130px !important;
+  padding-bottom: 115px !important;
+}
+
+@media (max-width: 991px) {
+  .slider-wrapper .slider-content {
+    padding-top: 110px !important;
+    padding-bottom: 100px !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .tj-hero-slider.style-1 {
+    height: auto;
+    min-height: 100svh;
+  }
+
+  .slider-wrapper .slider-content {
+    padding-top: 125px !important;
+    padding-bottom: 100px !important;
+  }
+}
+
+
+
+
+
+.vd-slide-tab {
+  color: rgba(255,255,255,0.9) !important;
+  background: rgba(255,255,255,0.12) !important;
+  border: 1px solid rgba(255,255,255,0.35) !important;
+  backdrop-filter: blur(8px);
+}
+
+.vd-slide-tab .vd-tab-label {
+  color: inherit !important;
+}
+
+.vd-slide-tab.is-active {
+  color: #fff !important;
+  background: rgba(0,92,89,0.88) !important;
+  border-color: #C6A15B !important;
+}
+
+.vd-slide-tab:hover {
+  color: #fff !important;
+  background: rgba(0,92,89,0.65) !important;
+  border-color: #C6A15B !important;
+}
+
+.vd-slide-tab .vd-tab-progress {
+  opacity: 0.45;
+}
+
+.vd-slide-tab.is-active .vd-tab-progress {
+  opacity: 1;
+}
+
+
+
+
+/* ── STICKY HEADER ── */
+
+.tj-header-area.header-duplicate.header-sticky {
+  background: #ffffff !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07) !important;
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Hidden state */
+.tj-header-area.header-duplicate.header-sticky:not(.sticky) {
+  transform: translateY(-120%) scale(0.97) !important;
+}
+
+/* Visible sticky state */
+.tj-header-area.header-duplicate.header-sticky.sticky {
+  transform: translateY(0) scale(1) !important;
+}
+
+/* Navigation */
+.tj-header-area.header-6.header-duplicate.header-sticky
+.mainmenu ul:not(.sub-menu) > li > a {
+  color: #303030 !important;
+}
+
+.tj-header-area.header-6.header-duplicate.header-sticky
+.mainmenu ul:not(.sub-menu) > li:hover > a,
+.tj-header-area.header-6.header-duplicate.header-sticky
+.mainmenu ul:not(.sub-menu) > li.current-menu-ancestor > a,
+.tj-header-area.header-6.header-duplicate.header-sticky
+.mainmenu ul:not(.sub-menu) > li.current-menu-item > a {
+  color: #005c59 !important;
+}
+
+/* Search */
+.tj-header-area.header-6.header-duplicate.header-sticky
+.header_search,
+.tj-header-area.header-6.header-duplicate.header-sticky
+.header_search i {
+  color: #303030 !important;
+}
+
+/* Hamburger */
+.tj-header-area.header-6.header-duplicate.header-sticky
+.menu_btn {
+  color: #303030 !important;
+}
+
+.tj-header-area.header-6.header-duplicate.header-sticky
+.menu_btn .cubes span {
+  border-color: #303030 !important;
+}
+
+/* Logo slightly smaller when sticky */
+.tj-header-area.header-duplicate.header-sticky .logo {
+  transition: transform 0.35s ease;
+}
+
+.tj-header-area.header-duplicate.header-sticky.sticky .logo {
+  transform: scale(0.94);
+}
+

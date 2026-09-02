@@ -41417,8 +41417,8 @@
   .tj-footer-columns {
     display: grid;
     grid-template-columns: repeat(4, 1fr) 0.8fr;
-    gap: 32px;
-    padding: 20px 0;
+    gap: 21px;
+    padding: 20px 65px;
     border-bottom: 1px solid rgba(247, 245, 241, 0.15);
   }
 

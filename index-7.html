@@ -902,10 +902,19 @@
   </div>
 </section>
 <!-- end: Case Study Section -->
-<!-- start: Capabilities Section (Editorial Legal Capabilities Explorer) -->
+
+
+<!-- =========================================================
+     CAPABILITIES SECTION — drop-in replacement
+     The header block below (heading + search bar) is copied
+     VERBATIM from the original — its shimmer/reveal animation
+     is driven by the sitewide inline script in index.html and
+     is untouched here on purpose.
+     ========================================================= -->
 <section class="vd-capabilities-section section-space">
   <div class="container">
-    <!-- Header: Two-column layout (Left: Intro, Right: Search bar) -->
+
+    <!-- Header: DO NOT MODIFY — unchanged from original -->
     <div class="vd-capabilities-header">
       <div class="vd-capabilities-intro">
         <div class="sec-heading style-2">
@@ -928,8 +937,9 @@
         </div>
       </div>
     </div>
+    <!-- /Header -->
 
-    <!-- Editorial Capabilities Carousel -->
+    <!-- Capabilities Carousel -->
     <div class="vd-capabilities-carousel" id="vdCapabilitiesCarousel">
 
       <button type="button" class="vd-carousel-nav vd-carousel-nav--prev" id="vdCarouselPrev" aria-label="Scroll to previous capabilities">
@@ -939,8 +949,8 @@
       <div class="vd-capabilities-track" id="vdCapabilitiesTrack">
         <div class="vd-capabilities-row" id="vdCapabilitiesGrid">
 
-          <!-- 01. Corporate & Strategic Business Matters -->
-          <article class="vd-capability-card vd-expanded" data-title="Corporate & Strategic Business Matters" data-keywords="corporate strategic business structuring governance transactions advice">
+          <!-- 01 -->
+          <article class="vd-capability-card" data-title="Corporate & Strategic Business Matters" data-keywords="corporate strategic business structuring governance transactions advice">
             <div class="vd-capability-header">
               <div class="vd-capability-num">01</div>
               <div class="vd-capability-icon"><i class="tji-business"></i></div>
@@ -948,17 +958,21 @@
                 <h4 class="title"><a href="service-details.html">Corporate &amp; Strategic Business Matters</a></h4>
               </div>
             </div>
-            <div class="vd-capability-panel-wrap">
-              <div class="vd-capability-panel">
-                <div class="vd-capability-thumb">
-                  <img src="assets/images/vidhitra/capability/strategy.jpg" alt="Corporate & Strategic Business Matters" loading="lazy" width="600" height="140">
-                </div>
-                <p class="desc">Business structuring, governance, corporate transactions, and strategic legal advice for decisions that shape the organisation.</p>
+            <div class="vd-capability-panel">
+              <div class="vd-capability-thumb">
+                <img src="assets/images/vidhitra/capability/strategy.jpg" alt="Corporate & Strategic Business Matters" loading="lazy" width="600" height="140">
+              </div>
+              <p class="desc">Business structuring, governance, corporate transactions, and strategic legal advice for decisions that shape the organisation.</p>
+              <div class="vd-capability-foot">
+                <a href="service-details.html" class="vd-capability-explore">
+                  <span>Explore capability</span>
+                  <i class="fa fa-arrow-right"></i>
+                </a>
               </div>
             </div>
           </article>
 
-          <!-- 02. Commercial Contracts & Business Relationships -->
+          <!-- 02 -->
           <article class="vd-capability-card" data-title="Commercial Contracts & Business Relationships" data-keywords="commercial contracts business relationships structuring negotiation review risk allocation management">
             <div class="vd-capability-header">
               <div class="vd-capability-num">02</div>
@@ -967,17 +981,21 @@
                 <h4 class="title"><a href="service-details.html">Commercial Contracts &amp; Business Relationships</a></h4>
               </div>
             </div>
-            <div class="vd-capability-panel-wrap">
-              <div class="vd-capability-panel">
-                <div class="vd-capability-thumb">
-                  <img src="assets/images/vidhitra/capability/contract.jpg" alt="Commercial Contracts & Business Relationships" loading="lazy" width="600" height="140">
-                </div>
-                <p class="desc">Contracts that support commercial relationships&mdash;from structuring and negotiation to review, risk allocation, and ongoing contract management.</p>
+            <div class="vd-capability-panel">
+              <div class="vd-capability-thumb">
+                <img src="assets/images/vidhitra/capability/contract.jpg" alt="Commercial Contracts & Business Relationships" loading="lazy" width="600" height="140">
+              </div>
+              <p class="desc">Contracts that support commercial relationships&mdash;from structuring and negotiation to review, risk allocation, and ongoing contract management.</p>
+              <div class="vd-capability-foot">
+                <a href="service-details.html" class="vd-capability-explore">
+                  <span>Explore capability</span>
+                  <i class="fa fa-arrow-right"></i>
+                </a>
               </div>
             </div>
           </article>
 
-          <!-- 03. Infrastructure, Projects & Bids -->
+          <!-- 03 -->
           <article class="vd-capability-card" data-title="Infrastructure, Projects & Bids" data-keywords="infrastructure projects bids tenders procurement concessions documentation structures">
             <div class="vd-capability-header">
               <div class="vd-capability-num">03</div>
@@ -986,17 +1004,21 @@
                 <h4 class="title"><a href="service-details.html">Infrastructure, Projects &amp; Bids</a></h4>
               </div>
             </div>
-            <div class="vd-capability-panel-wrap">
-              <div class="vd-capability-panel">
-                <div class="vd-capability-thumb">
-                  <img src="assets/images/vidhitra/capability/project.jpg" alt="Infrastructure, Projects & Bids" loading="lazy" width="600" height="140">
-                </div>
-                <p class="desc">Legal and commercial support across tenders, procurement, concessions, project documentation, and complex project structures.</p>
+            <div class="vd-capability-panel">
+              <div class="vd-capability-thumb">
+                <img src="assets/images/vidhitra/capability/project.jpg" alt="Infrastructure, Projects & Bids" loading="lazy" width="600" height="140">
+              </div>
+              <p class="desc">Legal and commercial support across tenders, procurement, concessions, project documentation, and complex project structures.</p>
+              <div class="vd-capability-foot">
+                <a href="service-details.html" class="vd-capability-explore">
+                  <span>Explore capability</span>
+                  <i class="fa fa-arrow-right"></i>
+                </a>
               </div>
             </div>
           </article>
 
-          <!-- 04. Regulatory Compliance & Business Risk -->
+          <!-- 04 -->
           <article class="vd-capability-card" data-title="Regulatory Compliance & Business Risk" data-keywords="regulatory compliance business risk governance frameworks internal controls management">
             <div class="vd-capability-header">
               <div class="vd-capability-num">04</div>
@@ -1005,17 +1027,21 @@
                 <h4 class="title"><a href="service-details.html">Regulatory Compliance &amp; Business Risk</a></h4>
               </div>
             </div>
-            <div class="vd-capability-panel-wrap">
-              <div class="vd-capability-panel">
-                <div class="vd-capability-thumb">
-                  <img src="assets/images/vidhitra/capability/risk.jpeg" alt="Regulatory Compliance & Business Risk" loading="lazy" width="600" height="140">
-                </div>
-                <p class="desc">Governance, compliance frameworks, internal controls, and risk management for businesses operating in regulated and complex environments.</p>
+            <div class="vd-capability-panel">
+              <div class="vd-capability-thumb">
+                <img src="assets/images/vidhitra/capability/risk.jpeg" alt="Regulatory Compliance & Business Risk" loading="lazy" width="600" height="140">
+              </div>
+              <p class="desc">Governance, compliance frameworks, internal controls, and risk management for businesses operating in regulated and complex environments.</p>
+              <div class="vd-capability-foot">
+                <a href="service-details.html" class="vd-capability-explore">
+                  <span>Explore capability</span>
+                  <i class="fa fa-arrow-right"></i>
+                </a>
               </div>
             </div>
           </article>
 
-          <!-- 05. Technology, IT & Digital Business -->
+          <!-- 05 -->
           <article class="vd-capability-card" data-title="Technology, IT & Digital Business" data-keywords="technology it digital business saas software arrangements outsourcing operations data-driven">
             <div class="vd-capability-header">
               <div class="vd-capability-num">05</div>
@@ -1024,17 +1050,21 @@
                 <h4 class="title"><a href="service-details.html">Technology, IT &amp; Digital Business</a></h4>
               </div>
             </div>
-            <div class="vd-capability-panel-wrap">
-              <div class="vd-capability-panel">
-                <div class="vd-capability-thumb">
-                  <img src="assets/images/vidhitra/capability/digital.jpg" alt="Technology, IT & Digital Business" loading="lazy" width="600" height="140">
-                </div>
-                <p class="desc">Legal support for technology transactions, SaaS and software arrangements, IT outsourcing, digital operations, and data-driven business models.</p>
+            <div class="vd-capability-panel">
+              <div class="vd-capability-thumb">
+                <img src="assets/images/vidhitra/capability/digital.jpg" alt="Technology, IT & Digital Business" loading="lazy" width="600" height="140">
+              </div>
+              <p class="desc">Legal support for technology transactions, SaaS and software arrangements, IT outsourcing, digital operations, and data-driven business models.</p>
+              <div class="vd-capability-foot">
+                <a href="service-details.html" class="vd-capability-explore">
+                  <span>Explore capability</span>
+                  <i class="fa fa-arrow-right"></i>
+                </a>
               </div>
             </div>
           </article>
 
-          <!-- 06. Employment & Workforce Matters -->
+          <!-- 06 -->
           <article class="vd-capability-card" data-title="Employment & Workforce Matters" data-keywords="employment workforce matters relationships frameworks leadership transitions workplace risk">
             <div class="vd-capability-header">
               <div class="vd-capability-num">06</div>
@@ -1043,17 +1073,21 @@
                 <h4 class="title"><a href="service-details.html">Employment &amp; Workforce Matters</a></h4>
               </div>
             </div>
-            <div class="vd-capability-panel-wrap">
-              <div class="vd-capability-panel">
-                <div class="vd-capability-thumb">
-                  <img src="assets/images/vidhitra/capability/workforce.jpg" alt="Employment & Workforce Matters" loading="lazy" width="600" height="140">
-                </div>
-                <p class="desc">Legal support across employment relationships, workforce frameworks, leadership transitions, and workplace risk.</p>
+            <div class="vd-capability-panel">
+              <div class="vd-capability-thumb">
+                <img src="assets/images/vidhitra/capability/workforce.jpg" alt="Employment & Workforce Matters" loading="lazy" width="600" height="140">
+              </div>
+              <p class="desc">Legal support across employment relationships, workforce frameworks, leadership transitions, and workplace risk.</p>
+              <div class="vd-capability-foot">
+                <a href="service-details.html" class="vd-capability-explore">
+                  <span>Explore capability</span>
+                  <i class="fa fa-arrow-right"></i>
+                </a>
               </div>
             </div>
           </article>
 
-          <!-- 07. Market Entry, Startups & Emerging Businesses -->
+          <!-- 07 -->
           <article class="vd-capability-card" data-title="Market Entry, Startups & Emerging Businesses" data-keywords="market entry startups emerging businesses india establishing structuring growing regulatory commercial">
             <div class="vd-capability-header">
               <div class="vd-capability-num">07</div>
@@ -1062,12 +1096,16 @@
                 <h4 class="title"><a href="service-details.html">Market Entry, Startups &amp; Emerging Businesses</a></h4>
               </div>
             </div>
-            <div class="vd-capability-panel-wrap">
-              <div class="vd-capability-panel">
-                <div class="vd-capability-thumb">
-                  <img src="assets/images/vidhitra/capability/new.jpg" alt="Market Entry, Startups & Emerging Businesses" loading="lazy" width="600" height="140">
-                </div>
-                <p class="desc">Legal support for establishing, structuring, and growing businesses in India, including market entry, regulatory alignment, commercial arrangements, and ongoing legal needs.</p>
+            <div class="vd-capability-panel">
+              <div class="vd-capability-thumb">
+                <img src="assets/images/vidhitra/capability/new.jpg" alt="Market Entry, Startups & Emerging Businesses" loading="lazy" width="600" height="140">
+              </div>
+              <p class="desc">Legal support for establishing, structuring, and growing businesses in India, including market entry, regulatory alignment, commercial arrangements, and ongoing legal needs.</p>
+              <div class="vd-capability-foot">
+                <a href="service-details.html" class="vd-capability-explore">
+                  <span>Explore capability</span>
+                  <i class="fa fa-arrow-right"></i>
+                </a>
               </div>
             </div>
           </article>
@@ -1078,7 +1116,7 @@
         <div class="vd-carousel-fade vd-carousel-fade--left" aria-hidden="true"></div>
         <div class="vd-carousel-fade vd-carousel-fade--right" aria-hidden="true"></div>
 
-        <!-- invisible hover hot-zones that drive the auto-scroll -->
+        <!-- hover hot-zones that drive auto-scroll -->
         <div class="vd-carousel-hotzone vd-carousel-hotzone--left" data-dir="-1" aria-hidden="true"></div>
         <div class="vd-carousel-hotzone vd-carousel-hotzone--right" data-dir="1" aria-hidden="true"></div>
       </div>
@@ -1101,59 +1139,6 @@
 
   </div>
 </section>
-<!-- end: Capabilities Section -->
-
-<!-- start: Credentials Section -->
-<section class="tj-credentials-section section-space">
-  <div class="container">
-
-    <div class="sec-heading text-center">
-      <span class="sub-title wow fadeInUp" data-wow-delay="0.1s">Credentials</span>
-      <h2 class="sec-title wow fadeInUp" data-wow-delay="0.2s">Experience That Supports Business Decisions at Every Stage</h2>
-      <div class="desc wow fadeInUp" data-wow-delay="0.3s">
-        <p>Our experience spans the business lifecycle, sectors, and jurisdictions. We bring this perspective to the legal and commercial decisions businesses face—from establishing and entering new markets to scaling operations, managing complexity, and strengthening governance.</p>
-      </div>
-    </div>
-
-    <div class="tj-credentials-layout">
-
-      <!-- Left: supporting image -->
-      <div class="tj-credentials-image wow fadeInLeft" data-wow-delay="0.2s">
-        <img src="assets/images/vidhitra/approach/exp.webp" alt="Vidhitra Corporate Advisors — leadership advisory experience">
-      </div>
-
-      <!-- Right: stacked list — bold heading + description per item,
-          NOT a counter/odometer mechanic, since none of these are
-          actual numbers. Each item separated by a thin divider,
-          echoing the reference's vertical rhythm without faking stats. -->
-      <div class="tj-credentials-list">
-
-        <div class="tj-credential-row wow fadeInUp" data-wow-delay="0.1s">
-          <h3 class="title">Business Lifecycle Experience</h3>
-          <p class="desc">Experience across the business journey—from incorporation and market entry to growth, investment, expansion, restructuring, and ongoing governance.</p>
-        </div>
-
-        <div class="tj-credential-row wow fadeInUp" data-wow-delay="0.2s">
-          <h3 class="title">Cross-Sector Commercial Understanding</h3>
-          <p class="desc">Experience across infrastructure, manufacturing, healthcare, logistics, technology, digital services, and other regulated and operationally complex sectors.</p>
-        </div>
-
-        <div class="tj-credential-row wow fadeInUp" data-wow-delay="0.3s">
-          <h3 class="title">Leadership-Level Advisory Experience</h3>
-          <p class="desc">Advising founders, promoters, boards, executive leadership, in-house legal teams, and international businesses on decisions that combine legal, commercial, operational, and regulatory considerations.</p>
-        </div>
-
-        <div class="tj-credential-row wow fadeInUp" data-wow-delay="0.4s">
-          <h3 class="title">India and Cross-Border Perspective</h3>
-          <p class="desc">Supporting Indian businesses and international organisations entering or operating in India, with an understanding of the legal and commercial considerations involved in domestic and cross-border business activity.</p>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- end: Credentials Section -->
 
 
 <!-- start: FAQS Section -->
@@ -1163,7 +1148,7 @@
     <div class="shadowbox mx-5">
       <div class="sec-heading text-center pt-5">
         <span class="sub-title wow fadeInUp mt-5" data-wow-delay="0.1s">FAQ</span>
-        <h2 class="sec-title text-anim">Legal Counsel Built Around Your Business</h2>
+ <h2 class="sec-title tj-text-invert">Legal Counsel Built Around Your Business</h2>
       </div>
 
       <div class="row">

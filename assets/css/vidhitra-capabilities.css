@@ -1,22 +1,33 @@
 /* =========================================================
-   VIDHITRA — CAPABILITIES SECTION (horizontal carousel)
-   v3: all seven capabilities sit in one horizontal row.
-   Resting cursor near the right (or left) edge of the
-   carousel continuously auto-scrolls the row in that
-   direction — no clicking required, though nav buttons and
-   arrow keys are provided as an accessible fallback. All the
-   existing per-card motion (entrance fade, icon rotate,
-   badge stamp, magnetic arrow, expand panel) is unchanged.
+   VIDHITRA — CAPABILITIES SECTION
+   Clean rewrite. Cards are permanently "open" (no expand/
+   collapse mechanic) — every animation below is either an
+   entrance reveal or a hover/interaction transition.
+
+   Root cause of "animation not working" in the old file:
+   1) applyOffset() in the JS built an invalid transform
+      string (missing closing parenthesis) — the carousel
+      never actually moved.
+   2) Three separate, overlapping "cards open by default"
+      rule blocks were fighting each other in the old CSS.
+   Both are fixed by this file + the accompanying JS.
    ========================================================= */
 
 .vd-capabilities-section{
+  --vd-teal:#005c59;
+  --vd-plum:#52104c;
+  --vd-gold:#C6A15B;
+  --vd-bg:#F7F5F1;
+  --vd-ink:#2D2D2D;
+  --vd-muted:#6B6B6B;
+  --vd-ease:cubic-bezier(.22,.61,.36,1);
   position:relative;
-  background:#F7F5F1;
+  background:var(--vd-bg);
   overflow:hidden;
 }
 
 /* =========================
-   SEARCH
+   SEARCH  (unchanged behaviour, tidied)
    ========================= */
 .vd-capabilities-search-wrap{ display:flex; flex-direction:column; gap:10px; }
 
@@ -32,16 +43,16 @@
   transition:border-color .25s ease, box-shadow .25s ease, transform .25s ease;
 }
 .vd-search-box:focus-within{
-  border-color:#005c59;
+  border-color:var(--vd-teal);
   box-shadow:0 12px 35px rgba(0,92,89,.10);
   transform:translateY(-2px);
 }
-.vd-search-icon{ flex-shrink:0; margin-right:12px; color:#005c59; font-size:16px; transition:transform .25s ease; }
+.vd-search-icon{ flex-shrink:0; margin-right:12px; color:var(--vd-teal); font-size:16px; transition:transform .25s ease; }
 .vd-search-box:focus-within .vd-search-icon{ transform:scale(1.15); }
 .vd-search-input{
   flex:1; width:100%; padding:16px 0;
   border:none !important; outline:none !important; background:transparent !important;
-  font-size:15px; color:#2D2D2D;
+  font-size:15px; color:var(--vd-ink);
 }
 .vd-search-input::placeholder{ color:#aaa; }
 .vd-search-clear{
@@ -51,11 +62,13 @@
   transition:opacity .2s cubic-bezier(.34,1.56,.64,1), transform .2s cubic-bezier(.34,1.56,.64,1), background .2s ease, color .2s ease;
 }
 .vd-search-clear.is-visible{ opacity:1; transform:scale(1); pointer-events:auto; }
-.vd-search-clear:hover{ background:#52104c; color:#fff; }
+.vd-search-clear:hover{ background:var(--vd-plum); color:#fff; }
 .vd-search-meta{ min-height:18px; margin-top:2px; }
-.vd-search-count{ font-size:12px; font-weight:700; letter-spacing:.10em; text-transform:uppercase; color:#005c59; display:inline-block; }
+.vd-search-count{ font-size:12px; font-weight:700; letter-spacing:.10em; text-transform:uppercase; color:var(--vd-teal); display:inline-block; }
 .vd-search-count.is-pulsing{ animation:vdCountPulse .35s cubic-bezier(.34,1.56,.64,1); }
-@keyframes vdCountPulse{ 0%{transform:scale(1);} 45%{transform:scale(1.18); color:#52104c;} 100%{transform:scale(1);} }
+@keyframes vdCountPulse{ 0%{transform:scale(1);} 45%{transform:scale(1.18); color:var(--vd-plum);} 100%{transform:scale(1);} }
+
+mark.vd-mark{ background:rgba(198,161,91,.35); color:var(--vd-plum); border-radius:2px; padding:0 1px; }
 
 /* =========================
    CAROUSEL SHELL
@@ -65,72 +78,58 @@
   display:flex;
   align-items:center;
   gap:12px;
+  margin-top:40px;
 }
 
-.vd-capabilities-track{
-  position:relative;
-  flex:1;
-  min-width:0;
-  overflow:hidden;
-}
+.vd-capabilities-track{ position:relative; flex:1; min-width:0; overflow:hidden; }
 
 .vd-capabilities-row{
   display:flex;
-  align-items:flex-start;
-  gap:20px;
+  align-items:stretch;
+  gap:22px;
   width:max-content;
   will-change:transform;
-  /* No CSS transition here on purpose: the hover-edge scroll writes
-     transform every animation frame for a continuously smooth glide.
-     Nav-button and keyboard moves opt into a transition individually
-     (see .vd-capabilities-row.vd-anim below) so they still ease. */
+  /* No blanket transition here: the hover-edge auto-scroll writes the
+     transform every animation frame for a smooth continuous glide.
+     Discrete moves (nav buttons / keyboard) opt into .vd-anim below
+     so those still ease nicely. */
 }
-.vd-capabilities-row.vd-anim{
-  transition:transform .5s cubic-bezier(.22,.61,.36,1);
-}
+.vd-capabilities-row.vd-anim{ transition:transform .5s var(--vd-ease); }
 
-/* edge fade cues — hint that there's more to scroll to */
+/* edge fade cues */
 .vd-carousel-fade{
   position:absolute; top:0; bottom:0; width:64px;
-  pointer-events:none;
-  z-index:2;
-  opacity:0;
+  pointer-events:none; z-index:2; opacity:0;
   transition:opacity .3s ease;
 }
-.vd-carousel-fade--left{ left:0; background:linear-gradient(90deg, #F7F5F1, rgba(247,245,241,0)); }
-.vd-carousel-fade--right{ right:0; background:linear-gradient(270deg, #F7F5F1, rgba(247,245,241,0)); }
+.vd-carousel-fade--left{ left:0; background:linear-gradient(90deg, var(--vd-bg), rgba(247,245,241,0)); }
+.vd-carousel-fade--right{ right:0; background:linear-gradient(270deg, var(--vd-bg), rgba(247,245,241,0)); }
 .vd-capabilities-carousel.vd-can-scroll-left .vd-carousel-fade--left{ opacity:1; }
 .vd-capabilities-carousel.vd-can-scroll-right .vd-carousel-fade--right{ opacity:1; }
 
-/* invisible zones along each edge of the track that drive the
-   continuous auto-scroll while the cursor rests inside them */
+/* invisible hover zones that drive continuous auto-scroll */
 .vd-carousel-hotzone{
-  position:absolute; top:0; bottom:0; width:18%;
-  max-width:180px;
-  z-index:3;
-  cursor:pointer;
+  position:absolute; top:0; bottom:0; width:18%; max-width:180px; z-index:3; cursor:pointer;
 }
 .vd-carousel-hotzone--left{ left:0; }
 .vd-carousel-hotzone--right{ right:0; }
 .vd-capabilities-carousel:not(.vd-can-scroll-left) .vd-carousel-hotzone--left,
-.vd-capabilities-carousel:not(.vd-can-scroll-right) .vd-carousel-hotzone--right{
-  pointer-events:none;
-}
+.vd-capabilities-carousel:not(.vd-can-scroll-right) .vd-carousel-hotzone--right{ pointer-events:none; }
 
-/* prev / next buttons — accessible fallback for click/keyboard users */
+/* prev / next buttons */
 .vd-carousel-nav{
   flex-shrink:0;
   display:flex; align-items:center; justify-content:center;
-  width:44px; height:44px;
+  width:46px; height:46px;
   border-radius:50%;
   border:1px solid rgba(0,92,89,.18);
   background:#fff;
-  color:#005c59;
+  color:var(--vd-teal);
   font-size:14px;
   cursor:pointer;
   transition:background .25s ease, color .25s ease, border-color .25s ease, opacity .25s ease, transform .2s ease;
 }
-.vd-carousel-nav:hover{ background:#005c59; color:#fff; border-color:#005c59; transform:translateY(-2px); }
+.vd-carousel-nav:hover{ background:var(--vd-teal); color:#fff; border-color:var(--vd-teal); transform:translateY(-2px); }
 .vd-carousel-nav--prev i{ transform:rotate(180deg); display:inline-block; }
 .vd-carousel-nav[disabled]{ opacity:.35; cursor:default; pointer-events:none; transform:none; }
 
@@ -141,73 +140,94 @@
   position:relative;
   flex:0 0 320px;
   width:320px;
+  display:flex;
+  flex-direction:column;
   background:#fff;
-  border:1px solid rgba(0,92,89,.16);
-  border-radius:6px;
+  border:1px solid rgba(0,92,89,.14);
+  border-radius:8px;
   overflow:hidden;
-  cursor:pointer;
-  transition:background .25s ease, box-shadow .3s ease, opacity .6s cubic-bezier(.22,.61,.36,1), transform .6s cubic-bezier(.22,.61,.36,1);
+
+  box-shadow:0 14px 38px rgba(0,92,89,.07);
 
   opacity:0;
-  transform:translateY(18px);
+  transform:translateY(26px) scale(.97);
+  transition:
+    opacity .7s var(--vd-ease),
+    transform .6s var(--vd-ease),
+    box-shadow .35s ease,
+    border-color .35s ease;
 }
-.vd-capability-card.vd-in-view{ opacity:1; transform:translateY(0); }
+.vd-capability-card.vd-in-view{ opacity:1; transform:translateY(0) scale(1); }
+
 .vd-capability-card:hover,
-.vd-capability-card:focus-within{ background:#FAF9F5; box-shadow:0 16px 40px rgba(0,92,89,.10); }
+.vd-capability-card:focus-within{
+  border-color:rgba(0,92,89,.28);
+  box-shadow:0 26px 54px rgba(0,92,89,.16);
+  transform:translateY(-6px) scale(1);
+}
+
+/* while the JS-driven tilt is active, hand transform control
+   over to inline style so the follow feels instant/direct;
+   everything else keeps easing normally */
+.vd-capability-card.vd-tilting{ transition:box-shadow .35s ease, border-color .35s ease; }
 
 /* search filter states */
-.vd-capability-card.vd-leaving{ opacity:0 !important; transform:translateY(6px) scale(.98) !important; transition:opacity .28s ease, transform .28s ease; pointer-events:none; }
+.vd-capability-card.vd-leaving{
+  opacity:0 !important; transform:translateY(6px) scale(.97) !important;
+  transition:opacity .28s ease, transform .28s ease;
+  pointer-events:none;
+}
 .vd-capability-card.vd-hidden{ display:none; }
 
-/* top accent bar draws in on hover / while expanded */
+/* top accent bar — teal by default (card reads as "active"),
+   sweeps to a teal→gold gradient on hover */
 .vd-capability-card::before{
   content:'';
   position:absolute; left:0; top:0; right:0; height:3px;
-  background:#005c59;
-  transform:scaleX(0);
+  background:var(--vd-teal);
+  transform:scaleX(1);
   transform-origin:left;
-  transition:transform .45s cubic-bezier(.22,.61,.36,1);
+  transition:background .45s ease;
 }
 .vd-capability-card:hover::before,
-.vd-capability-card:focus-within::before,
-.vd-capability-card.vd-expanded::before{ transform:scaleX(1); }
+.vd-capability-card:focus-within::before{
+  background:linear-gradient(90deg, var(--vd-teal), var(--vd-gold));
+}
 
 /* =========================
-   HEADER — badge, icon, title, arrow
+   HEADER — badge, icon, title
    ========================= */
 .vd-capability-header{
   display:flex;
   align-items:flex-start;
   gap:14px;
-  padding:22px 20px;
+  padding:22px 20px 16px;
 }
 
 .vd-capability-num{
   position:relative;
   width:32px; height:32px;
   display:flex; align-items:center; justify-content:center;
-  background:#52104c;
-  color:#C6A15B;
+  background:var(--vd-teal);
+  color:var(--vd-gold);
   border-radius:4px;
   font-size:11px;
   font-weight:800;
   flex-shrink:0;
-  transition:background .3s ease;
 }
 .vd-capability-num::after{
   content:'';
   position:absolute; inset:-6px;
   border-radius:8px;
-  border:1.5px solid #005c59;
+  border:1.5px solid var(--vd-teal);
   opacity:0;
   transform:scale(.7);
 }
 .vd-capability-card.vd-stamped .vd-capability-num{
-  background:#005c59;
   animation:vdStampPress .55s cubic-bezier(.34,1.56,.64,1);
 }
 .vd-capability-card.vd-stamped .vd-capability-num::after{
-  animation:vdStampRing .55s cubic-bezier(.22,.61,.36,1) forwards;
+  animation:vdStampRing .55s var(--vd-ease) forwards;
 }
 @keyframes vdStampPress{
   0%{ transform:scale(1) rotate(0); }
@@ -222,14 +242,14 @@
   width:38px; height:38px;
   display:flex; align-items:center; justify-content:center;
   background:rgba(0,92,89,.07);
-  color:#005c59;
+  color:var(--vd-teal);
   border-radius:5px;
   font-size:16px;
   transition:background .3s ease, color .3s ease, transform .45s cubic-bezier(.34,1.56,.64,1);
 }
 .vd-capability-card:hover .vd-capability-icon,
 .vd-capability-card:focus-within .vd-capability-icon{
-  background:#005c59; color:#fff; transform:rotate(-7deg) scale(1.08);
+  background:var(--vd-teal); color:#fff; transform:rotate(-8deg) scale(1.1);
 }
 
 .vd-capability-content{ flex:1; min-width:0; }
@@ -238,69 +258,79 @@
   font-size:15px;
   font-weight:700;
   line-height:1.35;
-  color:#2D2D2D;
-  display:-webkit-box;
-  -webkit-line-clamp:2;
-  -webkit-box-orient:vertical;
-  overflow:hidden;
+  color:var(--vd-ink);
 }
 .vd-capability-content .title a{ color:inherit; text-decoration:none; transition:color .2s ease; }
 .vd-capability-card:hover .title a,
-.vd-capability-card:focus-within .title a{ color:#005c59; }
-
-mark.vd-mark{ background:rgba(198,161,91,.35); color:#52104c; border-radius:2px; padding:0 1px; }
-
+.vd-capability-card:focus-within .title a{ color:var(--vd-teal); }
 
 /* =========================
-   EXPANDABLE PANEL — grid-template-rows 0fr → 1fr,
-   grows the card downward without affecting neighbours.
+   PANEL — image + description + explore link
+   Always visible (cards are permanently "open"); the only
+   animation here is the hover-driven colour reveal / zoom.
    ========================= */
-.vd-capability-panel-wrap{
-  display:grid;
-  grid-template-rows:0fr;
-  transition:grid-template-rows .5s cubic-bezier(.22,.61,.36,1);
-}
-.vd-capability-card.vd-expanded .vd-capability-panel-wrap{
-  grid-template-rows:1fr;
-}
-.vd-capability-panel{
-  overflow:hidden;
-  min-height:0;
-}
+.vd-capability-panel{ display:flex; flex-direction:column; flex:1; }
 
-.vd-capability-thumb{
-  position:relative;
-  height:140px;
-  overflow:hidden;
-}
+.vd-capability-thumb{ position:relative; height:150px; overflow:hidden; }
 .vd-capability-thumb img{
   width:100%; height:100%;
   object-fit:cover;
   display:block;
-  filter:grayscale(1) contrast(1.06) brightness(.9);
-  transition:filter .6s ease;
+  filter:grayscale(1) contrast(1.06) brightness(.92);
+  transform:scale(1.01);
+  transition:filter .6s ease, transform .8s var(--vd-ease);
 }
 .vd-capability-card:hover .vd-capability-thumb img,
 .vd-capability-card:focus-within .vd-capability-thumb img{
-  filter:grayscale(.15) contrast(1.03) brightness(1);
+  filter:grayscale(0) contrast(1.03) brightness(1);
+  transform:scale(1.08);
 }
 .vd-capability-thumb::after{
   content:'';
   position:absolute; inset:0;
   background:linear-gradient(155deg, rgba(82,16,76,.5), rgba(0,92,89,.48));
   mix-blend-mode:color;
+  opacity:.55;
   transition:opacity .5s ease;
 }
 .vd-capability-card:hover .vd-capability-thumb::after,
-.vd-capability-card:focus-within .vd-capability-thumb::after{ opacity:.4; }
+.vd-capability-card:focus-within .vd-capability-thumb::after{ opacity:.28; }
 
 .vd-capability-panel .desc{
   margin:0;
-  padding:14px 20px 20px;
+  padding:16px 20px 12px;
   font-size:13.5px;
-  line-height:1.6;
-  color:#6B6B6B;
+  line-height:1.65;
+  color:var(--vd-muted);
+  flex:1;
 }
+
+.vd-capability-foot{
+  padding:0 20px 20px;
+  margin-top:auto;
+}
+.vd-capability-explore{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12.5px;
+  font-weight:700;
+  letter-spacing:.03em;
+  text-transform:uppercase;
+  color:var(--vd-teal);
+  text-decoration:none;
+  padding-top:12px;
+  border-top:1px solid rgba(0,92,89,.12);
+  width:100%;
+}
+.vd-capability-explore i{
+  font-size:11px;
+  transform:translateX(0);
+  transition:transform .3s var(--vd-ease);
+}
+.vd-capability-card:hover .vd-capability-explore i,
+.vd-capability-card:focus-within .vd-capability-explore i{ transform:translateX(5px); }
+.vd-capability-explore:hover{ color:var(--vd-plum); }
 
 /* =========================
    NO RESULTS
@@ -308,23 +338,23 @@ mark.vd-mark{ background:rgba(198,161,91,.35); color:#52104c; border-radius:2px;
 .vd-capabilities-no-results{ display:none; text-align:center; padding:80px 20px; }
 .vd-capabilities-no-results.vd-visible{ display:block; animation:vdNoResultIn .5s ease both; }
 .vd-no-results-inner{ max-width:450px; margin:0 auto; }
-.vd-no-results-inner i{ display:block; margin-bottom:20px; font-size:36px; color:#C6A15B; animation:vdNoResultsPop .5s cubic-bezier(.34,1.56,.64,1); }
+.vd-no-results-inner i{ display:block; margin-bottom:20px; font-size:36px; color:var(--vd-gold); animation:vdNoResultsPop .5s cubic-bezier(.34,1.56,.64,1); }
 @keyframes vdNoResultsPop{ 0%{transform:scale(.4) rotate(-10deg); opacity:0;} 100%{transform:scale(1) rotate(0); opacity:1;} }
-.vd-no-results-inner h3{ font-size:22px; color:#2D2D2D; margin:0 0 12px; }
-.vd-no-results-inner p{ margin-bottom:25px; color:#6B6B6B; line-height:1.7; }
-.vd-reset-search-btn{ padding:13px 28px; background:#005c59; color:#fff; border:none; border-radius:4px; font-size:13px; font-weight:700; letter-spacing:.03em; cursor:pointer; transition:background .25s ease, transform .25s ease; }
-.vd-reset-search-btn:hover{ background:#52104c; transform:translateY(-2px); }
+.vd-no-results-inner h3{ font-size:22px; color:var(--vd-ink); margin:0 0 12px; }
+.vd-no-results-inner p{ margin-bottom:25px; color:var(--vd-muted); line-height:1.7; }
+.vd-reset-search-btn{ padding:13px 28px; background:var(--vd-teal); color:#fff; border:none; border-radius:4px; font-size:13px; font-weight:700; letter-spacing:.03em; cursor:pointer; transition:background .25s ease, transform .25s ease; }
+.vd-reset-search-btn:hover{ background:var(--vd-plum); transform:translateY(-2px); }
 @keyframes vdNoResultIn{ from{opacity:0; transform:translateY(15px);} to{opacity:1; transform:translateY(0);} }
 
 /* =========================
    RESPONSIVE
    ========================= */
 @media (max-width:767px){
-  .vd-capability-card{ flex-basis:260px; width:260px; }
-  .vd-carousel-nav{ display:none; } /* hot zones + native touch scroll cover mobile */
+  .vd-capability-card{ flex-basis:264px; width:264px; }
+  .vd-carousel-nav{ display:none; }
   .vd-capabilities-track{ overflow-x:auto; -webkit-overflow-scrolling:touch; scroll-snap-type:x proximity; }
   .vd-capabilities-row{ scroll-snap-align:start; }
-  .vd-carousel-hotzone{ display:none; } /* avoid fighting native touch scroll */
+  .vd-carousel-hotzone{ display:none; }
 }
 @media (max-width:575px){
   .vd-search-input{ font-size:16px; } /* stops iOS auto-zoom on focus */
@@ -334,208 +364,154 @@ mark.vd-mark{ background:rgba(198,161,91,.35); color:#52104c; border-radius:2px;
    REDUCED MOTION
    ========================= */
 @media (prefers-reduced-motion: reduce){
-  .vd-capability-card, .vd-capability-panel-wrap,
-  .vd-capability-icon, .vd-capability-arrow, .vd-capability-arrow i, .vd-capability-num,
+  .vd-capability-card,
+  .vd-capability-icon,
+  .vd-capability-num,
+  .vd-capability-thumb img,
+  .vd-capability-thumb::after,
+  .vd-capability-explore i,
   .vd-capabilities-row{
     transition:none !important; animation:none !important;
   }
   .vd-capability-card{ opacity:1 !important; transform:none !important; }
-  /* auto-scroll-on-hover is itself motion; disable the hot zones and
-     rely on the always-visible nav buttons instead. */
   .vd-carousel-hotzone{ display:none; }
 }
 
 
+/* =========================================================
+   PRESERVED, UNCHANGED — belongs to the separate "Our Approach"
+   section (.tj-approach-*), not the Capabilities section. It was
+   bundled into the old vidhitra-capabilities.css file; kept here
+   verbatim so that section keeps working, per your instruction
+   not to touch anything outside Capabilities.
+   ========================================================= */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  .tj-approach-list {
-    gap: 15px !important;
-    overflow: visible !important;
-  }
-  .tj-approach-list,
-  .tj-approach-item {
-    overflow: visible !important;
-  }
-
-  .tj-approach-item {
-    perspective: 1400px !important;
-  }
-
-  .tj-approach-number {
-    position: relative;
-    z-index: 2;
-    isolation: isolate;
-    transform-style: preserve-3d;
-    backface-visibility: visible;
-    -webkit-backface-visibility: visible;
-    transform-origin: center center;
-    transform: translateZ(0) rotateY(0deg);
-    will-change: transform;
-    box-shadow: none !important;
-  }
-
-  .js-ready .tj-approach-number {
-    transform: translateZ(0) rotateY(-80deg);
-  }
-
-  .js-ready .tj-approach-item.in-view .tj-approach-number {
-    animation: flipReverse 1.2s cubic-bezier(0.45, 0, 0.2, 1) forwards;
-  }
-
-  @keyframes flipReverse {
-    0%   { transform: translateZ(0) rotateY(-80deg); box-shadow: none; opacity: 1; }
-    50%  { opacity: 1; }
-    99%  { box-shadow: none; opacity: 1; }
-    100% { transform: translateZ(0) rotateY(0deg); box-shadow: 0 10px 25px rgba(0,0,0,0.25); opacity: 1; }
-  }
-
-  /* ===== The digit itself: smooth flip from left-center to center ===== */
-  .tj-approach-number {
-    overflow: visible;
-  }
-
-  .tj-approach-number span {
-    display: inline-block;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    transform-origin: center center;
-    transform: translateX(0) translateZ(0) rotateY(0deg);
-    opacity: 1;
-    will-change: transform, opacity;
-  }
-
-  .js-ready .tj-approach-number span {
-    transform: translateX(-100%) translateZ(0) rotateY(-120deg);
-    opacity: 0;
-  }
-
-  .js-ready .tj-approach-item.in-view .tj-approach-number span {
-    animation: digitFlip 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  }
-
-  @keyframes digitFlip {
-    0%   { transform: translateX(-100%) translateZ(0) rotateY(-120deg); opacity: 0; }
-    18%  { opacity: 0; }
-    28%  { opacity: 0.6; }
-    40%  { transform: translateX(-55%) translateZ(0) rotateY(-75deg); opacity: 1; }
-    62%  { transform: translateX(-22%) translateZ(0) rotateY(-30deg); opacity: 1; }
-    82%  { transform: translateX(3px) translateZ(0) rotateY(8deg); opacity: 1; }
-    100% { transform: translateX(0) translateZ(0) rotateY(0deg); opacity: 1; }
-  }
-
-    /* ===== Title: reveals first ===== */
-    .tj-approach-content .title {
-      opacity: 0;
-      transform: translateY(60px);
-    }
-
-    .js-ready .tj-approach-item:nth-child(1).in-view .tj-approach-content .title {
-      animation: textReveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      animation-delay: 0.7s;
-    }
-    .js-ready .tj-approach-item:nth-child(2).in-view .tj-approach-content .title {
-      animation: textReveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      animation-delay: 1.1s;
-    }
-    .js-ready .tj-approach-item:nth-child(3).in-view .tj-approach-content .title {
-      animation: textReveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      animation-delay: 1.5s;
-    }
-    .js-ready .tj-approach-item:nth-child(4).in-view .tj-approach-content .title {
-      animation: textReveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      animation-delay: 1.9s;
-    }
-
-    /* ===== Description: reveals right after the title ===== */
-    .tj-approach-content .desc {
-      opacity: 0;
-      transform: translateY(60px);
-    }
-
-    .js-ready .tj-approach-item:nth-child(1).in-view .tj-approach-content .desc {
-      animation: textReveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      animation-delay: 1s;
-    }
-    .js-ready .tj-approach-item:nth-child(2).in-view .tj-approach-content .desc {
-      animation: textReveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      animation-delay: 1.4s;
-    }
-    .js-ready .tj-approach-item:nth-child(3).in-view .tj-approach-content .desc {
-      animation: textReveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      animation-delay: 1.8s;
-    }
-    .js-ready .tj-approach-item:nth-child(4).in-view .tj-approach-content .desc {
-      animation: textReveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      animation-delay: 2.2s;
-    }
-
-    @keyframes textReveal {
-      0%   { opacity: 0;  transform: translateY(45px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 991px) {
-      .tj-approach-list {
-        gap: 20px !important;
-      }
-    }
-
-/* =========================
-   CARD 01 — default-open polish
-   The first card starts open on page load. These rules make it
-   feel intentionally featured rather than accidentally expanded.
-   ========================= */
-
-/* Suppress the grid-rows open animation on very first paint so the
-   panel appears already-open instantly. JS adds this class before
-   setting vd-expanded, then removes it one frame later. */
-.vd-capability-card.vd-no-transition .vd-capability-panel-wrap {
-  transition: none !important;
+.tj-approach-list {
+  gap: 15px !important;
+  overflow: visible !important;
+}
+.tj-approach-list,
+.tj-approach-item {
+  overflow: visible !important;
 }
 
-/* Expanded num badge — always teal fill (mirrors hover/expanded state) */
-.vd-capability-card.vd-expanded .vd-capability-num {
-  background: #005c59;
-  color: #c6a15b;
+.tj-approach-item {
+  perspective: 1400px !important;
 }
 
-/* Top accent line fully drawn — card reads as permanently active */
-.vd-capability-card.vd-expanded::before {
-  transform: scaleX(1);
+.tj-approach-number {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+  -webkit-backface-visibility: visible;
+  transform-origin: center center;
+  transform: translateZ(0) rotateY(0deg);
+  will-change: transform;
+  box-shadow: none !important;
 }
 
-/* Uncap the title so the full title always reads when expanded */
-.vd-capability-card.vd-expanded .vd-capability-content .title {
-  -webkit-line-clamp: unset;
+.js-ready .tj-approach-number {
+  transform: translateZ(0) rotateY(-80deg);
+}
+
+.js-ready .tj-approach-item.in-view .tj-approach-number {
+  animation: flipReverse 1.2s cubic-bezier(0.45, 0, 0.2, 1) forwards;
+}
+
+@keyframes flipReverse {
+  0%   { transform: translateZ(0) rotateY(-80deg); box-shadow: none; opacity: 1; }
+  50%  { opacity: 1; }
+  99%  { box-shadow: none; opacity: 1; }
+  100% { transform: translateZ(0) rotateY(0deg); box-shadow: 0 10px 25px rgba(0,0,0,0.25); opacity: 1; }
+}
+
+.tj-approach-number {
   overflow: visible;
-  display: block;
 }
 
-/* Full-colour image in the open state — hero / featured treatment */
-.vd-capability-card.vd-expanded .vd-capability-thumb img {
-  filter: grayscale(0) contrast(1.03) brightness(1);
-}
-.vd-capability-card.vd-expanded .vd-capability-thumb::after {
-  opacity: 0.35;
+.tj-approach-number span {
+  display: inline-block;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-origin: center center;
+  transform: translateX(0) translateZ(0) rotateY(0deg);
+  opacity: 1;
+  will-change: transform, opacity;
 }
 
-/* Subtle shadow lift distinguishes the open card from its neighbours */
-.vd-capability-card.vd-expanded {
-  box-shadow: 0 20px 48px rgba(0, 92, 89, 0.13);
+.js-ready .tj-approach-number span {
+  transform: translateX(-100%) translateZ(0) rotateY(-120deg);
+  opacity: 0;
+}
+
+.js-ready .tj-approach-item.in-view .tj-approach-number span {
+  animation: digitFlip 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes digitFlip {
+  0%   { transform: translateX(-100%) translateZ(0) rotateY(-120deg); opacity: 0; }
+  18%  { opacity: 0; }
+  28%  { opacity: 0.6; }
+  40%  { transform: translateX(-55%) translateZ(0) rotateY(-75deg); opacity: 1; }
+  62%  { transform: translateX(-22%) translateZ(0) rotateY(-30deg); opacity: 1; }
+  82%  { transform: translateX(3px) translateZ(0) rotateY(8deg); opacity: 1; }
+  100% { transform: translateX(0) translateZ(0) rotateY(0deg); opacity: 1; }
+}
+
+.tj-approach-content .title {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.js-ready .tj-approach-item:nth-child(1).in-view .tj-approach-content .title {
+  animation: textReveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.7s;
+}
+.js-ready .tj-approach-item:nth-child(2).in-view .tj-approach-content .title {
+  animation: textReveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 1.1s;
+}
+.js-ready .tj-approach-item:nth-child(3).in-view .tj-approach-content .title {
+  animation: textReveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 1.5s;
+}
+.js-ready .tj-approach-item:nth-child(4).in-view .tj-approach-content .title {
+  animation: textReveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 1.9s;
+}
+
+.tj-approach-content .desc {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.js-ready .tj-approach-item:nth-child(1).in-view .tj-approach-content .desc {
+  animation: textReveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 1s;
+}
+.js-ready .tj-approach-item:nth-child(2).in-view .tj-approach-content .desc {
+  animation: textReveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 1.4s;
+}
+.js-ready .tj-approach-item:nth-child(3).in-view .tj-approach-content .desc {
+  animation: textReveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 1.8s;
+}
+.js-ready .tj-approach-item:nth-child(4).in-view .tj-approach-content .desc {
+  animation: textReveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 2.2s;
+}
+
+@keyframes textReveal {
+  0%   { opacity: 0;  transform: translateY(45px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 991px) {
+  .tj-approach-list {
+    gap: 20px !important;
+  }
 }

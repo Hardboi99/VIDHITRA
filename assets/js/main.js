@@ -1504,14 +1504,30 @@
 	   Renamed from ".project-stack" to ".approach-stack" to match the
 	   new section (this isn't a portfolio anymore, so the class name
 	   should reflect what it actually is).
-	
-	   Changed: start: "top top" -> start: "center center"
-	   This means each card now pins once it reaches the VERTICAL CENTER
-	   of the viewport, instead of pinning the instant it touches the very
-	   top edge. The card will appear to glide up, settle centered on
-	   screen, hold there while the user scrolls past it, then release. */
 
-
+	   Each card pins at "top top" — when its top edge hits the top of
+	   the viewport — and stays pinned while the next card scrolls over it.
+	   pinSpacing: false prevents extra whitespace gaps between cards. */
+	const approachStack = gsap.utils.toArray(".approach-stack");
+	if (approachStack.length > 0) {
+		if (device_width > 991) {
+			approachStack.forEach(item => {
+				gsap.to(item, {
+					opacity: 0,
+					scale: 0.94,
+					y: 40,
+					scrollTrigger: {
+						trigger: item,
+						scrub: true,
+						start: "top top",
+						pin: true,
+						pinSpacing: false,
+						markers: false,
+					},
+				});
+			});
+		}
+	}
 
 	/* ==========================================
 	   Vidhitra Approach — Premium 3D Scroll Reveal
@@ -1710,89 +1726,42 @@
 			}
 		}
 
-		function initApproach() {
 
-			const items =
-				document.querySelectorAll(
-					".tj-approach-item"
-				);
 
-			if (!items.length) {
-				return;
-			}
 
-			approachItems =
-				Array.from(items)
-					.map(function (el) {
-
-						return {
-							el: el,
-							number:
-								el.querySelector(
-									".tj-approach-number"
-								),
-							title:
-								el.querySelector(
-									".title"
-								),
-							desc:
-								el.querySelector(
-									".desc"
-								)
-						};
-
-					})
-					.filter(function (item) {
-
-						return (
-							item.number &&
-							item.title &&
-							item.desc
-						);
-
-					});
-
-			window.addEventListener(
-				"scroll",
-				requestUpdate,
-				{ passive: true }
-			);
-
-			window.addEventListener(
-				"resize",
-				requestUpdate,
-				{ passive: true }
-			);
-
-			window.addEventListener(
-				"orientationchange",
-				requestUpdate,
-				{ passive: true }
-			);
-
-			requestUpdate();
-		}
-
-		if (
-			document.readyState ===
-			"loading"
-		) {
-
-			document.addEventListener(
-				"DOMContentLoaded",
-				initApproach,
-				{ once: true }
-			);
-
-		} else {
-
-			initApproach();
-
-		}
 
 	})();
 
+document.addEventListener('DOMContentLoaded', function () {
+	const items = document.querySelectorAll('.tj-approach-item');
+	if (!items.length) return;
 
+	document.body.classList.add('js-ready');
+
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+		if (entry.isIntersecting) {
+			entry.target.classList.add('in-view');
+			observer.unobserve(entry.target);
+
+			const numberEl = entry.target.querySelector('.tj-approach-number');
+			if (numberEl) {
+			numberEl.addEventListener('animationend', function handler() {
+				numberEl.style.animation = 'none';
+				numberEl.style.transform = 'translateZ(0) rotateY(0deg)';
+				numberEl.removeEventListener('animationend', handler);
+			});
+			}
+		}
+		});
+	}, {
+		threshold: 0.2,
+		rootMargin: '0px 0px -30px 0px'
+	});
+
+	items.forEach((item) => observer.observe(item));
+	});
+	
 	document.addEventListener('DOMContentLoaded', function () {
 		var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 		var el = document.querySelector('.counter-val');
@@ -2539,15 +2508,15 @@ gsap.to(".vd-about-frame", {
   ---------------------------------------------------------- */
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const faqItems = document.querySelectorAll('.h6-project-item');
+  const faqItems = document.querySelectorAll('.h6-project-section .h6-project-item, .tj-faq .accordion-item, .tj-faq-style .accordion-item, .h7-faq-style .accordion-item, .accordion-item.wow');
 
   if (faqItems.length && !prefersReducedMotion) {
 
-    // Set initial state — items start slightly below and invisible
+    // Match the real FAQ accordion cards, not the unrelated project cards.
     faqItems.forEach(function (item, i) {
       item.style.opacity = '0';
-      item.style.transform = 'translateY(32px)';
-      item.style.transition = 'opacity 0.7s ease ' + (i * 0.08) + 's, transform 0.7s ease ' + (i * 0.08) + 's';
+      item.style.transform = 'translateY(28px)';
+      item.style.transition = 'opacity 0.6s ease ' + (i * 0.08) + 's, transform 0.6s ease ' + (i * 0.08) + 's';
     });
 
     const faqObserver = new IntersectionObserver(function (entries) {
@@ -2559,8 +2528,8 @@ gsap.to(".vd-about-frame", {
         }
       });
     }, {
-      threshold: 0.08,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.12,
+      rootMargin: '0px 0px -30px 0px'
     });
 
     faqItems.forEach(function (item) {
@@ -2568,7 +2537,6 @@ gsap.to(".vd-about-frame", {
     });
 
   } else if (faqItems.length && prefersReducedMotion) {
-    // Reveal immediately, no animation
     faqItems.forEach(function (item) {
       item.style.opacity = '1';
       item.style.transform = 'none';

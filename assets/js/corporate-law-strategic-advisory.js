@@ -151,7 +151,7 @@
               trigger: banner,
               start: 'top bottom',
               end: 'bottom top',
-              scrub: true
+              scrub: 1.2
             }
           });
         }
@@ -170,51 +170,81 @@
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          stagger: 0.1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.cla-triggers__grid',
-            start: 'top 80%'
-          }
-        }
-      );
-    }
-  }
-
-  /* ── 4. Who We Support Interactive System ───────────────── */
-  function initAudience() {
-    var items = document.querySelectorAll('.cla-audience__item');
-    if (!items.length) return;
-
-    items[0].classList.add('is-active');
-
-    items.forEach(function (item) {
-      item.addEventListener('mouseenter', function () {
-        items.forEach(function (el) { el.classList.remove('is-active'); });
-        item.classList.add('is-active');
-      });
-    });
-
-    if (isReducedMotion) return;
-
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      gsap.fromTo(items,
-        { y: 25, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.7,
+          duration: 0.85,
           stagger: 0.08,
           ease: 'power3.out',
           scrollTrigger: {
-            trigger: '.cla-audience__list',
-            start: 'top 80%'
+            trigger: '.cla-triggers__grid',
+            start: 'top 82%'
           }
         }
       );
     }
   }
+
+ /* ── 4. Who We Support Interactive System ───────────────── */
+function initAudience() {
+  var cards = document.querySelectorAll('.cla-audience-card');
+  if (!cards.length) return;
+
+  var counterCurrent = document.querySelector('.cla-audience__counter-current');
+  var counterFill = document.querySelector('.cla-audience__counter-fill');
+  var total = cards.length;
+
+  cards[0].classList.add('is-active');
+
+  function setActive(index) {
+    cards.forEach(function (c) { c.classList.remove('is-active'); });
+    cards[index].classList.add('is-active');
+    if (counterCurrent) counterCurrent.textContent = String(index + 1).padStart(2, '0');
+    if (counterFill) counterFill.style.width = (((index + 1) / total) * 100) + '%';
+  }
+
+  cards.forEach(function (card, i) {
+    card.addEventListener('mouseenter', function () { setActive(i); });
+
+    card.addEventListener('mousemove', function (e) {
+      var rect = card.getBoundingClientRect();
+      var x = ((e.clientX - rect.left) / rect.width) * 100;
+      var y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty('--mx', x + '%');
+      card.style.setProperty('--my', y + '%');
+    });
+  });
+
+  if (isReducedMotion) return;
+
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.fromTo(cards,
+      { y: 35, opacity: 0, rotationX: -6, transformOrigin: 'top center' },
+      {
+        y: 0,
+        opacity: 1,
+        rotationX: 0,
+        duration: 0.85,
+        stagger: 0.08,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.cla-audience__grid',
+          start: 'top 82%'
+        }
+      }
+    );
+
+    gsap.fromTo('.cla-audience__counter-fill',
+      { width: '0%' },
+      {
+        width: (1 / total * 100) + '%',
+        duration: 0.85,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.cla-audience__grid',
+          start: 'top 82%'
+        }
+      }
+    );
+  }
+}
 
   /* ── 5. How We Help You Service Matrix ──────────────────── */
   function initServices() {
@@ -223,16 +253,16 @@
 
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       gsap.fromTo(rows,
-        { y: 30, opacity: 0 },
+        { y: 28, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.75,
-          stagger: 0.07,
+          duration: 0.8,
+          stagger: 0.06,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: '.cla-services__matrix',
-            start: 'top 80%'
+            start: 'top 82%'
           }
         }
       );
@@ -256,7 +286,7 @@
             ease: 'power3.out',
             scrollTrigger: {
               trigger: stmt,
-              start: 'top 80%'
+              start: 'top 82%'
             }
           }
         );
@@ -268,7 +298,7 @@
           { width: 0 },
           {
             width: '90px',
-            duration: 0.85,
+            duration: 0.9,
             ease: 'power2.out',
             scrollTrigger: {
               trigger: line,
@@ -287,16 +317,16 @@
 
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       gsap.fromTo(items,
-        { y: 30, opacity: 0 },
+        { y: 28, opacity: 0 },
         {
           y: 0,
           opacity: 1,
           duration: 0.8,
-          stagger: 0.1,
+          stagger: 0.08,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: '.cla-matters-list__table',
-            start: 'top 80%'
+            start: 'top 82%'
           }
         }
       );
@@ -318,7 +348,7 @@
             trigger: cta,
             start: 'top bottom',
             end: 'bottom top',
-            scrub: true
+            scrub: 1.2
           }
         });
       }
@@ -357,6 +387,12 @@
     initMatters();
     initCTA();
     initGenericReveals();
+
+    window.addEventListener('load', function () {
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+      }
+    });
   }
 
   if (document.readyState === 'loading') {

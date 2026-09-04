@@ -63,7 +63,7 @@
             trigger: '.fgc-hero',
             start: 'top top',
             end: 'bottom top',
-            scrub: true
+            scrub: 1.2
           }
         });
 
@@ -75,7 +75,7 @@
             trigger: '.fgc-hero',
             start: 'top top',
             end: 'bottom top',
-            scrub: true
+            scrub: 1.2
           }
         });
       }
@@ -447,7 +447,7 @@
             trigger: showcaseSection,
             start: 'top bottom',
             end: 'bottom top',
-            scrub: true
+            scrub: 1.2
           }
         });
       }
@@ -459,8 +459,8 @@
           {
             y: 0,
             opacity: 1,
-            duration: 0.75,
-            stagger: 0.08,
+            duration: 0.8,
+            stagger: 0.07,
             ease: 'power3.out',
             scrollTrigger: {
               trigger: '.fgc-showcase-grid',
@@ -532,12 +532,12 @@
       });
 
       gsap.fromTo(items,
-        { y: 30, opacity: 0 },
+        { y: 28, opacity: 0 },
         {
           y: 0,
-          opacity: 0.45,
-          duration: 0.7,
-          stagger: 0.07,
+          opacity: 1,
+          duration: 0.75,
+          stagger: 0.06,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: '.fgc-audience__list',
@@ -590,7 +590,7 @@
             trigger: contSection,
             start: 'top bottom',
             end: 'bottom top',
-            scrub: true
+            scrub: 1.2
           }
         });
       }
@@ -750,6 +750,12 @@
     initContinuity();
     initCTA();
     applyReducedMotion();
+
+    window.addEventListener('load', function () {
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+      }
+    });
   }
 
   if (document.readyState === 'loading') {

@@ -18,6 +18,9 @@
 /* ==========================================================
    0. DESIGN SYSTEM VARIABLES (Bound to main.css Theme)
    ========================================================== */
+
+
+   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Playfair+Display:ital@1&display=swap');
 :root {
   /* Brand Palette from main.css & Client Guidelines */
   --cla-magenta: var(--tj-color-cta-pink, #9A0064);
@@ -61,7 +64,18 @@
   --cla-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Page Scoping & Reset */
+/* Page Scoping & Reset with GPU Acceleration */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.mega-menu-service-nav {
+  display: none !important;
+}
+
 .cla-page {
   font-family: var(--cla-ff-body);
   color: var(--cla-text);
@@ -69,6 +83,27 @@
   overflow-x: hidden;
   line-height: 1.68;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hardware accelerated sections & cards */
+.cla-hero,
+.cla-hero__visual-frame,
+.cla-matters,
+.cla-triggers,
+.cla-audience,
+.cla-services,
+.cla-perspective,
+.cla-matters-list,
+.cla-cta,
+.cla-audience-card,
+.cla-service-row,
+.cla-trigger-card,
+.cla-matter-item {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* Base Eyebrow System */
@@ -677,16 +712,47 @@
 }
 
 /* ==========================================================
-   4. WHO WE SUPPORT (Phase 04)
+   4. WHO WE SUPPORT (Phase 04) — CLIENT SEGMENT GRID
    ========================================================== */
 .cla-audience {
-  background: var(--cla-white);
-  padding: 130px 0 140px;
   position: relative;
+  background: var(--cla-white);
+  padding: 150px 0 160px;
+  overflow: hidden;
 }
+
+.cla-audience__bg {
+  position: absolute;
+  top: -4%;
+  right: -2%;
+  z-index: 0;
+  pointer-events: none;
+  line-height: 1;
+}
+.cla-audience__bg-num {
+  font-family: var(--cla-ff-heading);
+  font-size: clamp(220px, 26vw, 420px);
+  font-weight: 800;
+  color: var(--cla-teal);
+  opacity: 0.035;
+  letter-spacing: -0.05em;
+}
+
+.cla-audience .container {
+  position: relative;
+  z-index: 1;
+}
+
 .cla-audience__header {
-  max-width: 740px;
-  margin-bottom: 4rem;
+  max-width: 900px;
+  margin-bottom: 4.5rem;
+}
+.cla-audience__header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 .cla-audience__heading {
   font-family: var(--cla-ff-heading);
@@ -694,92 +760,199 @@
   font-weight: 800;
   line-height: 1.1;
   color: var(--cla-teal);
-  margin: 0.6rem 0 1rem;
+  margin: 0.6rem 0 0;
 }
 .cla-audience__statement {
   font-family: var(--cla-ff-body);
   font-size: 16.5px;
   line-height: 1.75;
   color: var(--cla-text-muted);
-  margin: 0;
+  margin: 1.25rem 0 0;
+  max-width: 620px;
 }
 
-.cla-audience__list {
-  border-top: 1px solid var(--cla-rule);
-  position: relative;
-}
-.cla-audience__item {
-  padding: 2.2rem 1.5rem;
-  border-bottom: 1px solid var(--cla-rule);
+.cla-audience__counter {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  position: relative;
-  transition: background 0.35s ease, transform 0.4s var(--cla-ease-smooth), opacity 0.4s ease;
-  cursor: pointer;
+  gap: 0.75rem;
+  padding-bottom: 0.5rem;
 }
-.cla-audience__item::before {
+.cla-audience__counter-current {
+  font-family: var(--cla-ff-heading);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--cla-magenta);
+  min-width: 20px;
+  transition: color 0.3s ease;
+}
+.cla-audience__counter-total {
+  font-family: var(--cla-ff-heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cla-text-muted);
+}
+.cla-audience__counter-line {
+  position: relative;
+  width: 90px;
+  height: 2px;
+  background: var(--cla-rule);
+  overflow: hidden;
+  border-radius: 2px;
+}
+.cla-audience__counter-fill {
+  position: absolute;
+  inset: 0;
+  width: 16.66%;
+  background: linear-gradient(90deg, var(--cla-magenta), var(--cla-teal));
+  transition: width 0.45s var(--cla-ease-smooth);
+}
+
+.cla-audience__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.cla-audience-card {
+  position: relative;
+  background: var(--cla-cream-light);
+  border: 1px solid var(--cla-rule);
+  border-radius: 16px;
+  padding: 2.6rem 2rem 2.4rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.5s var(--cla-ease-smooth), box-shadow 0.5s var(--cla-ease-smooth),
+              border-color 0.4s ease, background 0.4s ease;
+}
+
+.cla-audience-card__spotlight {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), var(--cla-magenta-subtle), transparent 65%);
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.cla-audience-card:hover .cla-audience-card__spotlight { opacity: 1; }
+
+.cla-audience-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(154, 0, 100, 0.3);
+  background: var(--cla-white);
+  box-shadow: 0 28px 60px rgba(58, 24, 55, 0.12), 0 6px 18px rgba(0, 92, 89, 0.06);
+}
+
+.cla-audience-card::before {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2.5px;
+  top: 0; left: 0;
+  width: 0; height: 3px;
   background: linear-gradient(90deg, var(--cla-magenta), var(--cla-teal));
-  transition: width 0.4s var(--cla-ease-smooth);
+  transition: width 0.5s var(--cla-ease-smooth);
+  z-index: 2;
 }
-.cla-audience__item:hover::before,
-.cla-audience__item.is-active::before {
-  width: 100%;
+.cla-audience-card:hover::before { width: 100%; }
+
+.cla-audience-card__watermark {
+  position: absolute;
+  top: -6px;
+  right: 14px;
+  font-family: var(--cla-ff-heading);
+  font-size: 92px;
+  font-weight: 800;
+  color: var(--cla-teal);
+  opacity: 0.05;
+  z-index: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
-.cla-audience__item:hover,
-.cla-audience__item.is-active {
-  background: var(--cla-magenta-subtle);
-  transform: translateX(10px);
-}
-.cla-audience__list:hover .cla-audience__item:not(:hover):not(.is-active) {
-  opacity: 0.45;
+.cla-audience-card:hover .cla-audience-card__watermark {
+  opacity: 0.09;
+  transform: translateY(-4px);
 }
 
-.cla-audience__item-left {
+.cla-audience-card__icon {
+  position: relative;
+  z-index: 1;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 2rem;
-}
-.cla-audience__item-num {
-  font-family: var(--cla-ff-heading);
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  color: var(--cla-text-muted);
-  transition: color 0.3s ease;
-}
-.cla-audience__item:hover .cla-audience__item-num,
-.cla-audience__item.is-active .cla-audience__item-num {
+  justify-content: center;
+  background: linear-gradient(135deg, var(--cla-magenta-subtle), var(--cla-teal-subtle));
+  border: 1px solid rgba(154, 0, 100, 0.15);
+  margin-bottom: 1.5rem;
+  font-size: 22px;
   color: var(--cla-magenta);
+  transition: transform 0.45s var(--cla-ease-spring), background 0.4s ease, color 0.4s ease;
 }
-.cla-audience__item-title {
+.cla-audience-card:hover .cla-audience-card__icon {
+  transform: scale(1.1) rotate(-6deg);
+  background: linear-gradient(135deg, var(--cla-magenta), var(--cla-teal));
+  color: var(--cla-white);
+}
+
+.cla-audience-card__num {
+  position: relative;
+  z-index: 1;
+  display: block;
   font-family: var(--cla-ff-heading);
-  font-size: clamp(20px, 2.4vw, 28px);
+  font-size: 12px;
   font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--cla-gold-vibrant);
+  margin-bottom: 0.6rem;
+}
+
+.cla-audience-card__title {
+  position: relative;
+  z-index: 1;
+  font-family: var(--cla-ff-serif);
+  font-style: italic;
+  font-size: 24px;
+  font-weight: 400;
   color: var(--cla-text);
-  line-height: 1.25;
+  line-height: 1.3;
+  margin: 0 0 0.85rem;
   transition: color 0.3s ease;
 }
-.cla-audience__item:hover .cla-audience__item-title,
-.cla-audience__item.is-active .cla-audience__item-title {
-  color: var(--cla-teal);
-}
-.cla-audience__item-desc {
+.cla-audience-card:hover .cla-audience-card__title { color: var(--cla-teal); }
+
+.cla-audience-card__desc {
+  position: relative;
+  z-index: 1;
   font-family: var(--cla-ff-body);
   font-size: 14.5px;
+  line-height: 1.7;
   color: var(--cla-text-muted);
-  max-width: 420px;
-  line-height: 1.6;
-  margin: 0;
-  text-align: right;
+  margin: 0 0 1.75rem;
 }
+
+.cla-audience-card__chip {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cla-magenta);
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.cla-audience-card:hover .cla-audience-card__chip {
+  opacity: 1;
+  transform: translateX(0);
+}
+.cla-audience-card__chip i { transition: transform 0.35s ease; }
+.cla-audience-card:hover .cla-audience-card__chip i { transform: translateX(4px); }
+
+.cla-audience-card.is-active { border-color: rgba(154, 0, 100, 0.35); }
+
 
 /* ==========================================================
    5. HOW WE HELP YOU (Phase 05) — PRACTICE SCOPE
@@ -1299,14 +1472,11 @@
   .cla-matter-item__action {
     justify-content: flex-start;
   }
-  .cla-audience__item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
+  .cla-audience__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .cla-audience__item-desc {
-    text-align: left;
-  }
+  .cla-audience__bg-num { display: none; }
+
   .cla-arch-banner__media {
     width: 100%;
   }
@@ -1323,6 +1493,10 @@
 }
 
 @media (max-width: 767px) {
+
+    .cla-audience__grid { grid-template-columns: 1fr; }
+  .cla-audience__header-row { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .cla-audience-card { padding: 2.2rem 1.6rem; }
   .cla-hero__strip-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -1343,4 +1517,38 @@
   .cla-perspective__statement {
     font-size: 26px;
   }
+}
+
+/* ==========================================================
+   ELEGANT ITALIC SYSTEM (Adaptive Light & Dark Contexts)
+   ========================================================== */
+.elegant-italic {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.18rem;
+  letter-spacing: 0.3px;
+  line-height: 1.65;
+  font-optical-sizing: auto;
+}
+
+/* ── Light Sections: Crisp Dark Typography ── */
+.cla-matters .elegant-italic,
+.cla-triggers .elegant-italic,
+.cla-audience .elegant-italic,
+.cla-matters-list .elegant-italic,
+.elegant-italic--dark {
+  color: #383838 !important;
+  text-shadow: none;
+}
+
+/* ── Dark Sections: Luminous White & Soft Champagne Typography ── */
+.cla-hero .elegant-italic,
+.cla-services .elegant-italic,
+.cla-perspective .elegant-italic,
+.cla-cta .elegant-italic,
+.elegant-italic--white,
+.elegant-italic--light {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
 }

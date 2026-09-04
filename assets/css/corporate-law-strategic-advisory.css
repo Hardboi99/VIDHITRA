@@ -1,0 +1,1346 @@
+/**
+ * VIDHITRA CORPORATE ADVISORS LLP
+ * Capability Detail Page: Corporate Law & Strategic Advisory
+ * Premium Institutional Editorial Stylesheet
+ * 
+ * Inherits & harmonizes with the main.css theme design tokens:
+ * - Signature Capability & CTA Color: #9A0064 (Magenta / Vivid Plum-Pink)
+ * - Primary Brand Color: #005C59 (Deep Teal) & #137D6E (Teal Alt)
+ * - Deep Dark Plum: #3A1837 & #52104C
+ * - Background Light / Cream: #F7F5F1 & #F0EDE6
+ * - Static Content / Body Text: #303030 & #6B6B6B
+ * - Prestige Gold Accents: #C6A15B & #C5981A
+ * - Pure White: #FFFFFF
+ *
+ * Namespace: .cla-*
+ */
+
+/* ==========================================================
+   0. DESIGN SYSTEM VARIABLES (Bound to main.css Theme)
+   ========================================================== */
+:root {
+  /* Brand Palette from main.css & Client Guidelines */
+  --cla-magenta: var(--tj-color-cta-pink, #9A0064);
+  --cla-magenta-glow: rgba(154, 0, 100, 0.28);
+  --cla-magenta-subtle: rgba(154, 0, 100, 0.06);
+
+  --cla-teal: var(--tj-color-theme-primary, #005C59);
+  --cla-teal-alt: var(--tj-color-teal-alt, #137D6E);
+  --cla-teal-glow: rgba(0, 92, 89, 0.35);
+  --cla-teal-subtle: rgba(0, 92, 89, 0.05);
+
+  --cla-plum: var(--tj-color-border-1, #3A1837);
+  --cla-plum-dark: #2B0F28;
+  --cla-plum-deep: #1B071A;
+  --cla-plum-surface: rgba(58, 24, 55, 0.45);
+
+  --cla-gold: var(--tj-color-gold, #C6A15B);
+  --cla-gold-vibrant: var(--tj-color-gold-alt, #C5981A);
+  --cla-gold-subtle: rgba(198, 161, 91, 0.12);
+
+  --cla-cream: var(--tj-color-theme-bg, #F7F5F1);
+  --cla-cream-light: #FAF9F6;
+  --cla-cream-alt: var(--tj-color-theme-bg-2, #F0EDE6);
+  --cla-white: var(--tj-color-common-white, #FFFFFF);
+
+  --cla-text: var(--tj-color-text-body, #303030);
+  --cla-text-muted: var(--tj-color-text-body-2, #6B6B6B);
+  --cla-text-light: rgba(255, 255, 255, 0.82);
+  --cla-text-light-muted: rgba(255, 255, 255, 0.62);
+
+  --cla-rule: rgba(48, 48, 48, 0.1);
+  --cla-rule-dark: rgba(255, 255, 255, 0.12);
+
+  /* Typography */
+  --cla-ff-serif: 'DM Serif Display', Georgia, serif;
+  --cla-ff-heading: var(--tj-ff-heading, 'Libre Franklin', serif);
+  --cla-ff-body: var(--tj-ff-body, 'Lato', sans-serif);
+
+  /* Physics & Easing */
+  --cla-ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --cla-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Page Scoping & Reset */
+.cla-page {
+  font-family: var(--cla-ff-body);
+  color: var(--cla-text);
+  background-color: var(--cla-cream);
+  overflow-x: hidden;
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Base Eyebrow System */
+.cla-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--cla-ff-heading);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cla-magenta);
+  margin-bottom: 0.85rem;
+}
+.cla-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 1.25rem;
+  height: 2px;
+  background: var(--cla-magenta);
+  vertical-align: middle;
+}
+.cla-eyebrow--gold {
+  color: var(--cla-gold-vibrant);
+}
+.cla-eyebrow--gold::before {
+  background: var(--cla-gold-vibrant);
+}
+.cla-eyebrow--teal {
+  color: var(--cla-teal);
+}
+.cla-eyebrow--teal::before {
+  background: var(--cla-teal);
+}
+
+/* Scroll Reveals */
+.cla-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s var(--cla-ease-smooth), transform 0.85s var(--cla-ease-smooth);
+  will-change: opacity, transform;
+}
+.cla-reveal.is-inview {
+  opacity: 1;
+  transform: translateY(0);
+}
+.cla-reveal--d1 { transition-delay: 0.12s; }
+.cla-reveal--d2 { transition-delay: 0.24s; }
+.cla-reveal--d3 { transition-delay: 0.36s; }
+.cla-reveal--d4 { transition-delay: 0.48s; }
+
+/* Custom CTA Button styling adhering to Client Brand (#9A0064 & #005C59) */
+.cla-page .tj-primary-btn {
+  background-color: var(--cla-magenta);
+  box-shadow: 0 10px 30px var(--cla-magenta-glow);
+  transition: all 0.35s ease;
+}
+.cla-page .tj-primary-btn .btn_inner::before {
+  background-color: var(--cla-teal);
+}
+.cla-page .tj-primary-btn:hover {
+  background-color: var(--cla-plum);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(58, 24, 55, 0.45);
+}
+.cla-page .tj-primary-btn:hover .btn_inner::before {
+  width: 100%;
+}
+
+/* ==========================================================
+   1. HERO SECTION (Phase 01)
+   ========================================================== */
+.cla-hero {
+    position: relative;
+    min-height: 82vh;
+    background: radial-gradient(circle at 65% 30%, #3A1837 0%, #240C22 45%, #130412 100%);
+    color: var(--cla-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 105px 0 142px;
+    overflow: hidden;
+}
+
+.cla-hero__ambient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.cla-hero__glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.5;
+  will-change: transform;
+}
+.cla-hero__glow--plum {
+  top: 10%;
+  right: 5%;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(154, 0, 100, 0.4) 0%, rgba(58, 24, 55, 0.2) 50%, transparent 72%);
+}
+.cla-hero__glow--gold {
+  bottom: 5%;
+  left: 5%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(198, 161, 91, 0.22) 0%, rgba(0, 92, 89, 0.12) 55%, transparent 75%);
+}
+
+.cla-hero__container {
+  position: relative;
+  z-index: 2;
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 2.5rem;
+  margin: 0 auto;
+}
+
+.cla-hero__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.cla-hero__eyebrow {
+  color: var(--cla-gold-vibrant);
+}
+.cla-hero__eyebrow::before {
+  background: var(--cla-gold-vibrant);
+}
+
+.cla-hero__h1 {
+  font-family: var(--cla-ff-heading);
+  font-size: clamp(34px, 4.4vw, 64px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: var(--cla-white);
+  margin: 0.6rem 0 1.25rem;
+}
+.cla-hero__tagline {
+  font-family: var(--cla-ff-serif);
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--cla-gold);
+  line-height: 1.35;
+  margin: 0 0 1.5rem;
+}
+.cla-hero__desc {
+  font-family: var(--cla-ff-body);
+  font-size: 16.5px;
+  line-height: 1.78;
+  color: var(--cla-text-light);
+  max-width: 620px;
+  margin: 0 0 2.4rem;
+}
+
+.cla-hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+.cla-hero__secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.95rem 1.75rem;
+  border: 1px solid rgba(198, 161, 91, 0.5);
+  border-radius: 50px;
+  color: var(--cla-gold);
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.35s ease;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+}
+.cla-hero__secondary-btn:hover {
+  background: var(--cla-gold);
+  border-color: var(--cla-gold);
+  color: var(--cla-plum-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(198, 161, 91, 0.25);
+}
+
+/* Hero Abstract Architectural Visual (Right Side) */
+.cla-hero__visual {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cla-hero__visual-stage {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 4 / 3.6;
+}
+.cla-hero__block-back {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 72%;
+  height: 65px;
+  background: var(--cla-magenta);
+  border-radius: 4px;
+  z-index: 1;
+  box-shadow: 0 12px 32px var(--cla-magenta-glow);
+  transition: transform 0.6s var(--cla-ease-smooth);
+}
+.cla-hero__block-front {
+  position: absolute;
+  bottom: -18px;
+  left: 8%;
+  width: 220px;
+  height: 55px;
+  background: var(--cla-teal);
+  border-radius: 4px;
+  z-index: 1;
+  box-shadow: 0 12px 32px var(--cla-teal-glow);
+  transition: transform 0.6s var(--cla-ease-smooth);
+}
+.cla-hero__visual-frame {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  height: 90%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(198, 161, 91, 0.35);
+  background: var(--cla-plum-dark);
+  box-shadow: 0 35px 80px rgba(19, 4, 18, 0.85);
+  transform-style: preserve-3d;
+  transition: transform 0.6s var(--cla-ease-smooth), box-shadow 0.6s ease;
+}
+.cla-hero__visual-frame:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 45px 100px rgba(19, 4, 18, 0.95), 0 0 50px var(--cla-magenta-glow);
+}
+.cla-hero__visual-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s var(--cla-ease-smooth);
+}
+.cla-hero__visual-frame:hover .cla-hero__visual-img {
+  transform: scale(1.05);
+}
+
+.cla-hero__visual-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  z-index: 3;
+  background: var(--cla-white);
+  color: var(--cla-teal);
+  padding: 1.1rem 1.4rem;
+  border-radius: 6px;
+  border-left: 4px solid var(--cla-magenta);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+  max-width: 260px;
+}
+.cla-hero__visual-badge-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cla-magenta);
+  display: block;
+  margin-bottom: 2px;
+}
+.cla-hero__visual-badge-text {
+  font-family: var(--cla-ff-heading);
+  font-size: 13.5px;
+  font-weight: 800;
+  line-height: 1.35;
+  color: var(--cla-teal);
+  margin: 0;
+}
+
+/* Bottom Stats Strip */
+.cla-hero__strip {
+  position: relative;
+  z-index: 3;
+  margin-top: 4.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 2rem;
+}
+.cla-hero__strip-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.cla-hero__stat-item {
+  display: flex;
+  flex-direction: column;
+}
+.cla-hero__stat-value {
+  font-family: var(--cla-ff-heading);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--cla-gold);
+  line-height: 1.2;
+}
+.cla-hero__stat-label {
+  font-family: var(--cla-ff-body);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cla-text-light-muted);
+  margin-top: 4px;
+}
+
+/* ==========================================================
+   2. WHY THIS MATTERS (Phase 02)
+   ========================================================== */
+.cla-matters {
+  background: var(--cla-cream);
+  padding: 130px 0 140px;
+  position: relative;
+}
+.cla-matters__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.cla-matters__left {
+  position: sticky;
+  top: 120px;
+}
+.cla-matters__heading {
+  font-family: var(--cla-ff-heading);
+  font-size: clamp(30px, 3.8vw, 54px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--cla-teal);
+  margin: 0.75rem 0 1.5rem;
+}
+.cla-matters__statement {
+  font-family: var(--cla-ff-serif);
+  font-size: clamp(22px, 2.3vw, 30px);
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--cla-text);
+  margin: 0 0 1.5rem;
+  padding-left: 1.5rem;
+  border-left: 3.5px solid var(--cla-magenta);
+}
+
+.cla-matters__right {
+  padding-top: 1rem;
+}
+.cla-matters__p {
+  font-family: var(--cla-ff-body);
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--cla-text);
+  margin-bottom: 1.75rem;
+}
+.cla-matters__p:last-of-type {
+  margin-bottom: 2.5rem;
+}
+
+/* Architectural Reference Banner inside Why This Matters */
+.cla-arch-banner {
+  position: relative;
+  margin: 3.5rem 0 2rem;
+  width: 100%;
+}
+.cla-arch-banner__block-top {
+  position: absolute;
+  top: -14px;
+  right: -16px;
+  width: 62%;
+  height: 48px;
+  background: var(--cla-magenta);
+  border-radius: 4px;
+  z-index: 1;
+  box-shadow: 0 8px 24px var(--cla-magenta-glow);
+  transition: transform 0.6s var(--cla-ease-smooth);
+}
+.cla-arch-banner__block-bottom {
+  position: absolute;
+  bottom: -15px;
+  left: 8%;
+  width: 240px;
+  height: 48px;
+  background: var(--cla-teal);
+  border-radius: 4px;
+  z-index: 1;
+  box-shadow: 0 8px 24px var(--cla-teal-glow);
+  transition: transform 0.6s var(--cla-ease-smooth);
+}
+.cla-arch-banner:hover .cla-arch-banner__block-top {
+  transform: translate(6px, -4px);
+}
+.cla-arch-banner:hover .cla-arch-banner__block-bottom {
+  transform: translate(-6px, 4px);
+}
+.cla-arch-banner__media {
+  position: relative;
+  z-index: 2;
+  width: 78%;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.16);
+  background: var(--cla-plum-dark);
+}
+.cla-arch-banner__img {
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.8s var(--cla-ease-smooth);
+}
+.cla-arch-banner:hover .cla-arch-banner__img {
+  transform: scale(1.035);
+}
+.cla-arch-banner__card {
+  position: absolute;
+  right: 0;
+  bottom: 18px;
+  z-index: 3;
+  width: 52%;
+  max-width: 360px;
+  background: var(--cla-white);
+  padding: 1.8rem 1.6rem;
+  border-radius: 6px;
+  box-shadow: 0 20px 50px rgba(58, 24, 55, 0.15), 0 4px 15px rgba(0, 92, 89, 0.08);
+  border-left: 4px solid var(--cla-magenta);
+  transition: transform 0.4s var(--cla-ease-smooth), box-shadow 0.4s ease;
+}
+.cla-arch-banner:hover .cla-arch-banner__card {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 60px rgba(58, 24, 55, 0.2), 0 6px 20px rgba(154, 0, 100, 0.15);
+}
+.cla-arch-banner__tag {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cla-magenta);
+  display: block;
+  margin-bottom: 0.45rem;
+}
+.cla-arch-banner__title {
+  font-family: var(--cla-ff-heading);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--cla-teal);
+  line-height: 1.25;
+  margin: 0 0 0.6rem;
+}
+.cla-arch-banner__desc {
+  font-family: var(--cla-ff-body);
+  font-size: 13.5px !important;
+  line-height: 1.6 !important;
+  color: var(--cla-text-muted) !important;
+  margin: 0 0 1.2rem !important;
+}
+.cla-arch-banner__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1.1rem;
+  border: 1.5px solid var(--cla-magenta);
+  border-radius: 4px;
+  color: var(--cla-magenta);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+.cla-arch-banner__btn:hover {
+  background: var(--cla-magenta);
+  color: var(--cla-white);
+  box-shadow: 0 6px 18px var(--cla-magenta-glow);
+}
+.cla-arch-banner__btn:hover i {
+  transform: translateX(4px);
+}
+
+/* ==========================================================
+   3. WHEN YOU NEED LEGAL COUNSEL (Phase 03)
+   ========================================================== */
+.cla-triggers {
+  background: radial-gradient(circle at 70% 30%, #3A1837 0%, #250D23 60%, #150514 100%);
+  color: var(--cla-white);
+  padding: 130px 0 140px;
+  position: relative;
+  overflow: hidden;
+}
+.cla-triggers__header {
+  max-width: 760px;
+  margin-bottom: 4rem;
+}
+.cla-triggers__heading {
+  font-family: var(--cla-ff-heading);
+  font-size: clamp(28px, 3.6vw, 48px);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--cla-white);
+  margin: 0.6rem 0 1rem;
+}
+.cla-triggers__intro {
+  font-family: var(--cla-ff-body);
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: var(--cla-text-light);
+  margin: 0;
+}
+
+.cla-triggers__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.cla-trigger-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2.4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 230px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: transform 0.4s var(--cla-ease-smooth), border-color 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+}
+.cla-trigger-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cla-magenta), var(--cla-teal));
+  transition: width 0.45s var(--cla-ease-smooth);
+}
+.cla-trigger-card:hover::before {
+  width: 100%;
+}
+.cla-trigger-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(154, 0, 100, 0.5);
+  box-shadow: 0 20px 50px rgba(19, 4, 18, 0.6), 0 0 30px var(--cla-magenta-glow);
+}
+
+.cla-trigger-card__top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.cla-trigger-card__num {
+  font-family: var(--cla-ff-heading);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--cla-gold);
+  transition: transform 0.35s ease, color 0.35s ease;
+}
+.cla-trigger-card:hover .cla-trigger-card__num {
+  transform: translateX(4px);
+  color: var(--cla-magenta);
+}
+.cla-trigger-card__arrow {
+  color: var(--cla-magenta);
+  font-size: 15px;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.cla-trigger-card:hover .cla-trigger-card__arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.cla-trigger-card__title {
+  font-family: var(--cla-ff-heading);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--cla-white);
+  line-height: 1.38;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+/* ==========================================================
+   4. WHO WE SUPPORT (Phase 04)
+   ========================================================== */
+.cla-audience {
+  background: var(--cla-white);
+  padding: 130px 0 140px;
+  position: relative;
+}
+.cla-audience__header {
+  max-width: 740px;
+  margin-bottom: 4rem;
+}
+.cla-audience__heading {
+  font-family: var(--cla-ff-heading);
+  font-size: clamp(28px, 3.6vw, 48px);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--cla-teal);
+  margin: 0.6rem 0 1rem;
+}
+.cla-audience__statement {
+  font-family: var(--cla-ff-body);
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: var(--cla-text-muted);
+  margin: 0;
+}
+
+.cla-audience__list {
+  border-top: 1px solid var(--cla-rule);
+  position: relative;
+}
+.cla-audience__item {
+  padding: 2.2rem 1.5rem;
+  border-bottom: 1px solid var(--cla-rule);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative;
+  transition: background 0.35s ease, transform 0.4s var(--cla-ease-smooth), opacity 0.4s ease;
+  cursor: pointer;
+}
+.cla-audience__item::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, var(--cla-magenta), var(--cla-teal));
+  transition: width 0.4s var(--cla-ease-smooth);
+}
+.cla-audience__item:hover::before,
+.cla-audience__item.is-active::before {
+  width: 100%;
+}
+.cla-audience__item:hover,
+.cla-audience__item.is-active {
+  background: var(--cla-magenta-subtle);
+  transform: translateX(10px);
+}
+.cla-audience__list:hover .cla-audience__item:not(:hover):not(.is-active) {
+  opacity: 0.45;
+}
+
+.cla-audience__item-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.cla-audience__item-num {
+  font-family: var(--cla-ff-heading);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--cla-text-muted);
+  transition: color 0.3s ease;
+}
+.cla-audience__item:hover .cla-audience__item-num,
+.cla-audience__item.is-active .cla-audience__item-num {
+  color: var(--cla-magenta);
+}
+.cla-audience__item-title {
+  font-family: var(--cla-ff-heading);
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 800;
+  color: var(--cla-text);
+  line-height: 1.25;
+  transition: color 0.3s ease;
+}
+.cla-audience__item:hover .cla-audience__item-title,
+.cla-audience__item.is-active .cla-audience__item-title {
+  color: var(--cla-teal);
+}
+.cla-audience__item-desc {
+  font-family: var(--cla-ff-body);
+  font-size: 14.5px;
+  color: var(--cla-text-muted);
+  max-width: 420px;
+  line-height: 1.6;
+  margin: 0;
+  text-align: right;
+}
+
+/* ==========================================================
+   5. HOW WE HELP YOU (Phase 05) — PRACTICE SCOPE
+   ========================================================== */
+
+/* ── Section shell ── */
+.cla-services {
+  position: relative;
+  overflow: hidden;
+  color: var(--cla-white);
+  padding: 140px 0 150px;
+  background-color: #1a0518;
+}
+
+/* ── Full-bleed background image with clear visibility ── */
+.cla-services::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../images/vidhitra/about/How\ We\ Help\ You.png') no-repeat center center;
+  background-size: cover;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Subtle luxury vignette & edge blending to highlight artwork while preserving readability ── */
+.cla-services::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 90% 75% at 50% 50%, rgba(26, 6, 23, 0.35) 0%, rgba(18, 4, 16, 0.22) 50%, rgba(10, 2, 9, 0.55) 100%),
+    linear-gradient(180deg, rgba(20, 5, 18, 0.6) 0%, transparent 12%, transparent 88%, rgba(20, 5, 18, 0.75) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Push all content above background pseudo-elements */
+.cla-services > * {
+  position: relative;
+  z-index: 2;
+}
+.cla-services .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Section header ── */
+.cla-services__header {
+  max-width: 820px;
+  margin-bottom: 3.5rem;
+}
+
+.cla-services__heading {
+  font-family: var(--cla-ff-heading);
+  font-size: clamp(30px, 3.8vw, 54px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0.85rem 0 1.2rem;
+  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.6);
+}
+
+.cla-services__intro {
+  font-family: var(--cla-ff-body);
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: rgba(245, 235, 245, 0.88);
+  margin: 0;
+  max-width: 660px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Service matrix wrapper ── */
+.cla-services__matrix {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Individual service row (Frosted Glass Luxury Row) ── */
+.cla-service-row {
+  padding: 1.65rem 1.8rem;
+  background: rgba(28, 7, 25, 0.48);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid rgba(198, 161, 91, 0.35);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 65px 1.2fr 1.5fr 40px;
+  gap: 26px;
+  align-items: center;
+  position: relative;
+  cursor: default;
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+}
+
+/* ── HOVER STATE ── */
+.cla-service-row:hover {
+  background: rgba(154, 0, 100, 0.22);
+  border-color: rgba(198, 161, 91, 0.65);
+  border-left-color: var(--cla-magenta);
+  transform: translateX(8px);
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.45),
+    0 0 24px rgba(154, 0, 100, 0.25);
+}
+
+/* ── ACTIVE / FOCUS STATE ── */
+.cla-service-row:focus-within,
+.cla-service-row.is-active {
+  background: rgba(154, 0, 100, 0.28);
+  border-color: var(--cla-gold);
+  border-left-color: var(--cla-magenta);
+  outline: none;
+}
+
+/* ── Number ── */
+.cla-service-row__num {
+  font-family: var(--cla-ff-heading);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--cla-gold);
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+.cla-service-row:hover .cla-service-row__num {
+  color: #ffd67d;
+  transform: scale(1.08);
+}
+
+/* ── Service title ── */
+.cla-service-row__title {
+  font-family: var(--cla-ff-heading);
+  font-size: clamp(16px, 1.4vw, 19.5px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+  margin: 0;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+.cla-service-row:hover .cla-service-row__title {
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.45);
+}
+.cla-service-row:focus-within .cla-service-row__title,
+.cla-service-row.is-active .cla-service-row__title {
+  color: #ffd67d;
+}
+
+/* ── Description ── */
+.cla-service-row__desc {
+  font-family: var(--cla-ff-body);
+  font-size: 14.5px;
+  line-height: 1.68;
+  color: rgba(240, 230, 240, 0.82);
+  margin: 0;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+.cla-service-row:hover .cla-service-row__desc {
+  color: #ffffff;
+}
+
+/* ── Arrow ── */
+.cla-service-row__arrow {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: var(--cla-gold);
+  font-size: 15px;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+.cla-service-row:hover .cla-service-row__arrow {
+  transform: translateX(6px);
+  color: #ffd67d;
+}
+.cla-service-row:focus-within .cla-service-row__arrow,
+.cla-service-row.is-active .cla-service-row__arrow {
+  color: #ffd67d;
+  transform: translateX(5px);
+}
+
+
+
+/* ==========================================================
+   6. OUR PERSPECTIVE (Phase 06)
+   ========================================================== */
+.cla-perspective {
+  background: radial-gradient(circle at 50% 50%, #4A1E46 0%, #30112E 50%, #170516 100%);
+  color: var(--cla-white);
+  padding: 150px 0 160px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.cla-perspective__glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 850px;
+  height: 850px;
+  background: radial-gradient(circle, var(--cla-magenta-glow) 0%, rgba(58, 24, 55, 0.15) 45%, transparent 72%);
+  pointer-events: none;
+}
+.cla-perspective__container {
+  position: relative;
+  z-index: 2;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.cla-perspective__statement {
+  font-family: var(--cla-ff-serif);
+  font-size: clamp(32px, 4.2vw, 56px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--cla-white);
+  margin: 1.5rem 0 2rem;
+}
+.cla-perspective__statement span {
+  color: var(--cla-gold);
+}
+.cla-perspective__line {
+  width: 90px;
+  height: 3px;
+  background: var(--cla-magenta);
+  margin: 2rem auto;
+}
+.cla-perspective__p {
+  font-family: var(--cla-ff-body);
+  font-size: 18px;
+  line-height: 1.85;
+  color: var(--cla-text-light);
+  margin: 0 auto;
+  max-width: 820px;
+}
+
+/* ==========================================================
+   7. SELECTED TRANSACTIONS & ADVISORY MATTERS (Phase 07)
+   ========================================================== */
+.cla-matters-list {
+  background: var(--cla-cream);
+  padding: 130px 0 140px;
+  position: relative;
+}
+.cla-matters-list__header {
+  max-width: 780px;
+  margin-bottom: 4.5rem;
+}
+.cla-matters-list__heading {
+  font-family: var(--cla-ff-heading);
+  font-size: clamp(28px, 3.6vw, 48px);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--cla-teal);
+  margin: 0.6rem 0 1rem;
+}
+.cla-matters-list__intro {
+  font-family: var(--cla-ff-body);
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: var(--cla-text-muted);
+  margin: 0;
+}
+
+.cla-matters-list__table {
+  border-top: 1px solid var(--cla-rule);
+}
+.cla-matter-item {
+  padding: 2.4rem 1.25rem;
+  border-bottom: 1px solid var(--cla-rule);
+  display: grid;
+  grid-template-columns: 70px 1fr 1.6fr 140px;
+  gap: 30px;
+  align-items: start;
+  position: relative;
+  background: transparent;
+  transition: background 0.35s ease, transform 0.35s var(--cla-ease-smooth), box-shadow 0.35s ease;
+}
+.cla-matter-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: var(--cla-magenta);
+  transition: height 0.4s var(--cla-ease-smooth);
+}
+.cla-matter-item:hover::before {
+  height: 100%;
+}
+.cla-matter-item:hover {
+  background: var(--cla-white);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(58, 24, 55, 0.08);
+}
+
+.cla-matter-item__num {
+  font-family: var(--cla-ff-heading);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--cla-magenta);
+}
+.cla-matter-item__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.cla-matter-item__category {
+  font-family: var(--cla-ff-heading);
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cla-teal);
+  line-height: 1.35;
+  margin: 0;
+}
+.cla-matter-item__location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--cla-gold-vibrant);
+  text-transform: uppercase;
+}
+.cla-matter-item__desc {
+  font-family: var(--cla-ff-body);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--cla-text);
+  margin: 0;
+}
+.cla-matter-item__action {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.2rem;
+}
+.cla-matter-item__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cla-teal);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.cla-matter-item:hover .cla-matter-item__tag {
+  color: var(--cla-magenta);
+  transform: translateX(4px);
+}
+
+/* ==========================================================
+   8. FINAL CLOSING CTA (Phase 08)
+   ========================================================== */
+.cla-cta {
+  position: relative;
+  background: var(--cla-plum-dark);
+  color: var(--cla-white);
+  padding: 140px 0;
+  overflow: hidden;
+  text-align: center;
+}
+.cla-cta__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.cla-cta__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.18;
+  transform: scale(1.05);
+  transition: transform 1.8s var(--cla-ease-smooth);
+}
+.cla-cta:hover .cla-cta__bg img {
+  transform: scale(1.1);
+}
+.cla-cta__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(58, 24, 55, 0.94) 0%, rgba(20, 5, 19, 0.98) 100%);
+}
+
+.cla-cta__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.cla-cta__heading {
+  font-family: var(--cla-ff-heading);
+  font-size: clamp(32px, 4.4vw, 58px);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--cla-white);
+  margin: 0.75rem 0 1.25rem;
+  letter-spacing: -0.02em;
+}
+.cla-cta__line {
+  width: 80px;
+  height: 3px;
+  background: var(--cla-magenta);
+  margin: 1.5rem auto 1.75rem;
+}
+.cla-cta__text {
+  font-family: var(--cla-ff-body);
+  font-size: 17.5px;
+  line-height: 1.75;
+  color: var(--cla-text-light);
+  margin: 0 0 2.8rem;
+}
+
+.cla-cta__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.cla-cta__secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--cla-gold);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.75rem 1.4rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.cla-cta__secondary:hover {
+  color: var(--cla-white);
+  transform: translateX(4px);
+}
+
+/* ==========================================================
+   9. RESPONSIVE BREAKPOINTS
+   ========================================================== */
+@media (max-width: 1199px) {
+  .cla-services__matrix {
+    grid-template-columns: 60px 1.2fr 1.4fr 40px;
+  }
+  .cla-matter-item {
+    grid-template-columns: 50px 1.2fr 1.5fr 120px;
+  }
+}
+
+@media (max-width: 991px) {
+  .cla-hero {
+    padding: 120px 0 70px;
+    min-height: auto;
+  }
+  .cla-hero__grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .cla-hero__visual {
+    margin-top: 1rem;
+  }
+  .cla-hero__strip-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  .cla-matters__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .cla-matters__left {
+    position: static;
+  }
+  .cla-triggers__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cla-service-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .cla-service-row__num {
+    margin-bottom: 0;
+  }
+  .cla-service-row__arrow {
+    display: none;
+  }
+  .cla-matter-item {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .cla-matter-item__action {
+    justify-content: flex-start;
+  }
+  .cla-audience__item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .cla-audience__item-desc {
+    text-align: left;
+  }
+  .cla-arch-banner__media {
+    width: 100%;
+  }
+  .cla-arch-banner__img {
+    height: 250px;
+  }
+  .cla-arch-banner__card {
+    position: static;
+    width: 92%;
+    margin-top: -30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .cla-hero__strip-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .cla-triggers__grid {
+    grid-template-columns: 1fr;
+  }
+  .cla-hero__h1 {
+    font-size: 32px;
+  }
+  .cla-matters__heading,
+  .cla-triggers__heading,
+  .cla-audience__heading,
+  .cla-services__heading,
+  .cla-matters-list__heading {
+    font-size: 26px;
+  }
+  .cla-perspective__statement {
+    font-size: 26px;
+  }
+}

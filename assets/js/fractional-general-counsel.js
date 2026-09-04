@@ -103,6 +103,24 @@
         }
       );
 
+      // Heading numeral watermark
+      var headingMark = document.querySelector('.fgc-intro__heading-mark');
+      if (headingMark) {
+        gsap.fromTo(headingMark,
+          { opacity: 0, y: 14 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: '.fgc-intro__heading',
+              start: 'top 85%'
+            }
+          }
+        );
+      }
+
       // Eyebrow line reveal
       gsap.fromTo('.fgc-intro__left .fgc-eyebrow::before',
         { width: 0 },
@@ -150,6 +168,63 @@
         );
       }
 
+      // Meta rail draws in
+      var metaRail = document.querySelector('.fgc-intro__meta-rail');
+      if (metaRail) {
+        gsap.fromTo(metaRail,
+          { scaleY: 0 },
+          {
+            scaleY: 1,
+            duration: 0.9,
+            ease: 'power2.out',
+            transformOrigin: 'top center',
+            scrollTrigger: {
+              trigger: '.fgc-intro__meta',
+              start: 'top 85%'
+            }
+          }
+        );
+      }
+
+      // Meta dots pop in
+      var metaDots = document.querySelectorAll('.fgc-intro__meta-dot');
+      if (metaDots.length) {
+        gsap.fromTo(metaDots,
+          { scale: 0, opacity: 0 },
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 0.5,
+            stagger: 0.12,
+            ease: 'back.out(1.6)',
+            scrollTrigger: {
+              trigger: '.fgc-intro__meta',
+              start: 'top 80%'
+            }
+          }
+        );
+      }
+
+      // Icon number badges pop in
+      var metaNums = document.querySelectorAll('.fgc-intro__meta-num');
+      if (metaNums.length) {
+        gsap.fromTo(metaNums,
+          { scale: 0, opacity: 0 },
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 0.45,
+            stagger: 0.12,
+            delay: 0.15,
+            ease: 'back.out(1.6)',
+            scrollTrigger: {
+              trigger: '.fgc-intro__meta',
+              start: 'top 80%'
+            }
+          }
+        );
+      }
+
       // Paragraph by paragraph soft text mask
       var paras = document.querySelectorAll('.fgc-intro__right p');
       paras.forEach(function (p) {
@@ -188,6 +263,42 @@
         );
       }
 
+      // Insight panel + tags
+      var insight = document.querySelector('.fgc-intro__insight');
+      if (insight) {
+        gsap.fromTo(insight,
+          { opacity: 0, y: 24 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.9,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: insight,
+              start: 'top 85%'
+            }
+          }
+        );
+
+        var insightTags = insight.querySelectorAll('.fgc-intro__insight-tag');
+        if (insightTags.length) {
+          gsap.fromTo(insightTags,
+            { opacity: 0, x: -12 },
+            {
+              opacity: 1,
+              x: 0,
+              duration: 0.6,
+              stagger: 0.25,
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: insight,
+                start: 'top 80%'
+              }
+            }
+          );
+        }
+      }
+
       // Subtle scroll-linked movement for left column
       gsap.to('.fgc-intro__left', {
         yPercent: 4,
@@ -202,6 +313,8 @@
     }
   }
 
+
+  
   /* ── 3. Phase 3: FGC Model Engagement Sequence ─────────── */
   function initModel() {
     var modelCards = document.querySelectorAll('.fgc-model__card');
@@ -318,7 +431,48 @@
     }
   }
 
-  /* ── 5. Phase 5: Capabilities Staggered Sequential Entrance ───── */
+  /* ── 5. Phase 5: Capabilities Showcase Parallax & Stagger ───── */
+  function initCapabilitiesShowcase() {
+    var showcaseSection = document.querySelector('.fgc-capabilities--showcase');
+    if (!showcaseSection || isReducedMotion) return;
+
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      var bgImg = showcaseSection.querySelector('.fgc-showcase-bg__img');
+      if (bgImg) {
+        gsap.to(bgImg, {
+          yPercent: 12,
+          scale: 1.08,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: showcaseSection,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true
+          }
+        });
+      }
+
+      var cards = showcaseSection.querySelectorAll('.fgc-showcase-card');
+      if (cards.length) {
+        gsap.fromTo(cards,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.75,
+            stagger: 0.08,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: '.fgc-showcase-grid',
+              start: 'top 82%'
+            }
+          }
+        );
+      }
+    }
+  }
+
+  /* ── 5b. Capabilities Staggered Sequential Entrance ───── */
   function initCapabilities() {
     var items = document.querySelectorAll('.fgc-cap-item');
     if (!items.length || isReducedMotion) return;
@@ -589,6 +743,7 @@
     initModel();
     initLineReveals();
     initProcess();
+    initCapabilitiesShowcase();
     initCapabilities();
     initAudience();
     initGenericReveals();

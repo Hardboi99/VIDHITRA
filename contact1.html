@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+   <meta charset="utf-8" />
+   <meta http-equiv="x-ua-compatible" content="ie=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta name="description" content="" />
+
+  <!-- Site Title -->
+  <title>Vidhitra Corporate Advisors LLP | Contact Us</title>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="assets/images/vidhitra/logo.webp" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+
+   <!-- CSS here -->
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+   <link rel="stylesheet" href="assets/css/font-awesome-pro.min.css" />
+   <link rel="stylesheet" href="assets/css/animate.css" />
+   <link rel="stylesheet" href="assets/css/solvior-icons.css" />
+   <link rel="stylesheet" href="assets/css/swiper.min.css" />
+   <link rel="stylesheet" href="assets/css/odometer-theme-default.css" />
+   <link rel="stylesheet" href="assets/css/nice-select.css" />
+   <link rel="stylesheet" href="assets/css/venobox.min.css" />
+   <link rel="stylesheet" href="assets/css/meanmenu.css" />
+   <link rel="stylesheet" href="assets/css/main.css" />
+
+   <style>
+      @media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+          .tj-page-header {
+              padding-top: 110px;
+              padding-bottom: 50px;
+          }
+      }
+
+      @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+          .tj-page-header {
+              padding-top: 120px;
+              padding-bottom: 90px;
+          }
+      }
+
+      @media only screen and (min-width: 1400px) and (max-width: 1899px) {
+          .tj-page-header {
+              padding-top: 150px;
+              padding-bottom: 100px;
+          }
+      }
+
+      .section-space {
+          padding: 25px 0;
+      }
+      @media (max-width: 1400px) {
+          .mainmenu ul>li>a {
+              font-size: 13px !important;
+          }
+      }
+      @property --gradient-angle {
+         syntax: "<angle>";
+         initial-value: 0deg;
+         inherits: false;
+      }
+
+      :root {
+         --plum: #3A1837;
+         --teal: #005c59;
+         --green: #137d6e;
+         --gold: #C6A15B;
+         --cream: #F7F5F1;
+         --card-cream: #f5eee3;
+         --ink: #303030;
+      }
+
+      body {
+         background-color: var(--cream) !important;
+         color: var(--ink) !important;
+         font-family: 'Manrope', sans-serif !important;
+      }
+
+      h2, .sec-title {
+         color: var(--plum) !important;
+      }
+
+      .tj-page-header::before {
+         background-color: rgba(58, 24, 55, 0.2) !important;
+         /* background-color: rgba(15, 15, 15, 0.2) !important; */
+      }
+
+      /* ===== Top Section: Open Contact Info Cards ===== */
+      .contact-item.style-open {
+         background: rgb(242 235 225) !important;
+         border-radius: 12px;
+         box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+         border-top: 5px solid var(--plum);
+         padding: 35px 25px;
+         /* min-height: 240px; */
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         text-align: center;
+         transition: all 0.3s ease;
+      }
+      .contact-item.style-open:hover {
+         transform: translateY(-5px);
+         border-top-color: var(--teal);
+         box-shadow: 0 12px 30px rgba(0,92,89,0.12);
+      }
+      .contact-item.style-open .contact-icon {
+         width: 65px;
+         height: 65px;
+         background: rgba(0, 92, 89, 0.08);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         border-radius: 50%;
+         margin-bottom: 15px;
+      }
+      .contact-item.style-open .contact-icon i {
+         font-size: 28px;
+         color: var(--teal);
+      }
+      .contact-item.style-open .contact-title {
+         font-size: 18px;
+         color: var(--plum);
+         font-weight: 600;
+         margin-bottom: 10px;
+      }
+      .contact-item.style-open .contact-details {
+         font-size: 15px;
+         color: var(--teal);
+         font-weight: 600;
+         text-decoration: none;
+         word-break: break-all;
+      }
+      .contact-item.style-open .contact-details:hover {
+         color: var(--plum);
+         text-decoration: underline;
+      }
+      .contact-item.style-open p {
+         font-size: 14px;
+         color: var(--ink);
+         margin: 0;
+      }
+
+      /* ===== Contact Grid Layout ===== */
+      .contact-grid-wrapper {
+         max-width: 1240px;
+         margin: 0 auto;
+         display: grid;
+         grid-template-columns: 1.35fr 1fr;
+         gap: 50px;
+         align-items: stretch;
+      }
+      @media (max-width: 991px) {
+         .contact-grid-wrapper {
+            grid-template-columns: 1fr;
+            gap: 40px;
+         }
+      }
+
+      /* ===== Enhanced 3D Tilt-Cards with Top-Diagonal Entry Tweaks ===== */
+      .glow-card {
+         --rx: 0deg;
+         --ry: 0deg;
+         position: relative;
+         border-radius: 18px;
+         transform-style: preserve-3d;
+         transform: perspective(1400px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(0);
+         transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.25s ease;
+         height: 100%;
+         border: 1px solid rgba(0, 92, 89, 0.12);
+         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      }
+
+      /* Custom tweak for top-left/top-right diagonal entrance illusion via CSS keyframe mix */
+      .wow.fadeInLeft {
+         animation-name: customTopLeftIn !important;
+      }
+      .wow.fadeInRight {
+         animation-name: customTopRightIn !important;
+      }
+
+      @keyframes customTopLeftIn {
+         0% {
+            opacity: 0;
+            transform: perspective(1400px) translate3d(-80px, -60px, 0) rotateX(10deg) rotateY(-10deg);
+         }
+         100% {
+            opacity: 1;
+            transform: perspective(1400px) translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg);
+         }
+      }
+
+      @keyframes customTopRightIn {
+         0% {
+            opacity: 0;
+            transform: perspective(1400px) translate3d(80px, -60px, 0) rotateX(10deg) rotateY(10deg);
+         }
+         100% {
+            opacity: 1;
+            transform: perspective(1400px) translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg);
+         }
+      }
+
+      #formCard:hover {
+         transform: perspective(1400px) rotateX(var(--rx)) rotateY(var(--ry)) translate(-8px, -6px);
+         box-shadow: -12px 15px 35px rgba(58, 24, 55, 0.08);
+      }
+
+      #infoCard:hover {
+         transform: perspective(1400px) rotateX(var(--rx)) rotateY(var(--ry)) translate(8px, -6px);
+         box-shadow: 12px 15px 35px rgba(0, 92, 89, 0.08);
+      }
+
+      .glow-card-inner {
+         position: relative;
+         z-index: 1;
+         background: var(--card-cream);
+         border-radius: 17px;
+         height: 100%;
+         padding: 42px;
+         transform: translateZ(20px);
+      }
+
+      @media (max-width: 575px) {
+         .glow-card-inner { padding: 28px 22px; }
+      }
+
+      /* ===== Form Elements Style ===== */
+      .form-title {
+         font-family: 'Playfair Display', serif;
+         font-style: italic;
+         color: var(--plum);
+         font-size: 24px;
+         margin: 0 0 8px;
+         min-height: 1.3em;
+         white-space: nowrap;
+         overflow: hidden;
+      }
+      .form-cursor {
+         display: inline-block;
+         margin-left: 2px;
+         color: var(--teal);
+         animation: blink 0.9s steps(1) infinite;
+      }
+      @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+
+      .form-subtitle {
+         font-size: 14px;
+         color: #000;
+         margin: 0 0 30px;
+      }
+
+      .form-row { display: flex; flex-wrap: wrap; gap: 20px 18px; margin-bottom: 4px; }
+      .form-field { position: relative; flex: 1 1 220px; margin-bottom: 22px; }
+      .form-field.full { flex-basis: 100%; }
+
+      .form-field input,
+      .form-field select,
+      .form-field textarea {
+         width: 100%;
+         height: 54px;
+         border: 1px solid #dcd6cd !important;
+         background: #faf9f6 !important;
+         color: var(--ink) !important;
+         border-radius: 8px !important;
+         padding: 0 18px;
+         font-size: 15px;
+         font-family: inherit;
+         outline: none;
+         transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+      }
+      .form-field textarea {
+         height: 120px;
+         padding-top: 14px;
+         resize: none;
+      }
+      .form-field input:focus,
+      .form-field select:focus,
+      .form-field textarea:focus {
+         border-color: var(--teal) !important;
+         background: #ffffff !important;
+         box-shadow: 0 0 0 3px rgba(0, 92, 89, 0.15);
+         transform: translateY(-2px);
+      }
+      .form-field label {
+         position: absolute;
+         top: 17px;
+         left: 18px;
+         color: #888;
+         font-size: 14px;
+         pointer-events: none;
+         transition: 0.2s ease all;
+         background: transparent;
+      }
+      .form-field input:focus ~ label,
+      .form-field input:not(:placeholder-shown) ~ label,
+      .form-field textarea:focus ~ label,
+      .form-field textarea:not(:placeholder-shown) ~ label,
+      .form-field.has-value label {
+         top: -9px;
+         left: 13px;
+         font-size: 11px;
+         background: var(--card-cream);
+         padding: 0 6px;
+         color: var(--teal);
+         font-weight: 700;
+         letter-spacing: 0.03em;
+      }
+      .form-field .req { color: var(--teal); margin-left: 2px; }
+
+      .consent {
+         display: flex;
+         align-items: flex-start;
+         gap: 10px;
+         font-size: 13px;
+         color: #000;
+         margin: 6px 0 26px;
+         cursor: pointer;
+      }
+      .consent input { width: 16px; height: 16px; margin-top: 2px; accent-color: var(--teal); }
+
+      .submit-btn {
+         position: relative;
+         overflow: hidden;
+         border: none;
+         border-radius: 8px;
+         padding: 15px 34px;
+         font-size: 13px;
+         font-weight: 800;
+         letter-spacing: 0.08em;
+         text-transform: uppercase;
+         color: #fff;
+         cursor: pointer;
+         background: linear-gradient(135deg, var(--teal), var(--plum));
+         background-size: 200% 200%;
+         background-position: 0% 50%;
+         transition: background-position 0.5s ease, transform 0.15s ease;
+      }
+      .submit-btn:hover { background-position: 100% 50%; }
+      .submit-btn:active { transform: scale(0.97); }
+
+      .form-success {
+         display: inline-block;
+         margin-left: 14px;
+         font-size: 13px;
+         font-weight: 700;
+         color: var(--green);
+         opacity: 0;
+         transform: translateX(-6px);
+         transition: opacity 0.35s ease, transform 0.35s ease;
+      }
+      .form-success.show { opacity: 1; transform: translateX(0); }
+
+      /* ===== Right Info Panel Style ===== */
+      .info-eyebrow {
+         font-size: 13px;
+         font-weight: 700;
+         letter-spacing: 0.14em;
+         color: var(--teal);
+         display: block;
+         margin-bottom: 14px;
+      }
+      .info-title {
+         font-family: 'Playfair Display', serif;
+         font-style: italic;
+         font-size: 25px;
+         line-height: 1.3;
+         color: var(--plum);
+         margin: 0 0 18px;
+      }
+      .info-copy {
+         font-size: 14.5px;
+         line-height: 1.7;
+         color: #000;
+         margin: 0 0 32px;
+      }
+
+      .info-list { display: flex; flex-direction: column; gap: 22px; margin-bottom: 34px; }
+      .info-item {
+         display: flex;
+         align-items: center;
+         gap: 16px;
+         padding: 14px 16px;
+         border-radius: 10px;
+         background: rgba(0, 92, 89, 0.04);
+         transition: transform 0.25s ease, background 0.25s ease;
+      }
+      .info-item:hover {
+         transform: translateX(6px);
+         background: rgba(0, 92, 89, 0.08);
+      }
+      .info-icon {
+         flex: none;
+         width: 42px;
+         height: 42px;
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         background: linear-gradient(135deg, var(--teal), var(--green));
+         color: #fff;
+         font-size: 17px;
+         position: relative;
+      }
+      .info-icon::after {
+         content: '';
+         position: absolute;
+         inset: -4px;
+         border-radius: 50%;
+         border: 1px solid var(--plum);
+         opacity: 0;
+         transform: scale(0.85);
+         transition: opacity 0.25s ease, transform 0.25s ease;
+      }
+      .info-item:hover .info-icon::after { opacity: 1; transform: scale(1); }
+
+      .info-body { display: flex; flex-direction: column; gap: 3px; }
+      .info-label {
+         font-size: 11px;
+         text-transform: uppercase;
+         letter-spacing: 0.08em;
+         color: var(--green);
+         font-weight: 700;
+      }
+      .info-value {
+         font-size: 16.5px;
+         font-weight: 700;
+         color: var(--plum);
+         text-decoration: none;
+      }
+      .info-value:hover { color: var(--teal); }
+
+      /* ===== Map Section Styling ===== */
+      .tj-contact-map {
+         margin-top: 50px;
+         width: 100%;
+         background: linear-gradient(135deg, var(--teal) 0%, var(--plum) 100%);
+         padding: 20px;
+         border-radius: 16px;
+         box-shadow: 0 10px 35px rgba(0, 92, 89, 0.15);
+         border: 3px solid var(--green);
+      }
+      .tj-map-wrapper {
+         background: #ffffff;
+         padding: 10px;
+         border-radius: 10px;
+         overflow: hidden;
+      }
+      .tj-contact-map iframe {
+         width: 100%;
+         height: 450px;
+         display: block;
+         border-radius: 8px;
+         border: 0;
+         filter: saturate(1.2) contrast(1.05);
+      }
+
+      /* ===== Custom Footer Structure Style (Full Width Back Box on Desktop) ===== */
+      .tj-footer-area {
+         background-color: var(--plum);
+         color: #ffffff;
+         padding-top: 80px;
+         position: relative;
+      }
+      .tj-footer-columns {
+         width: 100%;
+         max-width: 100%;
+         margin: 0 auto;
+         padding: 0 50px 50px 50px;
+         display: grid;
+         grid-template-columns: repeat(5, 1fr);
+         gap: 30px;
+      }
+      @media (max-width: 1200px) {
+         .tj-footer-columns {
+            max-width: 1200px;
+            padding: 0 20px 50px 20px;
+         }
+      }
+      @media (max-width: 991px) {
+         .tj-footer-columns { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 575px) {
+         .tj-footer-columns { grid-template-columns: 1fr; }
+      }
+      .footer-heading {
+         font-size: 18px;
+         font-weight: 700;
+         margin-bottom: 20px;
+      }
+      .tj-footer-col ul {
+         list-style: none;
+         padding: 0;
+         margin: 0;
+         display: flex;
+         flex-direction: column;
+         gap: 12px;
+      }
+      .tj-footer-col ul li a {
+         color: #dfdfdf;
+         text-decoration: none;
+         font-size: 14.5px;
+         transition: color 0.2s ease;
+      }
+      .tj-footer-col ul li a:hover {
+         color: var(--teal);
+      }
+      .tj-footer-socials {
+         flex-direction: row !important;
+         gap: 15px !important;
+         margin-top: 10px;
+      }
+      .tj-footer-socials li a {
+         width: 36px;
+         height: 36px;
+         background: rgba(255,255,255,0.08);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         border-radius: 50%;
+         color: #fff !important;
+      }
+      .tj-footer-socials li a:hover {
+         background: var(--teal);
+      }
+      .tj-footer-wordmark {
+         text-align: center;
+         font-size: clamp(60px, 14vw, 160px);
+         font-weight: 900;
+         line-height: 1;
+         color: rgba(255, 255, 255, 0.03);
+         letter-spacing: 0.05em;
+         user-select: none;
+         margin-bottom: -20px;
+      }
+      .tj-footer-bottom {
+         border-top: 1px solid rgba(255, 255, 255, 0.1);
+         padding: 25px 50px;
+         width: 100%;
+         max-width: 100%;
+         margin: 0 auto;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         flex-wrap: wrap;
+         gap: 15px;
+      }
+      @media (max-width: 1200px) {
+         .tj-footer-bottom {
+            max-width: 1200px;
+            padding: 25px 20px;
+         }
+      }
+      .tj-footer-bottom p {
+         font-size: 14px;
+         color: #ccc;
+      }
+      .tj-footer-bottom a {
+         text-decoration: none;
+      }
+      .tj-footer-bottom a:hover {
+         text-decoration: underline;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+         .glow-card { animation: none !important; transform: none !important; }
+      }
+   </style>
+</head>
+
+<body>
+
+   <div class="mouseCursor cursor-outer"></div>
+   <div class="mouseCursor cursor-inner"><span>Drag</span></div>
+
+  <!-- start: Search Popup -->
+  <div class="search_popup">
+    <div class="search_close">
+      <button type="button" class="search_close_btn">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17 1L1 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M1 1L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-12">
+          <div class="tj_search_wrapper">
+            <div class="search_form">
+              <form action="#">
+                <div class="search_input">
+                  <h4 class="title">Search Blog, projects, Service or people.</h4>
+                  <div class="search-box">
+                    <input class="search-input-field" type="search" placeholder="Search here..." required="">
+                    <button type="submit">
+                      <i class="tji-search"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="search-popup-overlay"></div>
+  <!-- end: Search Popup -->
+
+<!-- start: Hamburger Menu -->
+<div class="body-overlay"></div>
+<div class="hamburger-area" data-lenis-prevent>
+  <div class="hamburger_bg"></div>
+  <div class="hamburger_wrapper">
+    <div class="hamburger_top d-flex align-items-center justify-content-between">
+      <div class="hamburger_logo">
+        <a href="index.html" class="mobile_logo">
+          <img src="assets/images/vidhitra/logo.webp" alt="Vidhitra Corporate Advisors LLP" />
+        </a>
+      </div>
+      <div class="hamburger_close">
+        <button class="hamburger_close_btn hamburgerCloseBtn"><i class="fa-thin fa-times"></i></button>
+      </div>
+    </div>
+    <div class="hamburger_search">
+      <form method="get" action="#0">
+        <button type="submit"><i class="fal fa-search"></i></button>
+        <input type="search" autocomplete="off" name="s" value="" placeholder="Search here" />
+      </form>
+    </div>
+
+    <div class="hamburger_menu">
+      <div class="mobile_menu"></div>
+    </div>
+
+    <div class="hamburger-infos">
+      <h4 class="hamburger-title">Contact info</h4>
+      <div class="contact-info">
+        <div class="contact_item">
+          <span class="subtitle">Email</span>
+          <div class="text"><a class="link" href="mailto:info@vidhitra.com">info@vidhitra.com</a></div>
+        </div>
+        <div class="contact_item">
+          <span class="subtitle">Phone</span>
+          <div class="text"><a class="link" href="tel:+919833874770">+91 98338 74770</a></div>
+        </div>
+        <div class="contact_item">
+          <span class="subtitle">Presence</span>
+          <div class="text">Pan-India</div>
+        </div>
+      </div>
+    </div>
+    <div class="hamburger-socials">
+      <h4 class="hamburger-title">Follow us</h4>
+      <ul>
+        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- end: Hamburger Menu -->
+
+<!-- start: Header Area -->
+<header class="tj-header-area header-6 style-6 header-absolute">
+  <div class="header-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="header-wrapper">
+
+            <div class="site-logo">
+              <a class="logo" href="index.html">
+                <img src="assets/images/vidhitra/logo.webp" class="logo" alt="Vidhitra Corporate Advisors LLP">
+              </a>
+            </div>
+
+            <div class="mainmenu d-lg-block d-none" id="main-menu">
+              <ul>
+                <li class="current-menu-ancestor"><a href="index.html">Home</a></li>
+                <li><a href="fractional-general-counsel.html">Fractional General Counsel</a></li>
+                <li class="has-dropdown">
+                  <a href="capabilities.html">Capabilities</a>
+                  <ul class="sub-menu mega-menu-service">
+                    <li>
+                      <a class="mega-menu-service-single" href="service-details.html">
+                        <span class="mega-menu-service-icon"><i class="tji-business"></i></span>
+                        <span class="mega-menu-service-title">Corporate &amp; Strategic Business Matters</span>
+                        <span class="mega-menu-service-nav"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="mega-menu-service-single" href="service-details.html">
+                        <span class="mega-menu-service-icon"><i class="tji-strategic"></i></span>
+                        <span class="mega-menu-service-title">Commercial Contracts &amp; Business Relationships</span>
+                        <span class="mega-menu-service-nav"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="mega-menu-service-single" href="service-details.html">
+                        <span class="mega-menu-service-icon"><i class="tji-process"></i></span>
+                        <span class="mega-menu-service-title">Infrastructure, Projects &amp; Bids</span>
+                        <span class="mega-menu-service-nav"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="mega-menu-service-single" href="service-details.html">
+                        <span class="mega-menu-service-icon"><i class="tji-optimization"></i></span>
+                        <span class="mega-menu-service-title">Regulatory Compliance &amp; Business Risk</span>
+                        <span class="mega-menu-service-nav"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="mega-menu-service-single" href="service-details.html">
+                        <span class="mega-menu-service-icon"><i class="tji-executive"></i></span>
+                        <span class="mega-menu-service-title">Technology, IT &amp; Digital Business</span>
+                        <span class="mega-menu-service-nav"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="mega-menu-service-single" href="service-details.html">
+                        <span class="mega-menu-service-icon"><i class="tji-leadership"></i></span>
+                        <span class="mega-menu-service-title">Employment &amp; Workforce Matters</span>
+                        <span class="mega-menu-service-nav"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="mega-menu-service-single" href="service-details.html">
+                        <span class="mega-menu-service-icon"><i class="tji-strategic"></i></span>
+                        <span class="mega-menu-service-title">Market Entry, Startups &amp; Emerging Businesses</span>
+                        <span class="mega-menu-service-nav"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="about.html">About</a>
+                    <ul class="sub-menu">
+                        <li><a href="about.html">About Vidhitra</a></li>
+                        <li><a href="the-vidhitra-approach.html">Our Approach</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                    </ul>
+                </li>
+                <li><a href="insights.html">Insights</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="header_right_info d-none d-md-inline-flex">
+              <button class="menu_btn d-none d-xl-inline-flex">
+                <span class="cubes"><span></span><span></span><span></span><span></span></span>
+              </button>
+              <a href="contact.html" class="tj-primary-btn">
+                <div class="btn_inner">
+                  <div class="btn_icon">
+                    <span><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
+                  </div>
+                  <div class="btn_text"><span>Get in Touch</span></div>
+                </div>
+              </a>
+            </div>
+
+            <button class="menu_btn d-lg-none hamburgerBtn">
+              <span class="cubes"><span></span><span></span><span></span><span></span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- end: Header Area -->
+
+   <main id="primary" class="site-main">
+      <!-- start: Breadcrumb Section -->
+      <section class="tj-page-header" data-bg-image="assets/images/vidhitra/banners/banc1.png">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="tj-page-header-content text-center">
+                     <h1 class="tj-page-title text-anim">Contact Us</h1>
+                     <div class="tj-page-link wow fadeInUp" data-wow-delay="0.1s">
+                        <span><a href="index.html"><span>Home</span></a></span>
+                        <span>/</span>
+                        <span><span>Contact</span></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end: Breadcrumb Section -->
+
+      <!-- start: Contact Top Section -->
+      <!-- <section class="tj-contact-area section-space">
+         <div class="container">
+            <div class="row">
+               <div class="col-12">
+                  <div class="sec-heading text-center">
+                     <span class="sub-title wow fadeInUp" data-wow-delay="0.1s" style="color: var(--teal);">GET IN TOUCH</span>
+                     <h2 class="sec-title text-anim">Our Contact Information</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row rg-30">
+               <div class="col-xl-3 col-lg-6 col-sm-6">
+                  <div class="contact-item style-open wow fadeInUp" data-wow-delay="0.1s">
+                     <div class="contact-icon"><i class="tji-email"></i></div>
+                     <h3 class="contact-title">Email Us</h3>
+                     <a href="mailto:info@vidhitra.com" class="contact-details">info@vidhitra.com</a>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-6 col-sm-6">
+                  <div class="contact-item style-open wow fadeInUp" data-wow-delay="0.3s">
+                     <div class="contact-icon"><i class="tji-phone"></i></div>
+                     <h3 class="contact-title">Call Us</h3>
+                     <a href="tel:+919833874770" class="contact-details">+91 98338 74770</a>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-6 col-sm-6">
+                  <div class="contact-item style-open wow fadeInUp" data-wow-delay="0.5s">
+                     <div class="contact-icon"><i class="tji-location"></i></div>
+                     <h3 class="contact-title">Our Presence</h3>
+                     <p class="contact-details" style="cursor: default; color: var(--teal);">Pan-India</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-6 col-sm-6">
+                  <div class="contact-item style-open wow fadeInUp" data-wow-delay="0.7s">
+                     <div class="contact-icon"><i class="tji-chat"></i></div>
+                     <h3 class="contact-title">Quick Help</h3>
+                     <a href="contact.html" class="contact-details">Support Desk</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section> -->
+      <!-- end: Contact Top Section -->
+      <br>
+      <!-- start: Animated Contact Form & Info Section -->
+      <section class="tj-contact-area section-bottom-space">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="sec-heading text-center" style="margin-bottom: 40px;">
+                <span class="sub-title wow fadeInUp" data-wow-delay="0.1s" style="color: var(--teal);">CONNECT WITH US</span>
+                <h2 class="sec-title text-anim">Every Conversation Starts Here</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-grid-wrapper">
+            
+            <!-- Left Form Card: Animated from Top-Left diagonal with 3D effect -->
+            <div class="glow-card wow fadeInLeft" data-wow-delay="0.2s" id="formCard">
+              <div class="glow-card-inner">
+                <h3 class="form-title"><span id="tjTypewriter"></span><span class="form-cursor">|</span></h3>
+                <p class="form-subtitle">Tell us briefly about your requirement and our team will respond promptly.</p>
+
+                <form id="tjClientEnquiryForm" novalidate>
+                  <div class="form-row">
+                    <div class="form-field">
+                      <input type="text" id="cuFullName" name="full_name" placeholder=" " required>
+                      <label for="cuFullName">Full Name<span class="req">*</span></label>
+                    </div>
+                    <div class="form-field">
+                      <input type="text" id="cuOrg" name="organisation" placeholder=" " required>
+                      <label for="cuOrg">Business / Organisation<span class="req">*</span></label>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-field">
+                      <input type="email" id="cuEmail" name="email" placeholder=" " required>
+                      <label for="cuEmail">Email Address<span class="req">*</span></label>
+                    </div>
+                    <div class="form-field">
+                      <select id="cuHelp" name="how_can_we_help" required>
+                        <option value="" disabled selected hidden></option>
+                        <option value="Fractional General Counsel">Fractional General Counsel</option>
+                        <option value="Specific Legal Matter">Specific Legal Matter</option>
+                        <option value="Corporate & Strategic Advisory">Corporate &amp; Strategic Advisory</option>
+                        <option value="Commercial Contracts">Commercial Contracts</option>
+                        <option value="Regulatory Compliance & Risk">Regulatory Compliance &amp; Risk</option>
+                        <option value="Other">Other</option>
+                      </select>
+                      <label for="cuHelp">How Can We Help?<span class="req">*</span></label>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-field">
+                      <input type="tel" id="cuPhone" name="phone" placeholder=" ">
+                      <label for="cuPhone">Phone Number</label>
+                    </div>
+                    <div class="form-field">
+                      <input type="url" id="cuWebsite" name="website" placeholder=" ">
+                      <label for="cuWebsite">Website / Business URL</label>
+                    </div>
+                  </div>
+
+                  <div class="form-field full">
+                    <textarea id="cuMessage" name="message" placeholder=" " required></textarea>
+                    <label for="cuMessage">Briefly Tell Us About Your Requirement<span class="req">*</span></label>
+                  </div>
+
+                  <label class="consent">
+                    <input type="checkbox" id="cuConsent" name="consent" required>
+                    <span>I consent to Vidhitra Corporate Advisors LLP collecting and processing my personal data for responding to my enquiry.</span>
+                  </label>
+
+                  <button type="submit" class="submit-btn">Submit</button>
+                  <span class="form-success" id="tjFormSuccess">Opening WhatsApp with your enquiry…</span>
+                </form>
+              </div>
+            </div>
+
+            <!-- Right Info Card: Animated from Top-Right diagonal with 3D effect -->
+            <div class="glow-card wow fadeInRight" data-wow-delay="0.4s" id="infoCard">
+              <div class="glow-card-inner" style="display:flex; flex-direction:column; justify-content: space-between;">
+                <div>
+                  <span class="info-eyebrow">Get In Touch</span>
+                  <h4 class="info-title">Every Business Relationship Begins with a Conversation</h4>
+                  <p class="info-copy">
+                    Whether you wish to discuss your legal requirements or explore strategic advisory partnerships with the firm, we invite you to get in touch.
+                  </p>
+
+                  <div class="info-list">
+                    <div class="info-item">
+                      <div class="info-icon"><i class="fa-regular fa-envelope"></i></div>
+                      <div class="info-body">
+                        <span class="info-label">Email Support</span>
+                        <a href="mailto:info@vidhitra.com" class="info-value">info@vidhitra.com</a>
+                      </div>
+                    </div>
+                    <div class="info-item">
+                      <div class="info-icon"><i class="fa-regular fa-phone-volume"></i></div>
+                      <div class="info-body">
+                        <span class="info-label">Call Us</span>
+                        <a href="tel:+919833874770" class="info-value">+91-9833874770</a>
+                      </div>
+                    </div>
+                    <div class="info-item">
+                      <div class="info-icon"><i class="fa-regular fa-map-location-dot"></i></div>
+                      <div class="info-body">
+                        <span class="info-label">Operational Presence</span>
+                        <span class="info-value">Pan-India</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Map Section -->
+          <div class="row">
+            <div class="col-12">
+              <div class="google-map tj-contact-map wow fadeInUp" data-wow-delay="0.4s">
+                <div class="tj-map-wrapper">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.852989182377!2d72.82964!3d19.07609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMW80OcKwMzknNDxiOSJOIDcywrA0OSc0Nic3IkU!5e0!3m2!1sen!2sin!4v1742025261462!5m2!1sen!2sin"
+                    style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <!-- end: Animated Contact Form & Info Section -->
+   </main>
+
+   <!-- start: Footer -->
+   <footer class="tj-footer-area">
+      <div class="tj-footer-columns">
+         <div class="tj-footer-col">
+            <h4 class="footer-heading">Fractional Legal Counsel</h4>
+            <ul>
+               <li><a href="fractional-general-counsel.html#understanding">Understanding Fractional General Counsel</a></li>
+               <li><a href="fractional-general-counsel.html#engagement-model">The Engagement Model</a></li>
+               <li><a href="fractional-general-counsel.html#how-we-work">How We Work</a></li>
+               <li><a href="capabilities.html">Our Capabilities</a></li>
+            </ul>
+         </div>
+
+         <div class="tj-footer-col">
+            <h4 class="footer-heading">Capabilities</h4>
+            <ul>
+               <li><a href="service-details.html">Corporate Law &amp; Strategic Advisory</a></li>
+               <li><a href="service-details.html">Infrastructure, Projects &amp; Bid Advisory</a></li>
+               <li><a href="service-details.html">Commercial Contracts</a></li>
+               <li><a href="service-details.html">Regulatory Compliance &amp; Risk</a></li>
+            </ul>
+         </div>
+
+         <div class="tj-footer-col">
+            <h4 class="footer-heading">Firm</h4>
+            <ul>
+               <li><a href="about.html">About Vidhitra</a></li>
+               <li><a href="the-vidhitra-approach.html">Our Approach</a></li>
+               <li><a href="leadership.html">Leadership</a></li>
+               <li><a href="insights.html">Insights</a></li>
+            </ul>
+         </div>
+
+         <div class="tj-footer-col">
+            <h4 class="footer-heading">Legal Information</h4>
+            <ul>
+               <li><a href="disclaimer.html">Disclaimer</a></li>
+               <li><a href="terms-of-use.html">Terms of Use</a></li>
+               <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            </ul>
+         </div>
+
+         <div class="tj-footer-col tj-footer-contact">
+            <h4 class="footer-heading">Contact Details</h4>
+            <ul>
+               <li><a href="mailto:info@vidhitra.com">info@vidhitra.com</a></li>
+               <li><a href="tel:+919833874770">+91 98338 74770</a></li>
+               <ul class="tj-footer-socials">
+                  <li><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                  <li><a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
+               </ul>
+            </ul>
+         </div>
+      </div>
+
+      <div class="tj-footer-wordmark wow fadeInUp" data-wow-delay="0.1s">
+         <span>VIDHITRA</span>
+      </div>
+
+      <div class="tj-footer-bottom">
+         <p class="text-white mb-0 text-bold">&copy; <span>2026</span> Vidhitra Corporate Advisors LLP. All rights reserved.</p>
+         <p class="text-white mb-0 text-bold">Developed By <a href="https://hsdigitalmedia.com/" target="_blank">HS Digital Media®</a></p>
+      </div>
+   </footer>
+   <!-- end: Footer -->
+
+   <script>
+      // Typewriter effect
+      const twEl = document.getElementById('tjTypewriter');
+      if (twEl) {
+         const text = 'Client Enquiry';
+         let i = 0;
+         (function type() {
+            if (i <= text.length) {
+               twEl.textContent = text.slice(0, i);
+               i++;
+               setTimeout(type, 90);
+            }
+         })();
+      }
+
+      // Independent 3D tilt per card
+      function attachTilt(card) {
+         if (!card) return;
+         card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const midX = rect.left + rect.width / 2;
+            const midY = rect.top + rect.height / 2;
+            const offsetX = ((e.clientX - midX) / (rect.width / 2)) * 6;
+            const offsetY = ((e.clientY - midY) / (rect.height / 2)) * 6;
+            card.style.setProperty('--ry', offsetX + 'deg');
+            card.style.setProperty('--rx', (-1 * offsetY) + 'deg');
+         });
+         card.addEventListener('mouseleave', () => {
+            card.style.setProperty('--rx', '0deg');
+            card.style.setProperty('--ry', '0deg');
+         });
+      }
+      attachTilt(document.getElementById('formCard'));
+      attachTilt(document.getElementById('infoCard'));
+
+      // Floating label state for select dropdown
+      const helpSelect = document.getElementById('cuHelp');
+      if (helpSelect) {
+         helpSelect.addEventListener('change', function () {
+            this.closest('.form-field').classList.toggle('has-value', !!this.value);
+         });
+      }
+
+      // Form submission handling to WhatsApp
+      const form = document.getElementById('tjClientEnquiryForm');
+      const whatsappNumber = '919833874770';
+
+      if (form) {
+         form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!form.checkValidity()) {
+               form.reportValidity();
+               return;
+            }
+
+            const data = {
+               name: form.full_name.value.trim(),
+               org: form.organisation.value.trim(),
+               email: form.email.value.trim(),
+               help: form.how_can_we_help.value.trim(),
+               phone: form.phone.value.trim(),
+               website: form.website.value.trim(),
+               message: form.message.value.trim()
+            };
+
+            let text = `New Client Enquiry\n\n`;
+            text += `Name: ${data.name}\n`;
+            text += `Organisation: ${data.org}\n`;
+            text += `Email: ${data.email}\n`;
+            text += `How can we help: ${data.help}\n`;
+            if (data.phone) text += `Phone: ${data.phone}\n`;
+            if (data.website) text += `Website: ${data.website}\n`;
+            text += `\nMessage:\n${data.message}`;
+
+            const encoded = encodeURIComponent(text);
+            const waUrl = `https://wa.me/${whatsappNumber}?text=${encoded}`;
+
+            const successEl = document.getElementById('tjFormSuccess');
+            if (successEl) {
+               successEl.classList.add('show');
+               setTimeout(() => successEl.classList.remove('show'), 5000);
+            }
+
+            window.open(waUrl, '_blank');
+         });
+      }
+   </script>
+
+   <!-- JS here -->
+   <script src="assets/js/jquery.min.js"></script>
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/js/gsap.min.js"></script>
+   <script src="assets/js/gsap-scroll-to-plugin.min.js"></script>
+   <script src="assets/js/gsap-scroll-trigger.min.js"></script>
+   <script src="assets/js/gsap-split-text.min.js"></script>
+   <script src="assets/js/smooth-scroll.min.js"></script>
+   <script src="assets/js/appear.min.js"></script>
+   <script src="assets/js/wow.min.js"></script>
+   <script src="assets/js/odometer.min.js"></script>
+   <script src="assets/js/jquery-knob.js"></script>
+   <script src="assets/js/swiper.min.js"></script>
+   <script src="assets/js/nice-select.js"></script>
+   <script src="assets/js/venobox.min.js"></script>
+   <script src="assets/js/meanmenu.js"></script>
+   <script src="assets/js/validate.min.js"></script>
+   <script src="assets/js/main.js"></script>
+</body>
+</html>

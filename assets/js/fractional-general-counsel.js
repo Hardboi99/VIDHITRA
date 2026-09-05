@@ -722,6 +722,136 @@
     }
   }
 
+  /* ── 9. Fixed Right-Side Sections Navigation ────────────── */
+  function initSideNav() {
+    var sideNav = document.getElementById('fgcSideNav');
+    var trigger = document.getElementById('fgcSideNavTrigger');
+    var panel = document.getElementById('fgcSideNavPanel');
+    var closeBtn = document.getElementById('fgcSideNavClose');
+    var currentBadge = document.getElementById('fgcSideNavCurrent');
+    if (!sideNav || !trigger || !panel) return;
+
+    var navBtns = sideNav.querySelectorAll('.fgc-side-nav__btn');
+    var sectionIds = ['fgc-hero', 'engagement-model', 'how-we-work', 'capabilities', 'who-we-support', 'continuity', 'contact-cta'];
+
+    function openNav() {
+      sideNav.classList.add('is-open');
+      trigger.setAttribute('aria-expanded', 'true');
+      panel.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeNav() {
+      sideNav.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+      panel.setAttribute('aria-hidden', 'true');
+    }
+
+    trigger.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (sideNav.classList.contains('is-open')) {
+        closeNav();
+      } else {
+        openNav();
+      }
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        closeNav();
+      });
+    }
+
+    // Close when clicking outside
+    document.addEventListener('click', function (e) {
+      if (sideNav.classList.contains('is-open') && !sideNav.contains(e.target)) {
+        closeNav();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && sideNav.classList.contains('is-open')) {
+        closeNav();
+      }
+    });
+
+    // Smooth scroll on button click
+    navBtns.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        var targetId = btn.getAttribute('data-target') || (btn.getAttribute('href') ? btn.getAttribute('href').replace('#', '') : '');
+        var targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          var headerOffset = 70;
+          var elementPosition = targetEl.getBoundingClientRect().top;
+          var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+
+          navBtns.forEach(function (b) { b.classList.remove('is-active'); });
+          btn.classList.add('is-active');
+
+          // On mobile screens, auto-close after selection for better viewing
+          if (window.innerWidth <= 768) {
+            setTimeout(closeNav, 300);
+          }
+        }
+      });
+    });
+
+    // ScrollSpy to update active state and trigger current badge
+    var ticking = false;
+    function updateActiveSection() {
+      var scrollPosition = window.pageYOffset + 180;
+      var currentId = sectionIds[0];
+      var currentIndex = 1;
+
+      for (var i = 0; i < sectionIds.length; i++) {
+        var el = document.getElementById(sectionIds[i]);
+        if (el) {
+          var top = el.offsetTop;
+          var height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            currentId = sectionIds[i];
+            currentIndex = i + 1;
+            break;
+          } else if (scrollPosition >= top) {
+            currentId = sectionIds[i];
+            currentIndex = i + 1;
+          }
+        }
+      }
+
+      navBtns.forEach(function (btn) {
+        var targetId = btn.getAttribute('data-target') || (btn.getAttribute('href') ? btn.getAttribute('href').replace('#', '') : '');
+        if (targetId === currentId) {
+          btn.classList.add('is-active');
+        } else {
+          btn.classList.remove('is-active');
+        }
+      });
+
+      if (currentBadge) {
+        currentBadge.textContent = currentIndex < 10 ? '0' + currentIndex : currentIndex;
+      }
+
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(updateActiveSection);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    updateActiveSection();
+  }
+
   /* ── Reduced Motion Fallback ────────────────────────────── */
   function applyReducedMotion() {
     if (isReducedMotion) {
@@ -749,6 +879,7 @@
     initGenericReveals();
     initContinuity();
     initCTA();
+    initSideNav();
     applyReducedMotion();
 
     window.addEventListener('load', function () {

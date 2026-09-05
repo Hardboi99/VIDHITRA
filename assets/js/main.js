@@ -51,22 +51,15 @@
 		$this.css("mask-image", "url(" + $mask_image + ")");
 	});
 
-	/* ------------- Header Sticky Js -------------*/
+/* ------------- Header Sticky Js -------------*/
 
 	var lastScrollTop = "";
 	function stickyMenu($targetMenu, $toggleClass) {
-		var st = $(window).scrollTop();
 		if ($(window).scrollTop() > 500) {
-			if (st > lastScrollTop) {
-				$targetMenu.removeClass($toggleClass);
-			} else {
-				$targetMenu.addClass($toggleClass);
-			}
+			$targetMenu.addClass($toggleClass);
 		} else {
 			$targetMenu.removeClass($toggleClass);
 		}
-
-		lastScrollTop = st;
 	}
 
 	$(window).on("scroll", function () {

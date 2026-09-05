@@ -53,6 +53,7 @@
   /* START: Default CSS */
   @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Playfair+Display:ital@1&display=swap');
 
   :root {
     /**
@@ -44818,3 +44819,14 @@ h3.title a,
     border: 2px solid black;
   }
 
+
+  
+.fgc-page p.elegant-italic {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif !important;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.18rem;
+  letter-spacing: 0.3px;
+  line-height: 1.65;
+  font-optical-sizing: auto;
+}

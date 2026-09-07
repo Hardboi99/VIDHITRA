@@ -500,6 +500,17 @@ function initEngagementModel() {
     }
   }
 
+  function initShowcaseSpotlight() {
+  var list = document.querySelector('.fgc-showcase-list');
+  if (!list || isReducedMotion) return;
+
+  list.addEventListener('pointermove', function (e) {
+    var rect = list.getBoundingClientRect();
+    list.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+    list.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+  });
+}
+
   /* ── 5b. Capabilities Staggered Sequential Entrance ───── */
   function initCapabilities() {
     var items = document.querySelectorAll('.fgc-cap-item');
@@ -883,6 +894,7 @@ function initEngagementModel() {
     initLineReveals();
     initProcess();
     initCapabilitiesShowcase();
+    initShowcaseSpotlight();
     initCapabilities();
     initAudience();
     initGenericReveals();

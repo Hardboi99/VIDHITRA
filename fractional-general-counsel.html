@@ -370,6 +370,76 @@
         </div>
       </section>
 
+      <!-- ══════════════════════════════════════════════
+          2. STICKY HORIZONTAL SECTION NAVIGATION
+      ══════════════════════════════════════════════ -->
+<nav class="fgc-subnav" id="fgcSubNav" aria-label="Page Sections Navigation">
+  <div class="fgc-subnav__outer">
+    <div class="container-fluid fgc-subnav__container">
+      <div class="fgc-subnav__left">
+        <button type="button" class="fgc-subnav__next" id="fgcSubNavNext" aria-label="Go to next section">
+          <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        </button>
+        <span class="fgc-subnav__tag">
+          <span class="fgc-subnav__tag-dot"></span>
+          <span>Legal Support</span>
+        </span>
+      </div>
+
+      <div class="fgc-subnav__scroll" id="fgcSubNavScroll">
+        <ul class="fgc-subnav__list" id="fgcSubNavList">
+          <li class="fgc-subnav__item">
+            <a href="#fgc-hero" class="fgc-subnav__btn is-active" data-target="fgc-hero">
+              <span class="fgc-subnav__btn-title">Overview</span>
+            </a>
+          </li>
+          <li class="fgc-subnav__item">
+            <a href="#engagement-model" class="fgc-subnav__btn" data-target="engagement-model">
+              <span class="fgc-subnav__btn-title">The FGC Model</span>
+            </a>
+          </li>
+          <li class="fgc-subnav__item">
+            <a href="#how-we-work" class="fgc-subnav__btn" data-target="how-we-work">
+              <span class="fgc-subnav__btn-title">How We Work</span>
+            </a>
+          </li>
+          <li class="fgc-subnav__item">
+            <a href="#capabilities" class="fgc-subnav__btn" data-target="capabilities">
+              <span class="fgc-subnav__btn-title">Capabilities</span>
+            </a>
+          </li>
+          <li class="fgc-subnav__item">
+            <a href="#who-we-support" class="fgc-subnav__btn" data-target="who-we-support">
+              <span class="fgc-subnav__btn-title">Who We Support</span>
+            </a>
+          </li>
+          <li class="fgc-subnav__item">
+            <a href="#continuity" class="fgc-subnav__btn" data-target="continuity">
+              <span class="fgc-subnav__btn-title">Why Continuity</span>
+            </a>
+          </li>
+          <li class="fgc-subnav__item">
+            <a href="#contact-cta" class="fgc-subnav__btn" data-target="contact-cta">
+              <span class="fgc-subnav__btn-title">Get in Touch</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="fgc-subnav__right">
+        <a href="contact.html" class="fgc-subnav__cta">
+          <span class="fgc-subnav__cta-text">Schedule Call</span>
+          <span class="fgc-subnav__cta-icon"><i class="fa fa-arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+    <div class="fgc-subnav__progress" aria-hidden="true">
+      <div class="fgc-subnav__progress-fill" id="fgcSubNavProgressFill"></div>
+    </div>
+  </div>
+</nav>
+
+
 <!-- ══════════════════════════════════════════════
     3. THE FGC MODEL — EDITORIAL VERSUS SPREAD
 ════════════════════════════════════════════ -->
@@ -906,163 +976,6 @@
           </div>
         </div>
       </section>
-
-      <!-- ══════════════════════════════════════════════
-          FIXED RIGHT-SIDE SECTION NAVIGATION MENU
-      ══════════════════════════════════════════════ -->
-      <aside class="fgc-side-nav is-open" id="fgcSideNav" aria-label="Page Sections Navigation">
-        <!-- Collapsed Floating Trigger Pill -->
-        <button type="button" class="fgc-side-nav__trigger" id="fgcSideNavTrigger" aria-expanded="true" aria-controls="fgcSideNavPanel" aria-label="Toggle Page Navigation">
-          <span class="fgc-side-nav__trigger-glow" aria-hidden="true"></span>
-          <span class="fgc-side-nav__trigger-badge">
-            <span class="fgc-side-nav__trigger-pulse"></span>
-            <svg class="fgc-side-nav__trigger-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="18" x2="15" y2="18"></line>
-            </svg>
-          </span>
-          <span class="fgc-side-nav__trigger-body">
-            <span class="fgc-side-nav__trigger-tag">NAVIGATE</span>
-            <span class="fgc-side-nav__trigger-text">Sections</span>
-          </span>
-          <span class="fgc-side-nav__trigger-current" id="fgcSideNavCurrent">
-            <span class="fgc-side-nav__trigger-num" id="fgcSideNavCurrentNum">01</span>
-            <span class="fgc-side-nav__trigger-total">/ 07</span>
-          </span>
-        </button>
-
-        <!-- Expanded Floating Menu Panel -->
-        <div class="fgc-side-nav__panel" id="fgcSideNavPanel" aria-hidden="false">
-          <!-- Ambient Background Glow Decor -->
-          <div class="fgc-side-nav__panel-ambient" aria-hidden="true"></div>
-
-          <!-- Panel Header -->
-          <div class="fgc-side-nav__header">
-            <div class="fgc-side-nav__header-left">
-              <div class="fgc-side-nav__header-icon">
-                <i class="fa fa-compass"></i>
-              </div>
-              <div class="fgc-side-nav__header-text">
-                <span class="fgc-side-nav__header-eyebrow">Quick Navigation</span>
-                <div class="fgc-side-nav__header-title">
-                  <span>PAGE SECTIONS</span>
-                  <span class="fgc-side-nav__header-badge" id="fgcSideNavCounter">01 / 07</span>
-                </div>
-              </div>
-            </div>
-            <button type="button" class="fgc-side-nav__close" id="fgcSideNavClose" aria-label="Close navigation menu">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </button>
-          </div>
-
-          <!-- Dynamic Reading Progress Bar -->
-          <div class="fgc-side-nav__progress" title="Page scroll progress">
-            <div class="fgc-side-nav__progress-track">
-              <div class="fgc-side-nav__progress-fill" id="fgcSideNavProgressFill"></div>
-            </div>
-          </div>
-
-          <!-- Navigation Menu List -->
-          <nav class="fgc-side-nav__menu">
-            <ul class="fgc-side-nav__list">
-              <li class="fgc-side-nav__item" style="--i: 0;">
-                <a href="#fgc-hero" class="fgc-side-nav__btn is-active" data-target="fgc-hero">
-                  <span class="fgc-side-nav__btn-indicator"></span>
-                  <span class="fgc-side-nav__btn-num">01</span>
-                  <span class="fgc-side-nav__btn-content">
-                    <span class="fgc-side-nav__btn-title">Overview</span>
-                    <span class="fgc-side-nav__btn-sub">Strategic Snapshot</span>
-                  </span>
-                  <span class="fgc-side-nav__btn-icon"><i class="fa fa-arrow-right"></i></span>
-                </a>
-              </li>
-              <li class="fgc-side-nav__item" style="--i: 1;">
-                <a href="#engagement-model" class="fgc-side-nav__btn" data-target="engagement-model">
-                  <span class="fgc-side-nav__btn-indicator"></span>
-                  <span class="fgc-side-nav__btn-num">02</span>
-                  <span class="fgc-side-nav__btn-content">
-                    <span class="fgc-side-nav__btn-title">The FGC Model</span>
-                    <span class="fgc-side-nav__btn-sub">Retainer Structure</span>
-                  </span>
-                  <span class="fgc-side-nav__btn-icon"><i class="fa fa-arrow-right"></i></span>
-                </a>
-              </li>
-              <li class="fgc-side-nav__item" style="--i: 2;">
-                <a href="#how-we-work" class="fgc-side-nav__btn" data-target="how-we-work">
-                  <span class="fgc-side-nav__btn-indicator"></span>
-                  <span class="fgc-side-nav__btn-num">03</span>
-                  <span class="fgc-side-nav__btn-content">
-                    <span class="fgc-side-nav__btn-title">How We Work</span>
-                    <span class="fgc-side-nav__btn-sub">4-Phase Integration</span>
-                  </span>
-                  <span class="fgc-side-nav__btn-icon"><i class="fa fa-arrow-right"></i></span>
-                </a>
-              </li>
-              <li class="fgc-side-nav__item" style="--i: 3;">
-                <a href="#capabilities" class="fgc-side-nav__btn" data-target="capabilities">
-                  <span class="fgc-side-nav__btn-indicator"></span>
-                  <span class="fgc-side-nav__btn-num">04</span>
-                  <span class="fgc-side-nav__btn-content">
-                    <span class="fgc-side-nav__btn-title">Capabilities</span>
-                    <span class="fgc-side-nav__btn-sub">Practice Coverage</span>
-                  </span>
-                  <span class="fgc-side-nav__btn-icon"><i class="fa fa-arrow-right"></i></span>
-                </a>
-              </li>
-              <li class="fgc-side-nav__item" style="--i: 4;">
-                <a href="#who-we-support" class="fgc-side-nav__btn" data-target="who-we-support">
-                  <span class="fgc-side-nav__btn-indicator"></span>
-                  <span class="fgc-side-nav__btn-num">05</span>
-                  <span class="fgc-side-nav__btn-content">
-                    <span class="fgc-side-nav__btn-title">Who We Support</span>
-                    <span class="fgc-side-nav__btn-sub">Target Clients</span>
-                  </span>
-                  <span class="fgc-side-nav__btn-icon"><i class="fa fa-arrow-right"></i></span>
-                </a>
-              </li>
-              <li class="fgc-side-nav__item" style="--i: 5;">
-                <a href="#continuity" class="fgc-side-nav__btn" data-target="continuity">
-                  <span class="fgc-side-nav__btn-indicator"></span>
-                  <span class="fgc-side-nav__btn-num">06</span>
-                  <span class="fgc-side-nav__btn-content">
-                    <span class="fgc-side-nav__btn-title">Why Continuity</span>
-                    <span class="fgc-side-nav__btn-sub">Compound Value</span>
-                  </span>
-                  <span class="fgc-side-nav__btn-icon"><i class="fa fa-arrow-right"></i></span>
-                </a>
-              </li>
-              <li class="fgc-side-nav__item" style="--i: 6;">
-                <a href="#contact-cta" class="fgc-side-nav__btn" data-target="contact-cta">
-                  <span class="fgc-side-nav__btn-indicator"></span>
-                  <span class="fgc-side-nav__btn-num">07</span>
-                  <span class="fgc-side-nav__btn-content">
-                    <span class="fgc-side-nav__btn-title">Get in Touch</span>
-                    <span class="fgc-side-nav__btn-sub">Start Discussion</span>
-                  </span>
-                  <span class="fgc-side-nav__btn-icon"><i class="fa fa-arrow-right"></i></span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-
-          <!-- Panel Footer -->
-          <div class="fgc-side-nav__footer">
-            <a href="contact.html" class="fgc-side-nav__cta-btn">
-              <span class="fgc-side-nav__cta-shine"></span>
-              <span>Schedule Call</span>
-              <i class="fa fa-arrow-right"></i>
-            </a>
-            <button type="button" class="fgc-side-nav__top-btn" id="fgcSideNavTop" aria-label="Scroll to top of page">
-              <i class="fa fa-arrow-up"></i>
-              <span>Top</span>
-            </button>
-          </div>
-        </div>
-      </aside>
 
     </main>
 

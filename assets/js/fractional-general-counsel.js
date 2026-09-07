@@ -750,170 +750,116 @@ function initEngagementModel() {
     }
   }
 
-  /* ── 9. Fixed Right-Side Sections Navigation ────────────── */
-  function initSideNav() {
-    var sideNav = document.getElementById('fgcSideNav');
-    var trigger = document.getElementById('fgcSideNavTrigger');
-    var panel = document.getElementById('fgcSideNavPanel');
-    var closeBtn = document.getElementById('fgcSideNavClose');
-    var currentBadge = document.getElementById('fgcSideNavCurrent');
-    var currentNum = document.getElementById('fgcSideNavCurrentNum');
-    var counterBadge = document.getElementById('fgcSideNavCounter');
-    var progressFill = document.getElementById('fgcSideNavProgressFill');
-    var topBtn = document.getElementById('fgcSideNavTop');
-    if (!sideNav || !trigger || !panel) return;
+  /* ── 9. Sticky Horizontal Section Navigation Subnav ────────────── */
+ function initSubNav() {
+  var subNav = document.getElementById('fgcSubNav');
+  if (!subNav) return;
 
-    var navBtns = sideNav.querySelectorAll('.fgc-side-nav__btn');
-    var sectionIds = ['fgc-hero', 'engagement-model', 'how-we-work', 'capabilities', 'who-we-support', 'continuity', 'contact-cta'];
-    var totalSections = sectionIds.length;
-    var totalStr = totalSections < 10 ? '0' + totalSections : '' + totalSections;
+  var navScroll = document.getElementById('fgcSubNavScroll');
+  var navBtns = subNav.querySelectorAll('.fgc-subnav__btn');
+  var progressFill = document.getElementById('fgcSubNavProgressFill');
+  var nextBtn = document.getElementById('fgcSubNavNext');
+  var headerDuplicate = document.querySelector('.tj-header-area.header-duplicate');
+  var sectionIds = ['fgc-hero', 'engagement-model', 'how-we-work', 'capabilities', 'who-we-support', 'continuity', 'contact-cta'];
 
-    function openNav() {
-      sideNav.classList.add('is-open');
-      trigger.setAttribute('aria-expanded', 'true');
-      panel.setAttribute('aria-hidden', 'false');
-    }
-
-    function closeNav() {
-      sideNav.classList.remove('is-open');
-      trigger.setAttribute('aria-expanded', 'false');
-      panel.setAttribute('aria-hidden', 'true');
-    }
-
-    trigger.addEventListener('click', function (e) {
-      e.stopPropagation();
-      if (sideNav.classList.contains('is-open')) {
-        closeNav();
-      } else {
-        openNav();
-      }
-    });
-
-    if (closeBtn) {
-      closeBtn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        closeNav();
-      });
-    }
-
-    if (topBtn) {
-      topBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      });
-    }
-
-    // Close when clicking outside
-    document.addEventListener('click', function (e) {
-      if (sideNav.classList.contains('is-open') && !sideNav.contains(e.target)) {
-        closeNav();
-      }
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && sideNav.classList.contains('is-open')) {
-        closeNav();
-      }
-    });
-
-    // Smooth scroll on button click
-    navBtns.forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        var targetId = btn.getAttribute('data-target') || (btn.getAttribute('href') ? btn.getAttribute('href').replace('#', '') : '');
-        var targetEl = document.getElementById(targetId);
-        if (targetEl) {
-          e.preventDefault();
-          var headerOffset = 70;
-          var elementPosition = targetEl.getBoundingClientRect().top;
-          var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-
-          navBtns.forEach(function (b) { b.classList.remove('is-active'); });
-          btn.classList.add('is-active');
-
-          // On mobile screens, auto-close after selection for better viewing
-          if (window.innerWidth <= 768) {
-            setTimeout(closeNav, 300);
-          }
-        }
-      });
-    });
-
-    // ScrollSpy to update active state, trigger current badge, and progress bar
-    var ticking = false;
-    function updateActiveSection() {
-      var scrollPosition = window.pageYOffset + 180;
-      var currentId = sectionIds[0];
-      var currentIndex = 1;
-
-      for (var i = 0; i < sectionIds.length; i++) {
-        var el = document.getElementById(sectionIds[i]);
-        if (el) {
-          var top = el.offsetTop;
-          var height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            currentId = sectionIds[i];
-            currentIndex = i + 1;
-            break;
-          } else if (scrollPosition >= top) {
-            currentId = sectionIds[i];
-            currentIndex = i + 1;
-          }
-        }
-      }
-
-      navBtns.forEach(function (btn) {
-        var targetId = btn.getAttribute('data-target') || (btn.getAttribute('href') ? btn.getAttribute('href').replace('#', '') : '');
-        if (targetId === currentId) {
-          btn.classList.add('is-active');
-        } else {
-          btn.classList.remove('is-active');
-        }
-      });
-
-      var indexStr = currentIndex < 10 ? '0' + currentIndex : '' + currentIndex;
-
-      if (currentNum) {
-        currentNum.textContent = indexStr;
-      } else if (currentBadge) {
-        currentBadge.textContent = indexStr;
-      }
-
-      if (counterBadge) {
-        counterBadge.textContent = indexStr + ' / ' + totalStr;
-      }
-
-      // Update scroll progress bar
-      if (progressFill) {
-        var scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-        var scrollProgress = scrollHeight > 0 ? (window.pageYOffset / scrollHeight) * 100 : 0;
-        scrollProgress = Math.min(Math.max(scrollProgress, 0), 100);
-        progressFill.style.width = scrollProgress.toFixed(1) + '%';
-      }
-
-      ticking = false;
-    }
-
-    window.addEventListener('scroll', function () {
-      if (!ticking) {
-        window.requestAnimationFrame(updateActiveSection);
-        ticking = true;
-      }
-    }, { passive: true });
-
-    updateActiveSection();
-
-    // Ensure navigation menu is open by default at start
-    openNav();
+  function goToSection(targetId) {
+    var targetEl = document.getElementById(targetId);
+    if (!targetEl) return;
+    var isMobile = window.innerWidth <= 991;
+    var subNavHeight = subNav.offsetHeight || 0;
+    var headerOffset = subNavHeight + (isMobile ? 8 : 20);
+    var elementPosition = targetEl.getBoundingClientRect().top;
+    window.scrollTo({ top: elementPosition + window.pageYOffset - headerOffset, behavior: 'smooth' });
   }
+
+  function updateNextState(activeIndex) {
+    if (!nextBtn) return;
+    var isLast = activeIndex >= sectionIds.length - 1;
+    nextBtn.classList.toggle('is-disabled', isLast);
+    nextBtn.setAttribute('aria-disabled', isLast ? 'true' : 'false');
+  }
+
+  navBtns.forEach(function (btn, i) {
+    btn.addEventListener('click', function (e) {
+      var targetId = btn.getAttribute('data-target');
+      if (!targetId) return;
+      e.preventDefault();
+      goToSection(targetId);
+      navBtns.forEach(function (b) { b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      updateNextState(i);
+      if (navScroll) btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    });
+  });
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function () {
+      var activeIndex = 0;
+      navBtns.forEach(function (btn, i) { if (btn.classList.contains('is-active')) activeIndex = i; });
+      var nextIndex = Math.min(activeIndex + 1, navBtns.length - 1);
+      if (navBtns[nextIndex]) navBtns[nextIndex].click();
+    });
+  }
+
+  // Measures the *actual* rendered height of the pinned main header right now,
+  // instead of a hardcoded pixel guess — works regardless of header height/breakpoint.
+  function getPinnedHeaderHeight() {
+    if (!headerDuplicate) return 0;
+    var style = window.getComputedStyle(headerDuplicate);
+    var rect = headerDuplicate.getBoundingClientRect();
+    var isPinned = (style.position === 'fixed' || style.position === 'sticky') && rect.top <= 1 && rect.height > 0;
+    return isPinned ? Math.round(rect.height) : 0;
+  }
+
+  function updateStickyOffset() {
+    var offset = getPinnedHeaderHeight();
+    subNav.style.top = offset + 'px';
+    subNav.classList.toggle('has-sticky-header', offset > 0);
+    subNav.classList.toggle('is-scrolled', window.pageYOffset > 60);
+  }
+
+  var ticking = false;
+  function updateOnScroll() {
+    updateStickyOffset();
+
+    var isMobile = window.innerWidth <= 991;
+    var scrollPosition = window.pageYOffset + (isMobile ? 120 : 180);
+    var currentIndex = 0;
+    for (var i = 0; i < sectionIds.length; i++) {
+      var el = document.getElementById(sectionIds[i]);
+      if (el && scrollPosition >= el.offsetTop) currentIndex = i;
+    }
+
+    var activeBtn = null;
+    navBtns.forEach(function (btn, i) {
+      btn.classList.toggle('is-active', i === currentIndex);
+      if (i === currentIndex) activeBtn = btn;
+    });
+    updateNextState(currentIndex);
+
+    if (activeBtn && navScroll && isMobile) {
+      var btnRect = activeBtn.getBoundingClientRect();
+      var scrollRect = navScroll.getBoundingClientRect();
+      if (btnRect.left < scrollRect.left || btnRect.right > scrollRect.right) {
+        activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }
+
+    if (progressFill) {
+      var scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = scrollHeight > 0 ? (window.pageYOffset / scrollHeight) * 100 : 0;
+      progressFill.style.width = Math.min(Math.max(pct, 0), 100).toFixed(1) + '%';
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) { window.requestAnimationFrame(updateOnScroll); ticking = true; }
+  }, { passive: true });
+  window.addEventListener('resize', updateStickyOffset);
+
+  updateOnScroll();
+}
 
   /* ── Reduced Motion Fallback ────────────────────────────── */
   function applyReducedMotion() {
@@ -942,7 +888,7 @@ function initEngagementModel() {
     initGenericReveals();
     initContinuity();
     initCTA();
-    initSideNav();
+    initSubNav();
     applyReducedMotion();
 
     window.addEventListener('load', function () {

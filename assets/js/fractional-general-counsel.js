@@ -315,29 +315,65 @@
 
 
   
-  /* ── 3. Phase 3: FGC Model Engagement Sequence ─────────── */
-function initModelV2() {
-  var section = document.querySelector('#engagement-model.fgc-model');
+  /* ── 3. FGC Model: Scenario Switch & Mouse Tilt ──────────── */  
+function initEngagementModel() {
+  var section = document.querySelector('.fgc-eng') || document.querySelector('#engagement-model');
   if (!section) return;
 
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduced) {
-    section.classList.add('fgcv2-inview');
-    return;
+  var crestStage = section.querySelector('.fgc-eng__crest-stage');
+  var versus = section.querySelector('.fgc-eng__versus');
+  var specs = section.querySelector('.fgc-eng__specs');
+  var panels = section.querySelectorAll('.fgc-eng__versus-panel');
+
+  function revealOnce(el, threshold) {
+    if (!el) return;
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-inview');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: threshold || 0.2 });
+      io.observe(el);
+    } else {
+      el.classList.add('is-inview');
+    }
   }
 
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          section.classList.add('fgcv2-inview');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.25 });
-    io.observe(section);
-  } else {
-    section.classList.add('fgcv2-inview');
+  // Reveal header/crest/watermark, the versus spread, and the specs bar
+  revealOnce(section, 0.15);
+  revealOnce(versus, 0.25);
+  revealOnce(specs, 0.2);
+
+  // "Versus" hover / focus — dim the inactive side, glow the seam toward the active one
+  if (versus && panels.length) {
+    panels.forEach(function (panel) {
+      var isA = panel.classList.contains('fgc-eng__versus-panel--a');
+      var focusOn = function () {
+        versus.classList.remove('is-panel-a-focus', 'is-panel-b-focus');
+        versus.classList.add(isA ? 'is-panel-a-focus' : 'is-panel-b-focus');
+      };
+      panel.addEventListener('mouseenter', focusOn);
+      panel.addEventListener('focus', focusOn);
+    });
+    versus.addEventListener('mouseleave', function () {
+      versus.classList.remove('is-panel-a-focus', 'is-panel-b-focus');
+    });
+  }
+
+  // 3D Crest mouse follow
+  if (crestStage && !isReducedMotion) {
+    section.addEventListener('mousemove', function (e) {
+      var rect = section.getBoundingClientRect();
+      var x = (e.clientX - rect.left) / rect.width - 0.5;
+      var y = (e.clientY - rect.top) / rect.height - 0.5;
+      crestStage.style.transform = 'rotateY(' + (x * 30) + 'deg) rotateX(' + (-y * 30) + 'deg)';
+    });
+    section.addEventListener('mouseleave', function () {
+      crestStage.style.transform = '';
+    });
   }
 }
 
@@ -421,7 +457,7 @@ function initModelV2() {
     }
   }
 
-  /* ── 5. Phase 5: Capabilities Showcase Parallax & Stagger ───── */
+  /* ── 5. Phase 5: Capabilities Showcase Zoom & Stagger ───── */
   function initCapabilitiesShowcase() {
     var showcaseSection = document.querySelector('.fgc-capabilities--showcase');
     if (!showcaseSection || isReducedMotion) return;
@@ -429,32 +465,34 @@ function initModelV2() {
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       var bgImg = showcaseSection.querySelector('.fgc-showcase-bg__img');
       if (bgImg) {
-        gsap.to(bgImg, {
-          yPercent: 12,
-          scale: 1.08,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: showcaseSection,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 1.2
+        gsap.fromTo(bgImg, 
+          { scale: 1.0 },
+          {
+            scale: 1.08,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: showcaseSection,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 1.2
+            }
           }
-        });
+        );
       }
 
-      var cards = showcaseSection.querySelectorAll('.fgc-showcase-card');
-      if (cards.length) {
-        gsap.fromTo(cards,
-          { y: 30, opacity: 0 },
+      var items = showcaseSection.querySelectorAll('.fgc-showcase-item');
+      if (items.length) {
+        gsap.fromTo(items,
+          { x: -25, opacity: 0 },
           {
-            y: 0,
+            x: 0,
             opacity: 1,
-            duration: 0.8,
-            stagger: 0.07,
+            duration: 0.7,
+            stagger: 0.06,
             ease: 'power3.out',
             scrollTrigger: {
-              trigger: '.fgc-showcase-grid',
-              start: 'top 82%'
+              trigger: '.fgc-showcase-list',
+              start: 'top 85%'
             }
           }
         );
@@ -719,10 +757,16 @@ function initModelV2() {
     var panel = document.getElementById('fgcSideNavPanel');
     var closeBtn = document.getElementById('fgcSideNavClose');
     var currentBadge = document.getElementById('fgcSideNavCurrent');
+    var currentNum = document.getElementById('fgcSideNavCurrentNum');
+    var counterBadge = document.getElementById('fgcSideNavCounter');
+    var progressFill = document.getElementById('fgcSideNavProgressFill');
+    var topBtn = document.getElementById('fgcSideNavTop');
     if (!sideNav || !trigger || !panel) return;
 
     var navBtns = sideNav.querySelectorAll('.fgc-side-nav__btn');
     var sectionIds = ['fgc-hero', 'engagement-model', 'how-we-work', 'capabilities', 'who-we-support', 'continuity', 'contact-cta'];
+    var totalSections = sectionIds.length;
+    var totalStr = totalSections < 10 ? '0' + totalSections : '' + totalSections;
 
     function openNav() {
       sideNav.classList.add('is-open');
@@ -749,6 +793,16 @@ function initModelV2() {
       closeBtn.addEventListener('click', function (e) {
         e.stopPropagation();
         closeNav();
+      });
+    }
+
+    if (topBtn) {
+      topBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       });
     }
 
@@ -793,7 +847,7 @@ function initModelV2() {
       });
     });
 
-    // ScrollSpy to update active state and trigger current badge
+    // ScrollSpy to update active state, trigger current badge, and progress bar
     var ticking = false;
     function updateActiveSection() {
       var scrollPosition = window.pageYOffset + 180;
@@ -825,8 +879,24 @@ function initModelV2() {
         }
       });
 
-      if (currentBadge) {
-        currentBadge.textContent = currentIndex < 10 ? '0' + currentIndex : currentIndex;
+      var indexStr = currentIndex < 10 ? '0' + currentIndex : '' + currentIndex;
+
+      if (currentNum) {
+        currentNum.textContent = indexStr;
+      } else if (currentBadge) {
+        currentBadge.textContent = indexStr;
+      }
+
+      if (counterBadge) {
+        counterBadge.textContent = indexStr + ' / ' + totalStr;
+      }
+
+      // Update scroll progress bar
+      if (progressFill) {
+        var scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var scrollProgress = scrollHeight > 0 ? (window.pageYOffset / scrollHeight) * 100 : 0;
+        scrollProgress = Math.min(Math.max(scrollProgress, 0), 100);
+        progressFill.style.width = scrollProgress.toFixed(1) + '%';
       }
 
       ticking = false;
@@ -840,6 +910,9 @@ function initModelV2() {
     }, { passive: true });
 
     updateActiveSection();
+
+    // Ensure navigation menu is open by default at start
+    openNav();
   }
 
   /* ── Reduced Motion Fallback ────────────────────────────── */
@@ -860,7 +933,7 @@ function initModelV2() {
   function init() {
     initHero();
     initIntro();
-    initModelV2();
+    initEngagementModel();
     initLineReveals();
     initProcess();
     initCapabilitiesShowcase();

@@ -316,40 +316,30 @@
 
   
   /* ── 3. Phase 3: FGC Model Engagement Sequence ─────────── */
-  function initModel() {
-    var modelCards = document.querySelectorAll('.fgc-model__card');
-    if (!modelCards.length) return;
+function initModelV2() {
+  var section = document.querySelector('#engagement-model.fgc-model');
+  if (!section) return;
 
-    // Activate item 0 by default
-    modelCards[0].classList.add('is-active');
-
-    if (isReducedMotion) return;
-
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      var progressBar = document.querySelector('.fgc-model__progress-bar');
-
-      function activateModel(index) {
-        modelCards.forEach(function (card, i) {
-          card.classList.toggle('is-active', i === index);
-        });
-
-        if (progressBar) {
-          var pct = Math.min(100, Math.max(25, ((index + 1) / modelCards.length) * 100));
-          progressBar.style.width = pct + '%';
-        }
-      }
-
-      modelCards.forEach(function (card, index) {
-        ScrollTrigger.create({
-          trigger: card,
-          start: 'top 65%',
-          end: 'bottom 35%',
-          onEnter: function () { activateModel(index); },
-          onEnterBack: function () { activateModel(index); }
-        });
-      });
-    }
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced) {
+    section.classList.add('fgcv2-inview');
+    return;
   }
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          section.classList.add('fgcv2-inview');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.25 });
+    io.observe(section);
+  } else {
+    section.classList.add('fgcv2-inview');
+  }
+}
 
   /* ── 3. Editorial Line Drawing & Clip Reveals ───────────── */
   function initLineReveals() {
@@ -870,7 +860,7 @@
   function init() {
     initHero();
     initIntro();
-    initModel();
+    initModelV2();
     initLineReveals();
     initProcess();
     initCapabilitiesShowcase();

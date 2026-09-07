@@ -55,7 +55,7 @@
   @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Playfair+Display:ital@1&display=swap');
 
-  :root {
+:root {
     /**
       @Font-Family Declaration
     */
@@ -102,7 +102,7 @@
     /* Lighter secondary text */
     --tj-color-theme-primary: #005c59;
     /* Main brand/action colour — teal */
-    --tj-color-theme-dark: #52104c;
+    --tj-color-theme-dark: #9A0064 ;
     /* Client H2 — dark plum, used for dark sections */
     --tj-color-theme-bg: #F7F5F1;
     /* Client background — off-white */
@@ -116,7 +116,7 @@
     --tj-color-red-1: #ff0000;
 
     /* --- New variables added for Vidhitra's palette (theme had no equivalent) --- */
-    --tj-color-cta-pink: #9A0064;
+    --tj-color-cta-pink: #8b1081;
     /* Client CTA / active menu — magenta */
     --tj-color-teal-alt: #137d6e;
     /* Client teal alt — hover states, secondary teal accents */
@@ -44745,7 +44745,7 @@ h3.title a,
     margin: 0;
 
     padding: 44px 45px 40px;   /* 45px matches .header-bottom's own gutter,
-                                   so items line up under the nav above */
+    so items line up under the nav above */
 
     background: var(--tj-color-common-white, #FFFFFF);
     border: unset;
@@ -44829,4 +44829,12 @@ h3.title a,
   letter-spacing: 0.3px;
   line-height: 1.65;
   font-optical-sizing: auto;
+}
+
+/* Hero elegant italic text */
+.tj-hero-slider.style-1 .slider-wrapper .slider-content p.slider-desc.elegant-italic {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.3px !important;
 }
